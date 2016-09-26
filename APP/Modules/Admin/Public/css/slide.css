@@ -1,0 +1,18 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a img{border:0;}
+/* slide */
+#slide{position:relative;float:left;width:960px;height:300px;margin-bottom:20px;overflow:hidden;background:url(../images/home4.jpg) no-repeat center;}
+#slide ul{position:absolute;}
+#slide li{float:left; width:960px; height:300px; overflow:hidden; }
+#slide .o-control{display:none;position:absolute;top:160px;width:50px;height:80px;background:#000;filter:alpha(opacity=30);opacity:0.3;cursor:pointer;}
+#slide .control{position:relative;top:13px;left:8px;display:inline-block;width:30px;height:55px;background:url(img/bg_index.png);filter:alpha(opacity=60);opacity:0.6;}
+#slide #goback{left:0px;}
+#goback .control{background-position:0px -35px;}
+#slide #forward{right:0px;}
+#forward .control{left:10px;background-position:-35px -35px;}
+#slide div{position:absolute; float:right; bottom:20px; right:10px; height:32px; overflow:hidden; zoom:1; }
+#slide span{width:32px;font-size:14px;height:32px;margin:2px 2px; background:#963;float:left;text-align:center;line-height:32px;cursor:pointer;font-family:arial;filter:alpha(opacity=70);opacity:0.7;}
+#slide span a{color:#fff;text-decoration:none;}
+#slide span.curr,#slide span.hover{background:#000;filter:alpha(opacity=100);opacity:1;}
+#slide .curr a:link, #slide .curr a:visited{color:#fff;}

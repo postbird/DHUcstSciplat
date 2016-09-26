@@ -1,0 +1,92 @@
+﻿
+/*---- 网站首页---- */
+.main_content {
+	width: 100%;
+}
+
+
+.top_middle {
+	width: 960px;
+	height: 300px;
+	background: #FFFFFF;
+	float: left;
+	margin-bottom: 15px;
+	border: 1px solid #DADADA;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px #EEE;
+}
+
+
+.con_bottom {
+	width: 100%;
+	height: auto;
+}
+
+.bottom_left {
+	width: 33%;
+	height: 250px;
+	float: left;
+}
+
+.bottom_middle {
+	width: 34%;
+	height: 250px;
+	float: left;
+}
+
+.bottom_right {
+	width: 33%;
+	height: 250px;
+	float: left;
+}
+
+.md77 .hd {
+	height: 24px;
+	line-height: 24px;
+	text-indent: 13px;
+	background: #3C5E7C;
+	color: #ccc;
+	font-weight: 700;
+}
+
+.md77 .hd a, .md77 .hd a:hover {
+	color: #ccc
+}
+
+.md77 .bd {
+	padding: 15px 0 0;
+	margin-bottom: 40px;
+	margin-left: 6px;
+}
+
+.list55 {
+	overflow: hidden;
+}
+
+.list55 li {
+	line-height: 26px;
+	height: 26px;
+	overflow: hidden;
+	border-bottom: 1px dotted #404445;
+	margin: 0 10px;
+	color: #fff;
+	background: url(../images/ICO.GIF) no-repeat 1px -10px
+}
+
+.list55 a {
+	padding-left: 11px;
+	display: block;
+	color: #000;
+	zoom: 1
+}
+
+.list55 a:hover {
+	background: url(../images/ICO.GIF) no-repeat 1px -29px;
+	color: #636363;
+}
+
+.list55 li i {
+	color: #fc0;
+	margin-right: 7px;
+	font-style: normal
+}

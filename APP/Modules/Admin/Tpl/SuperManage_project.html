@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/jquery-easyui-1.3.5/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/jquery-easyui-1.3.5/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap-responsive.min.css">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+	<style css='text/css'>
+		.red{color:red;}
+		.blue{color:blue;}
+		.operate{color:#428bca;}
+		.modal-dialog{width:50%;}
+		.inputpadding{padding-left:1px;}
+		.pantssize{font-size:14px;}
+		.back{position:absolute;right:10px;top:10px;}
+		
+	</style>
+	
+	<script>
+		$(document).ready(function(){
+			
+             $("#checkAll").click(function(){
+            	 var a=0;
+				  $(".sub-box").each(function(){
+				  	if(a>=($(".sub-box").length/2)){
+				  		return 0;
+				  	}else{
+				  		$(this).prop("checked",true);
+				  		a++;
+				  	}
+				  });
+			 });
+             $("#delAll").click(function(){  
+			  $(".sub-box").each(function(){
+			   $(this).prop("checked",false);
+			  });  
+			 });
+        });
+
+	</script>
+
+<js file='__ROOT__/Data/Ueditor/ueditor.config.js' />
+<js file='__ROOT__/Data/Ueditor/ueditor.all.min.js' />
+</head>
+<body style="padding:20px 20px 0px 20px">
+	<h2 align="center">申报项目列表</h2>
+	<form id="searchform" method='post' action="__URL__/searchproject" class="form-horizontal">
+	<table id = "search" >
+	  <tr>
+	  	<td>年度：</td>
+	  	<td>
+	  		<select id="searchannual" name="searchannual" class="form-control" >
+	  			<if condition="$searchyear eq 0">
+	  				<option value="0" selected="selected">=请选择年度=</option>
+	  			<else/>
+	  				<option value="0">=请选择年度=</option>
+	  			</if>
+	  			<for start="2014" end="2034">
+	  				<if condition="$searchyear eq $i">
+		  				<option value="{$i}" selected="selected">{$i}</option>
+		  			<else/>
+		  				<option value="{$i}">{$i}</option>
+		  			</if>
+	  			</for>
+  			</select>
+	  	</td>
+	  	<td style="padding-left:1em;">级别：</td>
+	  	<td>
+	  		<select id="searchlevel" name="searchlevel" class="form-control" >
+	  			<if condition="$searchlevel eq '0'">
+	  				<option value="0" selected="selected">=请选择级别=</option>
+	  			<else/>
+	  				<option value="0">=请选择级别=</option>
+	  			</if>
+	  			<if condition="$searchlevel eq '国家级'">
+	  				<option value="国家级" selected="selected">国家级</option>
+	  			<else/>
+	  				<option value="国家级">国家级</option>
+	  			</if>
+	  			<if condition="$searchlevel eq '上海市级'">
+	  				<option value="上海市级" selected="selected">上海市级</option>
+	  			<else/>
+	  				<option value="上海市级">上海市级</option>
+	  			</if>
+	  			<if condition="$searchlevel eq '校级'">
+	  				<option value="校级" selected="selected">校级</option>
+	  			<else/>
+	  				<option value="校级">校级</option>
+	  			</if>
+	  			<if condition="$searchlevel eq '院级'">
+	  				<option value="院级" selected="selected">院级</option>
+	  			<else/>
+	  				<option value="院级">院级</option>
+	  			</if>
+  			</select>
+	  	</td>
+	  	<td style="padding-left:1em;">来源：</td>
+	  	<td>
+	  		<select id="searchfid" name="searchfid" class="form-control" >
+	  			<if condition="$searchfid eq 0">
+	  				<option value="0" selected="selected">=请选择来源=</option>
+	  			<else/>
+	  				<option value="0">=请选择来源=</option>
+	  			</if>
+	  			<foreach name="searchfids" item='v'>
+	  				<if condition="$searchfid eq $v['pid']">
+	  					<option value="{$v['pid']}" selected="selected">{$v['ptitle']}</option>
+	  				<else/>
+	  					<option value="{$v['pid']}" >{$v['ptitle']}</option>
+	  				</if>
+	  			</foreach>
+  			</select>
+	  	</td>
+		<td style="padding-left:1em;">
+			<input type="hidden"  id="searchunum" name="searchunum" value="{$unum}">
+			<input type="hidden"  id="searchuname" name="searchuname" value="{$uname}">
+			<button class="btn  btn-default" id="searchbtn" name="searchbtn" type="button">查询&nbsp;<i class="icon-search icon-large icon-white"></i> </button>
+		</td>
+	  </tr>
+	</table>
+	</form>
+	<hr/>
+	
+	<div style="margin:10px 0;"></div>
+	
+	<form method='post' action="__URL__/outputproject" >	
+		<table id="dg" title="项目列表" style="width:1300px;height:800px" >
+		<foreach name='project' item='u'>
+		<tr>
+			<td>{$u.pid}</td>
+			<td><input type="checkbox" value="{$u.pid}" name="subBox[]" class="sub-box"></td>
+			<td>{$u.pname}</td>
+			<td>{$u.pclass}</td>
+			<td>{$u.pcaptainname}</td>
+			<td>{$u.pcaptainnum}</td>
+			<td>{$u.pnumber}</td>
+			<td>
+				<foreach name="u['user']" item='v'>
+					<if condition="($v['uprofession'] eq '学生') and ($v['unum'] neq $u['pcaptainnum'])">
+						{$v['uname']}（{$v['unum']}）
+					<else/>
+					</if>
+				</foreach>
+			</td>
+			<td>
+				<foreach name="u['user']" item='v'>
+					<if condition="($v['uprofession'] neq '学生')">
+						{$v['uname']}
+					<else/>
+					</if>
+				</foreach>
+			</td>
+			<td>
+				<foreach name="u['user']" item='v'>
+					<if condition="($v['uprofession'] neq '学生')">
+						{$v['uprofession']}
+					<else/>
+					</if>
+				</foreach>
+			</td>
+			<td>{$u.pfather}</td>
+			<td>
+				<if condition="$u['pstatus'] eq 0">
+					未审核
+				<else/>
+					<if condition="$u['pstatus'] eq 1">
+						通过
+					<else/>
+						不通过
+					</if>	
+				</if>
+			</td>
+			<td>
+				<if condition="$u['pleaderstatus'] eq 0">
+					未审核
+				<else/>
+					<if condition="$u['pleaderstatus'] eq 1">
+						通过
+					<else/>
+						不通过
+					</if>	
+				</if>
+			</td>
+			<td>
+				<a href="{:U('Admin/SuperManage/projectread',array('pid'=>$u['pid'],'unum'=>$unum,'uname'=>$uname))}">读取</a>
+				
+			</td>		
+		</tr>
+		</foreach>
+		</table>
+		
+		<div style="padding-left:600px;">
+		{$page}
+		</div>
+		<a id="checkAll" href="javascript:;"class="btn btn-default">全选</a>
+		<a id="delAll" href="javascript:;" class="btn btn-default">取消全选</a>
+		<input type="submit" name='option1' value="导出选中选项" class="btn btn-primary">
+		<input type="submit" name='option2' value="选中中期答辩" class="btn btn-primary">
+		<input type="submit" name='option3'  value="选中结题答辩" class="btn btn-primary">
+		&nbsp;&nbsp;<span class='red'>{$msg}</span>
+	</form>		
+	<script>
+			
+	$(function(){
+			$('#searchbtn').click(function(){
+				if($('#searchannual').val() == '' && $('#searchlevel').val()==''){
+					alert('请输入查询内容');
+					return false;
+				}else{
+					$('#searchform').submit();
+				}
+										
+			});
+			
+		});
+		$(function(){
+			
+			$('#dg').datagrid({
+			       fitColumns:true,
+					rownumbers:true,
+					singleSelect:true,
+					autoRowHeight:false,
+					
+				  columns:[[
+					{field:'pid',hidden:true},
+					{field:' ',title:" ",width:15},				            
+					{field:'pname',title:"项目名称",width:200},
+			        {field:'pclass',title:'项目类型',width:45},
+			        {field:'pcaptainname',title:"负责人姓名",width:45},
+			        {field:'pcaptainnum',title:"负责人学号",width:45},
+			        {field:'pnumber',title:"人数",width:20},
+			        {field:'anotherstu',title:"其他学生",width:100},
+			        {field:'pteachername',title:"指导老师",width:45},
+			        {field:'pteacherprofesion',title:"老师职称",width:40},
+			        {field:'pfather',title:"所属一级学科",width:50},
+			        {field:'status',title:"管理员审核",width:35},
+			        {field:'leaderstatus',title:"学校审核",width:35},
+			        {field:'op',title:"操作",width:35},
+			        		        
+			   	  ]]
+				});
+		});
+	</script>
+</body>
+</html>

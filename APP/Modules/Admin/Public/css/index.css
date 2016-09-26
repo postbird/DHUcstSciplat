@@ -1,0 +1,275 @@
+/**********************修改的一些bootstrap的样式*********************************/
+/**
+	bootstrap中,有的css样式不是很喜欢,但是避免更改源文件,在引入文件更改
+**/
+* { font-family: "Microsoft YaHei"  }
+.btn{border-radius: 0px;}
+.panel{border-radius: 0px;}
+.panel-heading{border-top-left-radius: 0px;  border-top-right-radius: 0px;}
+.panel-footer{border-bottom-right-radius: 0px;  border-bottom-left-radius: 0px;}
+/*hr{margin-bottom: 3px;margin-top:6px;}*/
+.list-group-item:hover{background-color: #fafafa;}
+.navbar{border-radius: 0px;}
+.list-group-item:first-child {border-top-left-radius: 0px;border-top-right-radius: 0px;}
+.list-group-item:last-child {margin-bottom: 0;border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
+.modal-content{border-radius: 0px;}
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: 0px;
+}
+/**********************通用的css样式 ---  对样式的扩充*********************************/
+
+.black-body{background-color: #000000;}
+.fa{cursor: pointer;}
+a:hover{text-decoration: none;}
+.inline-block{display: inline-block;}
+.white-font{color:#fff;}
+.text-indent{text-indent: 2em;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+.block-font{display: block;}
+.red-font{color:#E7290F;}
+.primary-box{padding:10px;color:#fff;background-color: #337ab7;border-color: #2e6da4;cursor: pointer;}
+.success-box{padding:10px;color:#fff;background-color: #5cb85c;border-color: #4cae4c;cursor: pointer;}
+.info-box{padding:10px;color:#fff;background-color: #5bc0de;border-color: #46b8da;cursor: pointer;}
+.warning-box{padding:10px;color:#fff;background-color: #f0ad4e;border-color: #eea236;cursor: pointer;}
+.danger-box{padding:10px;color:#fff;background-color: #d9534f;border-color: #d43f3a;cursor: pointer;}
+.primary-box:hover{background-color:#333;}
+.danger-box:hover{background-color:#333;}
+.warning-box:hover{background-color:#333;}
+.info-box:hover{background-color:#333;}
+.success-box:hover{background-color:#333;}
+.red-box{background-color:#E7290F;color:#fff;padding:5px;margin-bottom: 5px;}
+.padding-top-bottom{padding-top:5px;padding-bottom:5px;}
+.big-font{font-size:18px;}
+.middle-font{font-size:16px;}
+.red-square-span{display:inline-block;background-color: #E7290F;color:#fff;padding:2px;}
+.no-padding{padding:0px;}
+.no-padding-left{padding-left: 0px;}
+.no-padding-right{padding-right: 0px;}
+.overflow-div{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.red-flag-box{display:block;min-height:50px;max-height: 50px;width:9px;background-color: #E7290F;}
+.margin-top-px{margin-top:20px;}
+/**********************通用的css样式 ---  对样式的扩充结束*********************************/
+a:hover{
+	text-decoration: none;
+}
+.header{
+	height: 53px;
+	background-color: #3B1CFF;
+	background: url(../images/top-right.gif);
+	border-bottom: 5px solid #DAECF6;
+	position: relative;
+}
+#logo{
+	width: 300px;
+	float: left;
+}
+#logo .logo{
+	display: block;
+	width: 140px;
+	color: #FEFDFF;
+	float: left;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+#logo .logo:hover{
+	color: #FB9337;
+}
+#logo .slogan{
+	display: block;
+    float: left;
+	border-left: 1px solid #606D84;
+	border-right: 1px solid #606D84;
+	padding: 0px 10px;
+    color: #DDD5E5;
+    margin-top: 15px;
+}
+
+.head-right{
+	width: 530px;
+	position: absolute;
+	right: 6px;
+	bottom: 0px;
+	cursor: pointer;
+}
+.userinfo{
+	float: right;
+	padding: 6px 12px 0px 8px;
+}
+.userinfo span{
+	background: #3C5E7C;
+	color: #FFFFFF;
+	display: inline-block;
+	padding: 0 5px;
+	font-size: 13px;
+	font-weight: bold;
+}
+.userinfo span:hover{
+	color: #FB9337;
+}
+
+.userpanel{
+	position: absolute;
+	right: 15px;
+	top: 25px;
+	background:#DAECF6;
+	width: 78px;
+	height: 108px;
+	border-radius: 2px;
+	padding: 10px;
+	display: none;
+}
+.userpanel li a{
+	display: block;
+	padding: 5px;
+	color: #666;
+}
+.userpanel li a:hover{
+	background: #fb9337;
+	border-radius: 2px;
+	color: #FFF;
+}
+.update-cate{
+	background-color: none;
+}
+
+.update-cate a span:hover{
+	color: #FB9337;
+}
+
+.son{
+	background: #eff3f6;
+}
+
+.headermenu li{
+	bottom:0px;
+	float: left;
+	display: inline-block;
+	padding: 35px 12px 0px 12px;
+}
+.headermenu li a{
+	display: block;
+	font-family: "舒体";
+	font-size: 14px;
+	font-weight:bold;
+	color: #222120;
+	
+}
+.headermenu li a:hover{
+	background: url('../images/bghover.png');
+	color: #FFFFFF;
+}
+#content{
+	height:auto;
+	/* overflow:auto; */
+	/* overflow:hidden; */
+}
+#dis{
+	/* overflow:auto; */
+}
+
+#menu{
+	overflow-y:hidden;
+	overflow-x:hidden;
+	width: 177px;
+	padding-right: 7px;
+	background-color:#DAECF6;
+	/* background: url('../images/shadow.png') repeat-y right; */
+	float: left;
+}
+
+#opt{
+	/* overflow:hidden; */
+	float: left;
+	
+}
+#opt iframe{
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+}
+#menu a{
+	color: #404040;
+}
+.left-menu{
+	/* overflow:visile; */
+	/*display: none;*/
+}
+.left-menu li{
+	width: 173px;
+	/*border: 1px #f00 solid;*/
+}
+.left-menu li span{
+	/* position: relative; */
+}
+.left-menu li span a{
+	display: block;
+	padding-left: 12px;
+	height: 34px;
+	line-height: 34px;
+	background: url('../images/bg-normal.png');
+	border-bottom: 1px solid #BCBCBC;
+}
+.left-menu li span a:hover{
+	text-shadow: 0 1px 0 #193C65;
+	color: #FEFEFE!important;
+	background: url(../images/bg-hover.png);
+}
+#menu .son a{
+	display: block;
+	padding-left: 30px;
+	height: 29px;
+	line-height: 29px;
+}
+#menu .son .son-hover{
+	height: 27px;
+	line-height: 27px;
+	background: #D4E2F0;
+	border-top: 1px solid #B2C1D2;
+	border-bottom: 1px solid #B2C1D2;
+	background: #d4e2ef;
+	color:#06E;
+	text-shadow: 0 1px 0 white;
+}
+.close-left{
+   	background: url("../images/menucollapsed.png") no-repeat scroll center 0px transparent;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    cursor: pointer;
+    display: block;
+    height: 21px;
+    margin:10px 5px;
+}
+.enable-left{
+	background: url("../images/menucollapsed.png") no-repeat scroll center -21px transparent;
+	margin:10px 2px;
+	border: none;
+}
+#shortcut-ico li{
+	width: 30px;
+	height: 25px;
+	line-height: 25px;
+	border-bottom: 1px solid #EEE;
+}
+#shortcut-ico li a{
+	display: block;
+	margin-left: 5px;
+}
+.icon{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('../images/sprites.png') no-repeat;
+}
+
+.icon-user{
+	margin-right:5px;
+}
+.icon-cog{
+	margin-right:5px;
+}
+.icon-key{
+	margin-right:5px;
+}

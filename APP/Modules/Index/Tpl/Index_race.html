@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css">
+<style>
+	.head{text-align:center;}
+	a{target:"opt";}
+	.page-header{height:400px;}
+	.menu{font-size:1.2em;}
+	.menu-title{font-size:1.1em;}
+	li a{color:black;}
+	li span{float:right;}
+</style>
+</head>
+<body>
+	<div class='container'>
+		<h3 class='head'>{$race['rname']}</h3>
+		<hr/>
+	 	<form id="form1" method='post'  class="form-horizontal" enctype="multipart/form-data">
+		 			
+					<div class="form-group">
+						<div class="col-sm-10 col-sm-offset-1">
+					      {$race['rcontent']}
+					    </div>
+					</div>
+					<hr/>
+					<div class="form-group">
+						<label  class="col-sm-2 control-label" >开始日期:</label>
+						<label  class="col-sm-2 control-label normalfont" >{$race['rdatestart']}</label>
+					    <label  class="col-sm-2  control-label" >截止日期:</label>
+					    <label  class="col-sm-2 control-label normalfont" >{$race['rdateend']}</label>
+				    </div>
+				    <hr/>
+					<div class="form-group">
+						<label for="username" class="col-sm-2 control-label" >主办/承办单位:</label>
+						<label for="username" class="col-sm-2 control-label normalfont" > {$race['rsponsor']}</label>
+				 	</div>
+				 	 <hr/>
+					<div class="form-group">
+						<label  class="col-sm-2  control-label" >竞赛级别:</label>
+					    <label  class="col-sm-2 control-label normalfont" >{$race['rlevel']}</label>							
+					</div>
+					<hr/>
+					<div class="form-group">
+						<if condition="$race['raccessory'] eq ''">
+					    <else/>
+					   		 <label for="username" class="col-sm-2  control-label" >附件:</label>
+					    	 <label  class="col-sm-2 control-label normalfont" ><a href="{:U('Index/Index/downfile')}?filename=.{$race["raccessory"]}">附件下载</a></label>	
+						</if>   
+					</div>
+					
+			  		<div class="modal-footer">
+		   			 	 <a class="btn btn-primary" href="{:U('Index/Index/racelist')}" target="opt"><span>返回</span></a>
+					</div>
+		</form>
+	</div>
+	
+
+	
+</body>
+</html>

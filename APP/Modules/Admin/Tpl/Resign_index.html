@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/bootstrap/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/login.css"/>
+<title>科创管理平台注册页面</title>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+    
+    <script type="text/javascript">
+   			var verifyUrl='{:U("Admin/Login/verify",'','')}';
+   			var loginindexUrl='{:U("Admin/Login/index",'','')}';
+   			var loginloginUrl='{:U("Admin/Login/login",'','')}';
+   			var indexUrl='{:U("Admin/Index/index",'','')}';
+           
+    </script>
+  <style>
+  	.loginbtn{float:right;}
+  	.note{color:red;font-size:0.85em;}
+  </style>  
+</head>
+<body onkeydown='onEnterDown();'>
+   	<div id="header">
+        <div id="login_top">科创管理平台注册页面<span id="version"></span></div>
+        <div id = "login_welcome"><i class="icon-chevron-left"></i>欢迎使用 </div>
+	</div>
+	
+    <div  id="login_body">
+     <div id="login_left">
+	
+     <marquee behavior="scroll" height="150" direction=up scrollamount=2 scrolldelay=5 onmouseover="this.stop()" onmouseout="this.start()">
+    <div style="color:#7F8D18;">
+	
+	
+	</div>
+	</marquee>
+     </div>
+        <span id="loginContainer">
+        	<img id="login_img" src="__PUBLIC__/images/login.png"/>
+            <form  action="__URL__/resignCheck" method="post" id="form1" >
+                <table>
+                    <tr>
+                        <th><span class="login-input"><label for="name">用户名：</label><label class='note'>学号或者工号 *</label></span></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="input-xlarge" tabindex="1" name="usernum" id="usernum" /></td>
+                    </tr>
+                     <tr>
+                        <th><span class="login-input"><label for="name">姓名：</label><label class='note'>填写真实姓名否则注册失败</label></span></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="input-xlarge" tabindex="1" name="username" id="username" /></td>
+                    </tr>
+                    <tr>
+                        <th><span class="login-input"><label for="role">角色：</label></span></th>
+                    </tr>
+                    <tr>
+	                    <td>
+	                    	<select id="role" name="role" >
+								<option value='0'>=请选择角色=</option>
+								<option value='学生'>学生</option>
+								<option value='教师'>教师</option>
+							</select>
+	                    </td>
+                    </tr>
+                    <tr>
+                        <th><span class="login-input"><label for="role">职称：</label></span></th>
+                    </tr>
+                    <tr>
+	                    <td>
+	                    	<select id="profession" name="profession" >
+								<option value='0'>=请选择职称=</option>
+								<option value='学生'>学生</option>
+								<option value='助教'>助教</option>
+								<option value='讲师'>讲师</option>
+								<option value='副教授'>副教授</option>
+								<option value='教授'>教授</option>
+							</select>
+	                    </td>
+                    </tr>
+                    <tr>
+                        <th><span class="login-input"><label for="pwd">密码：</label><a href=""></a></span> </th>
+                    </tr>
+                    <tr>
+                        <td><input type="password" class="input-xlarge" tabindex="2" name="password" id="password" /></td>
+                    </tr>
+                    <tr>
+                        <th><span class="login-input"><label for="pwd1">确认密码：</label><a href=""></a></span> </th>
+                    </tr>
+                    <tr>
+                        <td><input type="password" class="input-xlarge" tabindex="2" name="password1" id="password1" /></td>
+                    </tr>
+                    <tr>
+                        <th><span class="login-input"><label for="tel">手机号：</label><a href=""></a></span> </th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="input-xlarge" tabindex="2" name="tel" id="tel" /></td>
+                    </tr>
+                    
+                <tr id="login">
+                	<td>
+                		<div class='loginbtn'>
+                				 <button  onclick="resignCheck()" type="button" tabindex="3" class="btn btn-info"><i class="icon-edit icon-white"></i>&nbsp;&nbsp;提交</button>
+            			</div>
+                   </td>
+                </tr>
+                </table>
+            </form>
+        </span>
+    </div>
+    <script type="text/javascript">
+	    function resignCheck(){
+			
+			if($('#usernum').val() == ''){
+				alert("请填写用户名！");
+				return false;
+				}
+			if($('#username').val() == ''){
+				alert("请填写姓名！");
+				return false;
+				}
+			
+			if($('#role').val()=='0'){
+				alert("请选择角色！");
+				return false;
+				}
+			if($('#profession').val()=='0'){
+				alert("请选择职称！");
+				return false;
+				}
+			if($('#password').val() == ''){
+				alert("密码不能为空！");
+				return false;
+				}
+		
+			if($('#password').val() == $('#password1').val()){
+				$('#form1').submit();
+				
+				}
+			else{
+					alert("两次填写密码不一致！");
+					return false;
+				}	
+			
+		    }
+    </script>
+</body>
+</html>

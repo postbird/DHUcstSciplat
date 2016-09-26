@@ -1,0 +1,151 @@
+body {
+	min-width:960px;
+	overflow:hidden;
+	background-color:#f5f5f5;
+}
+#header{
+	width: 100%;
+	margin-top:1%;
+	height: 15px;
+	
+}
+#header #login_top{
+	line-height: 52px;
+	text-align:center;
+	font-size: 33px;
+	color:#1374EB;
+	font-style:oblique;
+	font-weight: normal;
+	font-family: "华文行楷";
+	text-decoration: none;
+}
+#header  #login_top:hover{
+	color: #F34E31;
+
+}
+#header  #login_top:link{
+	color:#35AFA5;
+}
+
+#header #version{
+	font-size: 14px;
+	color:#1374EB;
+}
+#header #version:hover{
+	font-size: 14px;
+	color: #F34E31;
+}
+
+
+
+#header #login_welcome{
+	color:#1374EB;
+	float: right;
+	margin-bottom:0px;
+	margin-right:8px;
+	padding-bottom:0px;
+	font-size: 10px;
+	text-decoration: none;
+}
+#header #login_welcome:hover{
+	color:#B7B219;
+}
+
+#login_body{
+	margin-top:5%;
+	width:100%;
+	height:450px;
+	background-image: url("../images/test1.jpg");
+	
+}
+
+
+ #login_left{
+	float:left;
+	margin-top:8%;
+	margin-left:12%; 
+	width:399px;
+	heigth:auto;
+}
+
+#login_left textarea{
+	width:380px;
+	readonly: readonly;
+	 overflow:hidden;
+	 background-color:#EFF30B;
+	 border-width:1px;
+	 border-style:inset;
+	 border-color:#0F0F0F;
+} 
+
+#loginContainer{
+	margin-top:5%;
+	margin-left:10%;
+	float:left;
+	width: 320px;
+	border: 1px solid #C4C4C4;
+	background: #FFF;
+}
+
+#login_img{
+		width: 320px;
+} 
+
+#loginContainer table{
+	margin: 10px 20px;
+}
+#loginContainer table th{
+	text-align: left;
+	font-weight: normal;
+}
+.login-input{
+	display: block;
+	height: 25px;
+	font-family: Arial;
+}
+.login-input label{
+	display: block;
+	width: 140px;
+	float: left;
+}
+.login-input a{
+	float: right;
+}
+#name{
+	background: url(../images/icon-user.gif) no-repeat right center;
+	opacity: 0.7;
+}
+#pwd{
+	background: url(../images/icon-lock.gif) no-repeat right center;
+	opacity: 0.7;
+}
+form{
+	margin-bottom: 0px;
+}
+.code img{
+	margin-left: 5px;
+	margin-top: -10px;
+}
+
+
+ #login{
+	height: 25px;
+	padding: 19px 19px 20px 19px;
+	/* background-color: whiteSmoke; */
+	border-top: 1px solid #E5E5E5;
+}
+}
+
+}
+#login  input{
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin-top: 7px;
+}}
+ */}
+ 
+
+/* #login_bottom{
+	float:right;
+} */

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x:hidden;">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css">
+<style>
+	.menu-title{font-size:1.1em;}
+	li a{color:black;}
+	li span{float:right;}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="col-md-4">
+	 	<div class="panel panel-info panel_col">
+	  
+			<div class="panel-heading menu-title">新闻</div>
+
+			<ul class="list-group ">
+				<foreach name="news" item='v'>
+					 <li class="list-group-item"><a href="{:U('Index/Index/news',array('nid'=>$v['nid']))}">{$v.ntitle}</a><span>{$v.ndate}</span></li>
+				</foreach>
+				 <li class="list-group-item"><a href="{:U('Index/Index/newslist')}" style="float:right;">更多>></a></li>
+		    </ul>
+		</div>
+  </div> 
+
+  <div class="col-md-4">
+	 	<div class="panel panel-info panel_col">
+	  
+			<div class="panel-heading menu-title">讲座</div>
+
+	
+			<ul class="list-group">
+				<foreach name="lecture" item='v'>
+					 <li class="list-group-item"><a href="{:U('Index/Index/lecture',array('lid'=>$v['lid']))}">{$v.ltitle}</a><span>{$v.ldatestart}</span></li>
+					 
+				</foreach>
+				<li class="list-group-item"><a href="{:U('Index/Index/lecturelist')}" style="float:right;">更多>></a></li>
+			</ul>
+		</div>
+  </div> 
+  <div class="col-md-4">
+	 	<div class="panel panel-info panel_col">
+	  
+			<div class="panel-heading menu-title">科创</div>
+
+	
+			<ul class="list-group">
+				<foreach name="user" item='v'>
+					 <li class="list-group-item">{$v.uname}({$v.unum})<span>{$v.upoint}分</span></li>
+				</foreach>
+			</ul>
+		</div>
+  </div>  
+</div>
+<hr/>
+<div class="row">
+  <div class="col-md-4">
+	 	<div class="panel panel-info panel_col">
+	  
+			<div class="panel-heading menu-title">竞赛</div>
+
+			<ul class="list-group">
+				<foreach name="race" item='v'>
+					<li class="list-group-item"><a href="{:U('Index/Index/race',array('rid'=>$v['rid']))}">{$v.rname}</a><span>{$v.rdatestart}</span></li>
+				</foreach>
+				<li class="list-group-item"><a href="{:U('Index/Index/racelist')}" style="float:right;">更多>></a></li>
+			</ul>
+		</div>
+  </div> 
+
+  <div class="col-md-4">
+	 	<div class="panel panel-info panel_col">
+	  
+			<div class="panel-heading menu-title">项目</div>
+
+	
+			<ul class="list-group">
+				<foreach name="projectnews" item='v'>
+					<li class="list-group-item"><a href="{:U('Index/Index/projectnews',array('pid'=>$v['pid']))}">{$v.ptitle}</a><span>{$v.pdatestart}</span></li>
+				</foreach>
+				<li class="list-group-item"><a href="{:U('Index/Index/projectnewslist')}" style="float:right;">更多>></a></li>
+			</ul>
+		</div>
+  </div> 
+  <div class="col-md-4">
+	 	<div class="panel panel-info panel_col">
+	  
+			<div class="panel-heading menu-title">人才库</div>
+
+	
+			<ul class="list-group">
+				<foreach name="elite" item='v'>
+					<li class="list-group-item">{$v.ename}</li>
+				</foreach>
+				<li class="list-group-item"><a href="{:U('Index/Index/elite')}" style="float:right;">详情>></a></li>
+			</ul>
+		</div>
+  </div>  
+</div>
+</body>
