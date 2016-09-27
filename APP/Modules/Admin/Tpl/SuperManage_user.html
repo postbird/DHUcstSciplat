@@ -50,23 +50,43 @@
 <body style="padding:20px 20px 0px 20px">
 	<h2 align="center">用户列表</h2>
 	<hr/>
+	<label  class="control-label normalfont" ><a href="{:U('Admin/SuperManage/downfile')}?filename=.{$userFilePath}">用户导入模板下载</a></label>	
+	<hr>
+	<div class="col-md-12">
 		<form id="form" method='post' action="__URL__/insertuser" class="form-horizontal" enctype="multipart/form-data">
-			<div class="form-group">
-				 <label for="username" class="col-sm-1  control-label" >导入:</label>
-			 	<div class="col-sm-8">
-			 	请选择需要导入的Excel文件(大小不超过10M，文件类型为.xls、.xlsx)：
+			<div class="col-sm-1">
+				<label for="username" class="control-label" >导入:</label>
+			</div>
+			 	<div class="col-sm-4">
+			 		请选择需要导入的Excel文件(大小不超过10M，文件类型为.xls、.xlsx)：
 			     <input type='file' name="newsFile"/>
 			    </div>	
-			 </div>
-			
-			<div class="modal-footer" style="width:32%;">
-				<label  class="control-label normalfont" style="margin-right:6em;"><a href="{:U('Admin/SuperManage/downfile')}?filename=.{$userFilePath}">用户导入模板下载</a></label>	
-	   			<input type="submit" class="btn btn-primary" value="导 入" >
-		   </div>
+	   			<input type="submit" class="btn btn-primary btn-sm" value="导 入" >
 	  	</form>
-  	<div style="margin:10px 0;"></div>
-	<hr/>		
-	
+	</div>
+	<div class="col-md-12">
+		<hr>
+	</div>
+	<div class="col-md-12">
+		<form action="__URL__/getStudent" class="form-horizontal"method="post" >
+			<div class="form-group">
+				<div class="col-sm-2">
+					<input type="text" class="form-control" name="stu"placeholder="学号或姓名...">
+					<input type="hidden" name="unum" value="{$unum}">
+					<input type="hidden" name="uname" value="{$uname}">
+				</div>
+				<div class="col-sm-1">
+					<select name="type" id="" class="form-control">
+						<option value="0">学号</option>
+						<option value="1">姓名</option>
+					</select>
+				</div>
+				<div class="col-sm-4">
+					<input type="submit" class="btn btn-success btn-sm" value="查 询">
+				</div>
+			</div>
+		</form>
+	</div>	
 	<table id="dg" title="用户列表" style="width:1200px;height:380px" >
 	<foreach name='user' item='u'>
 	<tr>
@@ -84,7 +104,7 @@
 	</tr>
 	</foreach>
 	</table>
-	<div style="padding-left:500px;">
+	<div style="text-align:center;">
 	{$page}&nbsp;&nbsp;<span class='red'>{$msg}</span>
 	</div>
 	

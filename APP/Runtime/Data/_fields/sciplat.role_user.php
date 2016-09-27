@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'role_id', 1 => 'user_id', '_autoinc' => false, '_type' => array ( 'role_id' => 'mediumint(9) unsigned', 'user_id' => 'char(32)', ), );?>

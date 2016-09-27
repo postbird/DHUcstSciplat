@@ -1158,7 +1158,7 @@ class SuperManageAction extends CommonAction{
 		$count=M('user')->count();
 		$page=new Page($count,30);
 		$limit = $page->firstRow . ',' . $page->listRows;
-		$user=D('UserRelation')->relation(true)->order('uid desc')->select();
+		$user=D('UserRelation')->relation(true)->order('uid desc')->limit($limit)->select();
 		$this->user=$user;
 		//p($user);die;
 		//模板路径
@@ -1221,9 +1221,83 @@ class SuperManageAction extends CommonAction{
 		$this->lecture=$lecture;
 		$this->display();
 	}
+	//用户查询 根据姓名或者是学号
+	// stu 学号或者是姓名   type 类型 0学号 1姓名
+	public function getStudent(){
+		$stu='';
+		$type=0;
+		$stu=$_REQUEST['stu'];
+		$unum=$_REQUEST['unum'];
+		$uname=$_REQUEST['uname'];
+		$type=$_REQUEST['type'];
+		if($type==0){
+			// $user=M("user")->where(array('unum'=>$stu))->select();
+			$user=D('UserRelation')->relation(true)->where(array('unum'=>$stu))->find();
+		}else{
+			// $user=M("user")->where('uname like "%'.$stu.'%"')->select();
+			$user=D('UserRelation')->relation(true)->where('uname like "%'.$stu.'%"')->find();
+		}
+		// $this->
+		// {:U('Admin/SuperManage/userread',array('uid'=>$u['uid'],'unum'=>$unum,'uname'=>$uname))}
+		$this->unum=$unum;
+		$this->uname=$uname;
+		$this->user=$user;
+		// p($user);die;
+		//导入角色
+		$role=M('role')->select();
+
+		$this->role=$role;
+		//p($role);die;
+		//查询用户学号
+		
+		//查询积分---竞赛
+		$race=M('race_user')->where(array('unum'=>$user['unum'],'status'=>1))->field(array('race_name','bonus'))->select();
+		
+		$this->race=$race;
+		//查询积分---项目
+		$project=array();
+		$projectid=M('project_user')->where(array('user_id'=>$uid))->select();
+		//p($projectid);
+		for($i=0;$i<count($projectid);$i++){
+			$tmp=M('project')->where(array('pid'=>$projectid[$i]['project_id']))->field(array('pid','pname','pstatus','pleaderstatus','plevel','pmiddleend','plastend'))->find();
+			
+			if($tmp['pstatus']==1){
+				$tmp['assign']="报名";
+				array_push($project,$tmp);
+			}
+			if($tmp['pleaderstatus']==1){
+				$tmp['assign']=$tmp['plevel'];
+				array_push($project,$tmp);
+			}
+			if($tmp['pmiddleend']==1){
+				$tmp['assign']="中期答辩";
+				array_push($project,$tmp);
+			}
+			if($tmp['plastend']==1){
+				$tmp['assign']="结题答辩";
+				array_push($project,$tmp);
+			}
+		}
+		//p($project);die;
+		$this->project=$project;
+		//查询积分---讲座
+		$lecture=M('lecture_user')->where(array('user_num'=>$user['unum'],'lpresent'=>1))->select();
+		$this->lecture=$lecture;
+		// var_dump($user);
+		// echo "<hr>";
+		// var_dump($project);
+		// echo "<hr>";
+		// var_dump($lecture);
+		// echo "<hr>";
+		// var_dump($unum);
+		// echo "<hr>";
+		// var_dump($uname);
+		// exit();
+		$this->display("getStudent");
+	}
 	public function userupdate(){
 		
-		//p($_POST);die;
+		// p($_POST);die;
 		$unum=I("unum");
 		$uname=I("uname");
 		$this->unum=$unum;
@@ -1278,6 +1352,7 @@ class SuperManageAction extends CommonAction{
 		else
 			$this->redirect('userread',array('unum'=>$unum,'uname'=>$uname,'uid'=>$_POST['uid'],'msg'=>"保存失败！"));		
 	}
+
 	public function pwdreset($uid){
 		if (! empty ( $uid )) {
 						$user=M('user')->where(array('uid'=>$uid))->find();
@@ -1730,4 +1805,6 @@ class SuperManageAction extends CommonAction{
 		echo json_encode($name);
 	}
 	//=========用户名查询结束=======
+
+	
 }
