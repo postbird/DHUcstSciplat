@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,16 +28,16 @@
 	window.UEDITOR_HOME_URL='__ROOT__/Data/Ueditor/';
 	window.onload=function(){
 			window.UEDITOR_CONFIG.initialFrameHeight=320;
-			//window.UEDITOR_CONFIG.getActionUrl = "{:U(GROUP_NAME.'/Blog/upload')}"; //提交页面
+			//window.UEDITOR_CONFIG.getActionUrl = "<?php echo U(GROUP_NAME.'/Blog/upload');?>"; //提交页面
 			//window.UEDITOR_CONFIG.imagePath = URL + "php/";
 			//UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;
 			//UE.Editor.prototype.getActionUrl = function(action){
 			//if(action == 'uploadimage') {
-			//return '{:U(GROUP_NAME.'/Blog/upload')}';
+			//return '<?php echo U(GROUP_NAME.'/Blog/upload');?>';
 			//}
 			//return this._bkGetActionUrl(action);
 			//}
-			//window.UEDITOR_CONFIG.imageUrl='{:U(GROUP_NAME.'/Blog/upload')}';
+			//window.UEDITOR_CONFIG.imageUrl='<?php echo U(GROUP_NAME.'/Blog/upload');?>';
 			//window.UEDITOR_CONFIG.imagePath=URL+"php/";
 			//上传文件的保存路径的修改再config.json里
 			UE.getEditor('content');
@@ -45,8 +45,8 @@
 		}
 </script>
 
-<js file='__ROOT__/Data/Ueditor/ueditor.config.js' />
-<js file='__ROOT__/Data/Ueditor/ueditor.all.min.js' />
+<script type="text/javascript" src="__ROOT__/Data/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__ROOT__/Data/Ueditor/ueditor.all.min.js"></script>
 </head>
 <body>
 	<div class='container'>
@@ -56,112 +56,94 @@
 	 		 <div class="form-group">
 	 			<label for="usernum" class="col-sm-2  control-label" >学院:</label>
 			    <div class="col-sm-8">
-			      <input type="text" class="form-control" id="school" name="school" value='{$user["school"]}' readonly='true' >
+			      <input type="text" class="form-control" id="school" name="school" value='<?php echo ($user["school"]); ?>' readonly='true' >
 			    </div>
 	 		</div>
 	 		<div class="form-group">
 	 			<label for="usernum" class="col-sm-2  control-label" >学号/工号:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="num" name="num" value='{$user["unum"]}' readonly='true' >
+			      <input type="text" class="form-control" id="num" name="num" value='<?php echo ($user["unum"]); ?>' readonly='true' >
 			    </div>
 			    <label for="usernum" class="col-sm-2  control-label" >姓名:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="name" name="name" value='{$user["uname"]}' readonly='true' >
+			      <input type="text" class="form-control" id="name" name="name" value='<?php echo ($user["uname"]); ?>' readonly='true' >
 			    </div>
 	 		</div>
 	 		
 			<div class="form-group">
 	 			<label for="usernum" class="col-sm-2  control-label" >专业:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="master" name="master" value='{$user["master"]}' readonly='true' >
+			      <input type="text" class="form-control" id="master" name="master" value='<?php echo ($user["master"]); ?>' readonly='true' >
 			    </div>
 			    <label for="usernum" class="col-sm-2  control-label" >班级:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="grade" name="grade" value='{$user["ugrade"]}' readonly='true' >
+			      <input type="text" class="form-control" id="grade" name="grade" value='<?php echo ($user["ugrade"]); ?>' readonly='true' >
 			    </div>
 			</div>
 			<div class="form-group">
 				<label for="usernum" class="col-sm-2  control-label" >角色:</label>
 			    <div class="col-sm-3">
 			     		<select id="role" name="role" class="form-control" disabled="disabled">
-							<foreach name='role' item='v'>
-								<if condition="$user['role'][0]['name'] eq $v['name']">
-									<option value='{$v['id']}' selected="selected">{$v.name}</option>
-								<else/>
-									<option value='{$v['id']}'>{$v.name}</option>
-								</if>
-							</foreach>
+							<?php if(is_array($role)): foreach($role as $key=>$v): if($user['role'][0]['name'] == $v['name']): ?><option value='<?php echo ($v['id']); ?>' selected="selected"><?php echo ($v["name"]); ?></option>
+								<?php else: ?>
+									<option value='<?php echo ($v['id']); ?>'><?php echo ($v["name"]); ?></option><?php endif; endforeach; endif; ?>
 						</select>
 			    </div>
 	 			<label for="usernum" class="col-sm-2  control-label" >职称:</label>
 			    <div class="col-sm-3">
-	     			<if condition="$user['uprofession'] eq '学生'">
-	     				<select id="profession" name="profession" class="form-control" disabled="disabled">
+	     			<?php if($user['uprofession'] == '学生'): ?><select id="profession" name="profession" class="form-control" disabled="disabled">
 	     					<option value='学生' selected='selected'>学生</option>
      					</select>
-	     			<else/>
+	     			<?php else: ?>
 	     				<select id="profession" name="profession" class="form-control" >
-	     					<if condition="$user['uprofession'] eq '学生'">
-								<option value='学生' selected='selected'>学生</option>
-							<else/>
-								<option value='学生' >学生</option>
-							</if>
-							<if condition="$user['uprofession'] eq '助教'">
-								<option value='助教' selected='selected'>助教</option>
-							<else/>
-								<option value='助教' >助教</option>
-							</if>
-							<if condition="$user['uprofession'] eq '讲师'">
-								<option value='讲师' selected='selected'>讲师</option>
-							<else/>
-								<option value='讲师'>讲师</option>
-							</if>
-							<if condition="$user['uprofession'] eq '副教授'">
-								<option value='副教授' selected='selected'>副教授</option>
-							<else/>
-								<option value='副教授'>副教授</option>
-							</if>
-							<if condition="$user['uprofession'] eq '教授'">
-								<option value='教授' selected='selected'>教授</option>
-							<else/>
-								<option value='教授'>教授</option>
-							</if>
-						</select>
-	     			</if>
+	     					<?php if($user['uprofession'] == '学生'): ?><option value='学生' selected='selected'>学生</option>
+							<?php else: ?>
+								<option value='学生' >学生</option><?php endif; ?>
+							<?php if($user['uprofession'] == '助教'): ?><option value='助教' selected='selected'>助教</option>
+							<?php else: ?>
+								<option value='助教' >助教</option><?php endif; ?>
+							<?php if($user['uprofession'] == '讲师'): ?><option value='讲师' selected='selected'>讲师</option>
+							<?php else: ?>
+								<option value='讲师'>讲师</option><?php endif; ?>
+							<?php if($user['uprofession'] == '副教授'): ?><option value='副教授' selected='selected'>副教授</option>
+							<?php else: ?>
+								<option value='副教授'>副教授</option><?php endif; ?>
+							<?php if($user['uprofession'] == '教授'): ?><option value='教授' selected='selected'>教授</option>
+							<?php else: ?>
+								<option value='教授'>教授</option><?php endif; ?>
+						</select><?php endif; ?>
 			    </div>
 			</div>
 			<div class="form-group">
 	 			<label for="usernum" class="col-sm-2  control-label" >电话:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="tel" name="tel" value='{$user["utel"]}'  >
+			      <input type="text" class="form-control" id="tel" name="tel" value='<?php echo ($user["utel"]); ?>'  >
 			    </div>
 			    <label for="usernum" class="col-sm-2  control-label" >邮箱:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="mail" name="mail" value='{$user["umail"]}'  >
+			      <input type="text" class="form-control" id="mail" name="mail" value='<?php echo ($user["umail"]); ?>'  >
 			    </div>
 	 		</div>
 	 		<div class="form-group">
 	 			<label for="usernum" class="col-sm-2  control-label" >科创积分:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="point" name="point" value='{$user["upoint"]}' disabled="disabled">
+			      <input type="text" class="form-control" id="point" name="point" value='<?php echo ($user["upoint"]); ?>' disabled="disabled">
 			    </div>
 			    <label for="usernum" class="col-sm-2  control-label" >人才库:</label>
 			    <div class="col-sm-3" style="padding-top:7px;">
 			    	<label>
-				      <foreach name="user['elite']" item='v'>
-				      		{$v.ename}&nbsp;&nbsp;
-				      </foreach>
+				      <?php if(is_array($user['elite'])): foreach($user['elite'] as $key=>$v): echo ($v["ename"]); ?>&nbsp;&nbsp;<?php endforeach; endif; ?>
 			      	</label>
 			    </div>
 	 		</div>
 	 		<hr/>
 	 		
 		   <div class="modal-footer">
-		   			<input type='hidden',id='uid' name='uid' value='{$user["uid"]}'>
-			  		<input type='hidden',id='unum' name='unum' value='{$unum}'>
-		   			<input type='hidden',id='uname' name='uname' value='{$uname}'>
+		   			<input type='hidden',id='uid' name='uid' value='<?php echo ($user["uid"]); ?>'>
+			  		<input type='hidden',id='unum' name='unum' value='<?php echo ($unum); ?>'>
+		   			<input type='hidden',id='uname' name='uname' value='<?php echo ($uname); ?>'>
 		   			<input type="submit" class="btn btn-primary" value="保 存" >
-				   	 &nbsp;&nbsp;<span class='red'>{$msg}</span>
+				   	 &nbsp;&nbsp;<span class='red'><?php echo ($msg); ?></span>
 			   </div>
 		  </form>
 		  

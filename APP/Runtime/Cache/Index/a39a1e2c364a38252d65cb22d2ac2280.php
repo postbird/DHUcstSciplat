@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -51,11 +51,9 @@ function iFrameHeight() {
   </div>
   <div class="col-md-6 col-xs-6">
      <div class=" text-right overflow-div"style="text-align:right;padding-top:20px;">
-            <if condition="$user neq ''">
-              <h4 ><a href="{:U('Admin/Index/index')}"><i class="fa fa-user"></i>   用户:{$user['uname']}({$user['unum']})</a></h4>
-            <else/>
-              <h4 ><a href="{:U('Admin/Login/index')}"><i class="fa fa-user"></i>   登录</a></h4>
-            </if> 
+            <?php if($user != ''): ?><h4 ><a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-user"></i>   用户:<?php echo ($user['uname']); ?>(<?php echo ($user['unum']); ?>)</a></h4>
+            <?php else: ?>
+              <h4 ><a href="<?php echo U('Admin/Login/index');?>"><i class="fa fa-user"></i>   登录</a></h4><?php endif; ?> 
       </div>
   </div>
 </div>
@@ -78,13 +76,13 @@ function iFrameHeight() {
       <div class="container">
         <ul class="nav navbar-nav menu">
           <li class="nav-font"><a href="__ROOT__" >首页 <span class="sr-only">(current)</span></a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/newslist')}" target="opt">新闻</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/lecturelist')}" target="opt">讲座</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/racelist')}" target="opt">竞赛</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/projectnewslist')}" target="opt">项目</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/elite')}" target="opt">人才库</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/about')}" target="opt">关于</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/suggest')}" target="opt">反馈</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/newslist');?>" target="opt">新闻</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/lecturelist');?>" target="opt">讲座</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/racelist');?>" target="opt">竞赛</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/projectnewslist');?>" target="opt">项目</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/elite');?>" target="opt">人才库</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/about');?>" target="opt">关于</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/suggest');?>" target="opt">反馈</a></li>
         </ul>
        
       </div>
@@ -132,7 +130,7 @@ function iFrameHeight() {
 <div class="container">
   
 <div class="maincontent">
-        <iframe name="opt" id="iframepage" src="{:U('Index/Index/home')}" frameborder="0" scrolling="no" style="width:100%;" onLoad="iFrameHeight()"></iframe>
+        <iframe name="opt" id="iframepage" src="<?php echo U('Index/Index/home');?>" frameborder="0" scrolling="no" style="width:100%;" onLoad="iFrameHeight()"></iframe>
 </div>
 </div>
 

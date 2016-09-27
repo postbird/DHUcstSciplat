@@ -156,4 +156,10 @@ class IndexAction extends Action{
 			//将文件内容读取出来并直接输出，以便下载
 			readfile($filename);
 	}
+	public function about(){
+		$this->display();
+	}
+	public function suggest(){
+		$this->display();
+	}
 }
