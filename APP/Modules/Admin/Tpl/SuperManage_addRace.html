@@ -69,59 +69,10 @@
 <js file='__ROOT__/Data/Ueditor/ueditor.all.min.js' />
 </head>
 <body style="padding:20px 20px 0px 20px">
-	<h2 align="center">竞赛列表</h2>
-	<hr/>
-	
-	<br/>
-	<!-- data-toggle="modal" data-target="#adduserModal " -->
-	<a class="btn btn-default "   href="__URL__/addRace">
-					发布竞赛
-			</a>
-
-	<div style="margin:10px 0;"></div>
-	
-	<form method='post' action="__URL__/outputrace" >	
-		<table id="dg" title="竞赛列表" style="width:1080px;height:380px" >
-		<foreach name='race' item='u'>
-		<tr>
-			<td>{$u.rid}</td>
-			<td><input type="checkbox" value="{$u.rid}" name="subBox[]" class="sub-box"></td>
-			<td>{$u.rname}</td>
-			<td>{$u.rdatestart}</td>
-			<td>{$u.rdateend}</td>
-			<td>{$u.rsponsor}</td>
-			<td>{$u.rlevel}</td>
-			<td>
-				<if condition='$u["rstatus"]  eq 1'>
-					是
-				<else/>
-					否
-				</if>
-			</td>
-			<td>
-				<a href="{:U('Admin/SuperManage/raceread',array('rid'=>$u['rid'],'unum'=>$unum,'uname'=>$uname))}">读取</a>
-				<a href="{:U('Admin/SuperManage/racegroup',array('rid'=>$u['rid'],'unum'=>$unum,'uname'=>$uname,))}">查看报名</a>
-				<a href="javascript:void(0)" onclick="deleterace({$u.rid})">删除</a>
-			</td>		
-		</tr>
-		</foreach>
-		</table>
-		<a id="checkAll" href="javascript:;"class="btn btn-default">全选</a>
-		<a id="delAll" href="javascript:;" class="btn btn-default">取消全选</a>
-		<input type="submit" name='option1' value="导出选中选项" class="btn btn-primary">
-		&nbsp;&nbsp;<span class='red'>{$msg}</span>
-	</form>	
-	<div style="padding-left:400px;">
-	{$page}
-	</div>
-	
 	<!-- Modal 添加信息开始-->
-		<div class="modal fade" id="adduserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title" id="myModalLabel">发布竞赛</h4>
+		<div class="col-md-12" >
+		      <div class="page-header">
+		        <h2 class="text-center" id="myModalLabel">发布竞赛</h2>
 		      </div>
 		      <div class="modal-body">
 		        <form id="form1" method='post' action="__URL__/raceinsert" class="form-horizontal" enctype="multipart/form-data">
@@ -174,16 +125,14 @@
 				 </div>
 				
 			  
-			   <div class="modal-footer">
+			   <div class="text-center">
 			   	<input type='hidden',id='unum' name='unum' value='{$unum}'>
 			   	<input type='hidden',id='uname' name='uname' value='{$uname}'>
-			   	<input type="submit" class="btn btn-primary" value="保 存" id="adduserbtn" name="adduserbtn">
+			   	<input type="submit" class="btn btn-primary " value="保 存" id="adduserbtn" name="adduserbtn">
 		      </div>
 			  
 			  </form>
 		      </div>
-		    </div>
-		  </div>
 		</div>
 	<!-- Modal 添加信息结束-->
 	<script>
@@ -248,31 +197,6 @@
 			
 		});
 		
-		
-	
-
-		$(function(){
-			
-			$('#dg').datagrid({
-			       fitColumns:true,
-					rownumbers:true,
-					singleSelect:true,
-					autoRowHeight:false,
-					
-				  columns:[[
-					{field:'rid',hidden:true},
-					{field:' ',title:" ",width:15},
-					{field:'rname',title:"竞赛名称",width:200},
-			        {field:'rdatestart',title:'开始日期',width:45},
-			        {field:'rdateend',title:"结束日期",width:45},
-			        {field:'rsponsor',title:"主办/承办单位",width:100},
-			        {field:'rlevel',title:"竞赛级别",width:50},
-			        {field:'rstatus',title:"发布状态",width:40},
-			        {field:'op',title:"操作",width:70},
-			        		        
-			   	  ]]
-				});
-		});
 	</script>
 </body>
 </html>

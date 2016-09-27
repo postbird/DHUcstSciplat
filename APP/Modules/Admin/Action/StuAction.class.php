@@ -13,6 +13,12 @@ class StuAction extends CommonAction{
 		$this->page=$page->show ();
 		$this->display();
 	}
+	//添加讲座
+	public function addLecture(){
+		$this->unum=I("unum");
+		$this->uname=I("uname");
+		$this->display();
+	}
 	public function raceread(){
 		$unum=I("unum");
 		$uname=I("uname");
@@ -722,6 +728,16 @@ class StuAction extends CommonAction{
 	public function insertlecture(){
 		$this->unum=I("unum");
 		$this->uname=I("uname");
+		$unum=I("unum");
+		//判断如果是科创管理员添加的讲座 则不需要更改
+		$uid=M("user")->where(array("unum"=>$unum))->getField("uid");
+		// p($uid);die;
+		$urole=M("role_user")->where(array("user_id"=>$uid))->getField("role_id");
+		if($urole!=1){
+			$lcheckstatus=1;
+		}else{
+			$lcheckstatus=0;
+		}
 		$data=array(
 			'ltitle'=>$_POST['title'],
 			'lcontent'=>$_POST['content'],
@@ -735,6 +751,7 @@ class StuAction extends CommonAction{
 			'ldateend'=>$_POST['dateend'],
 			'lsheet'=>$_POST['sheet'],
 			'lnum'=>$_POST['num'],
+			'lcheckstatus'=>$lcheckstatus,
 			);
 			//p($data);die;
 		$db=M('lecture');

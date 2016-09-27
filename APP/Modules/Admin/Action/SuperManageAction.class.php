@@ -16,7 +16,26 @@ class SuperManageAction extends CommonAction{
 		$this->page=$page->show ();
 		$this->display();
 	}
-	
+	//添加新闻
+	public function addNews(){
+		$this->display();
+	}
+	//添加竞赛
+	public function addRace(){
+		$this->display();
+	}
+	//添加讲座
+	public function addLecture(){
+		$this->unum=I("unum");
+		$this->uname=I("uname");
+		$this->display();
+	}
+	//添加讲座
+	public function addProject(){
+		$this->unum=I("unum");
+		$this->uname=I("uname");
+		$this->display();
+	}
 	public function newsinsert(){
 		//echo date('Y-m-d');
 			
@@ -1077,6 +1096,32 @@ class SuperManageAction extends CommonAction{
 		$this->searchfids=$fids;
 		$this->display('project');
 	}	
+	//删除 projectNews
+	public function projectDelete(){
+		$pid=$_REQUEST['pid'];
+		$projectnews = M ( "projectnews" );
+		$data['status']="ok";
+		$data['p']=$pid;
+		if($projectnews->where('pid='.$pid)->delete()){
+			$this->ajaxReturn($data,"json");
+		}else{
+			$data['status']="error";
+			$this->ajaxReturn($data,"json");
+		}
+	}
+	//删除 讲座
+	public function lectureDelete(){
+		$lid=$_REQUEST['lid'];
+		$lecture = M ( "lecture" );
+		$data['status']="ok";
+		$data['l']=$lid;
+		if($lecture->where('lid='.$lid)->delete()){
+			$this->ajaxReturn($data,"json");
+		}else{
+			$data['status']="error";
+			$this->ajaxReturn($data,"json");
+		}
+	}
 	//=============项目中心结束============
 	//=============人才库管理开始============
 	public function elite(){

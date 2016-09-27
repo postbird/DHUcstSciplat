@@ -48,74 +48,10 @@
 <js file='__ROOT__/Data/Ueditor/ueditor.all.min.js' />
 </head>
 <body style="padding:20px 20px 0px 20px">
-	<h2 align="center">讲座列表</h2>
-	<hr/>
-	
-	<br/>
-	 <!-- data-toggle="modal" data-target="#adduserModal" -->
-	<a class="btn btn-default "  href="__URL__/addLecture/unum/{$unum}/uname/{$uname}">
-					发布讲座
-			</a>
-
-	<div style="margin:10px 0;"></div>
-	
-	
-	<table id="dg" title="讲座列表" style="width:1280px;height:380px" >
-	<foreach name='lecture' item='u'>
-	<tr>
-		<td>{$u.lid}</td>
-		<td>{$u.ltitle}</td>
-		<td>{$u.llecturer}</td>
-		<td>{$u.ldate}</td>
-		<td>{$u.lplace}</td>
-		<td>{$u.ldirectorname}</td>
-		<td>{$u.ldatestart}</td>
-		<td>{$u.ldateend}</td>
-		<td>
-			<if condition='$u["lsheet"]  eq 1'>
-				是
-			<else/>
-				否
-			</if>
-		</td>
-		<td>{$u.lnum}</td>
-		<td>
-			<if condition='$u["lcheckstatus"]  eq 0'>
-				未审核
-			<else/>
-				<if condition='$u["lcheckstatus"]  eq 1'>
-					已通过
-				<else/>
-					未通过
-				</if>
-			</if>
-		</td>
-		<td>
-			<if condition='$u["lstatus"]  eq 1'>
-				是
-			<else/>
-				否
-			</if>
-		</td>
-		<td>
-			<a href="{:U('Admin/SuperManage/lectureread',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname))}">读取</a>
-			<a href="{:U('Admin/SuperManage/lectureapply',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname,))}">查看报名</a>
-			<a href="javascript:void(0)" onclick="deletelecture({$u.lid})">删除</a>
-		</td>		
-	</tr>
-	</foreach>
-	</table>
-	<div style="padding-left:500px;">
-	{$page}&nbsp;&nbsp;<span class='red'>{$msg}</span>
-	</div>
-	
 		<!-- Modal 添加信息开始-->
-	<div class="modal fade" id="adduserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel">发布信息</h4>
+	    <div class="container col-md-12">
+	      <div class="page-header ">
+	        <h2 class="text-center" id="myModalLabel">发布讲座</h2>
 	      </div>
 	      <div class="modal-body">
 	        <form id="form1" method='post' action="__URL__/insertlecture" class="form-horizontal" enctype="multipart/form-data">
@@ -163,7 +99,7 @@
 			  		<div class="form-group">
 			  			<label for="username" class="col-sm-2 control-label" >负责人:</label>
 			  			<div class="col-sm-4">
-					      <input type="text" class="form-control " id="director" name="director" value="{$uname}({$unum})" readonly="true">
+					      <input type="text" class="form-control " id="director" name="director" value="{$uname}({$unum})" >
 					    </div>
 					    <label for="username" class="col-sm-2 control-label" >负责人电话:</label>
 			  			<div class="col-sm-4">
@@ -191,24 +127,19 @@
 		  </form>
 	      </div>
 	    </div>
-	  </div>
-	</div>
 	<!-- Modal 添加信息结束-->
 	<script>
 		
-	function deletelecture(lid){
-		if(confirm("确认删除？")){
+	function deletenews(nid){
+		alert("删除后不可恢复，确认删除？");
+		if(confirm("确认删除")){
 			$.ajax({
-				type:"json",
-				url:"__URL__/lectureDelete/lid/"+lid,
-				success:function(data){
-					if(data.status=="ok"){
-						alert("删除成功");
-						window.location.reload();
-					}else{
-						alert("删除失败");
-					}
-					
+				type:"POST",
+				url:"__URL__/newsdelete/nid/"+nid,
+				success:function(data,textStatus,jqXHR){
+				alert("删除成功");
+					window.location.reload();
+	
 				},
 				error:function(jqXHR,textStatus,errorThrown){
 					alert("删除失败");
@@ -266,34 +197,6 @@
 			
 		});
 		
-		
-	
-
-		$(function(){
-			
-			$('#dg').datagrid({
-			       fitColumns:true,
-					rownumbers:true,
-					singleSelect:true,
-					autoRowHeight:false,
-					columns:[[
-					{field:'lid',hidden:true},
-					{field:'ltitle',title:"主题",width:90},
-			        {field:'llecturer',title:'主讲人',width:30},
-			        {field:'ldate',title:"讲座时间",width:60},
-			        {field:'lplace',title:"讲座地点",width:60},
-			        {field:'ldirectorname',title:"负责人",width:30},
-			        {field:'ldatestart',title:"报名开始时间",width:30},
-			        {field:'ldateend',title:"报名结束时间",width:30},
-			        {field:'lsheet',title:"是否有讲座单",width:20},
-			        {field:'lnum',title:"预计人数",width:15},
-			        {field:'lcheckstatus',title:"审核状态",width:20},
-			        {field:'lstatus',title:"是否生效",width:20},
-			        {field:'ss',title:"操作",width:45},
-			        		        
-			   	  ]]
-				});
-		});
 	</script>
 </body>
 </html>

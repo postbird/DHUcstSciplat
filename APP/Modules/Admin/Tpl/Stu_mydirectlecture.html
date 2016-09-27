@@ -52,9 +52,10 @@
 	<hr/>
 	
 	<br/>
-	<button class="btn btn-default "  data-toggle="modal" data-target="#adduserModal">
+	<!-- data-toggle="modal" data-target="#adduserModal" -->
+	<a class="btn btn-default " href="__URL__/addLecture/unum/{$unum}/uname/{$uname}" >
 					发布讲座
-			</button>
+			</a>
 
 	<div style="margin:10px 0;"></div>
 	
@@ -95,7 +96,6 @@
 			<a href="{:U('Admin/Stu/mylectureread',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname))}">读取</a>
 			<a href="{:U('Admin/Stu/mylectureapply',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname,))}">查看报名</a>
 			<if condition="$u['lcheckstatus'] eq 1">
-				
 			<else/>
 				<a href="javascript:void(0)" onclick="mylecturedelete({$u.lid})">删除</a>
 			</if>
