@@ -53,6 +53,7 @@ function iFrameHeight() {
      <div class=" text-right overflow-div"style="text-align:right;padding-top:20px;">
             <?php if($user != ''): ?><h4 ><a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-user"></i>   用户:<?php echo ($user['uname']); ?>(<?php echo ($user['unum']); ?>)</a></h4>
             <?php else: ?>
+              <h4 ><a href="<?php echo U('Admin/Login/index');?>"><i class="fa fa-user"></i>   登录</a></h4>
               <h4 ><a href="<?php echo U('Admin/Login/index');?>"><i class="fa fa-user"></i>   登录</a></h4><?php endif; ?> 
       </div>
   </div>
