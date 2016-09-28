@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
  <head>
 	<link rel="stylesheet" href="__PUBLIC__/html5clock/css/style.css" media="screen" type="text/css" />
@@ -31,10 +31,10 @@
                 <a href="#" class="minimize hide"></a>
             </div>
             <div class="content" style="display: block;">
-                    <p>你好，{$us['uname']}</p>
-                    <p>学号/工号:{$us['unum']}</p>
+                    <p>你好，<?php echo ($us['uname']); ?></p>
+                    <p>学号/工号:<?php echo ($us['unum']); ?></p>
                     <p>登录时间：<?php date_default_timezone_set("PRC"); echo date("Y-m-d H:i:s  l") ?></p>
-                    <p>登录IP：<?php $iipp=$_SERVER["REMOTE_ADDR"]; echo $iipp  ?></p>
+                    <p>登录IP：<?php $iipp=$_SERVER["REMOTE_ADDR"]; echo $iipp ?></p>
                 </table>
             </div>
         </div>
@@ -50,15 +50,12 @@
 	                  <a href="#" class="minimize hide"></a>
 	              </div>
 	              <div class="content " style="display: block;">
-	             		<if condition="$us['role'][0]['name'] eq '学生'">
-			                <div id='sturace' style="display: block;>
+	             		<?php if($us['role'][0]['name'] == '学生'): ?><div id='sturace' style="display: block;>
 		             			<label class="col-sm-2  control-label" >竞赛:</label>
 								<div class="col-sm-10 col-sm-offset-2">
 									<label class="col-sm-3  control-label" >管理员审核未通过:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='race' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myraceread',array('unum'=>$unum,'uname'=>$uname,'rid'=>$v['race_id']))}">{$v.race_name}</a></p>
-	             						</foreach>
+										<?php if(is_array($race)): foreach($race as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myraceread',array('unum'=>$unum,'uname'=>$uname,'rid'=>$v['race_id']));?>"><?php echo ($v["race_name"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									
 								</div>
@@ -68,9 +65,7 @@
 								<div class="col-sm-10 col-sm-offset-2">
 									<label class="col-sm-3  control-label" >管理员审核未通过:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='lecture' item='v'>
-	             							<p><a href="{:U('Admin/Stu/mylectureread',array('unum'=>$unum,'uname'=>$uname,'lid'=>$v['lid']))}">{$v.ltitle}</a></p>
-	             						</foreach>
+										<?php if(is_array($lecture)): foreach($lecture as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/mylectureread',array('unum'=>$unum,'uname'=>$uname,'lid'=>$v['lid']));?>"><?php echo ($v["ltitle"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									
 								</div>
@@ -80,78 +75,58 @@
 								<div class="col-sm-10 col-sm-offset-2">
 									<label class="col-sm-3  control-label" >管理员审核未通过:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='profirstunckeck' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($profirstunckeck)): foreach($profirstunckeck as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >学校审核未通过:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='proleaderunckeck' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($proleaderunckeck)): foreach($proleaderunckeck as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >月报:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='reportinform' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}-{$v.ryear}年-{$v.rmonth}月份</a></p>
-	             						</foreach>
+										<?php if(is_array($reportinform)): foreach($reportinform as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?>-<?php echo ($v["ryear"]); ?>年-<?php echo ($v["rmonth"]); ?>月份</a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >中期检查材料未提交:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='middlecheckinform' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($middlecheckinform)): foreach($middlecheckinform as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >中期检查材料未通过:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='promiddleunckeck' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($promiddleunckeck)): foreach($promiddleunckeck as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >结题材料未提交:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='lastcheckinform' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($lastcheckinform)): foreach($lastcheckinform as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >结题材料未通过:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='prolastunckeck' item='v'>
-	             							<p><a href="{:U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($prolastunckeck)): foreach($prolastunckeck as $key=>$v): ?><p><a href="<?php echo U('Admin/Stu/myprojectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 								</div>
 							</div>
-							<if condition="$selfmsg neq 0">
-								<div id='stulec' style="display: block;>
+							<?php if($selfmsg != 0): ?><div id='stulec' style="display: block;>
 			             			<label class="col-sm-2  control-label" >个人信息:</label>
 									<div class="col-sm-10 col-sm-offset-2">
 										<label class="col-sm-3  control-label" >个人信息设置:</label>
 										<div class="col-sm-9 col-sm-offset-2">
-											<p><a href="{:U('Admin/Stu/updateselfmsg',array('unum'=>$unum,'uname'=>$uname,'uid'=>$selfmsg['uid']))}">请设置一次你的个人信息</a></p>
+											<p><a href="<?php echo U('Admin/Stu/updateselfmsg',array('unum'=>$unum,'uname'=>$uname,'uid'=>$selfmsg['uid']));?>">请设置一次你的个人信息</a></p>
 		             					</div>
 										
 									</div>
 								</div>
-							<else/>
-							</if>
+							<?php else: endif; ?>
 							<div>
 								<hr/>
 							</div>
 							<hr/>
 	             			<label>&nbsp;</label>
 	             				
-    					<else/>
-    					</if>
-	                	<if condition="($us['role'][0]['name'] eq '高级管理员') or ($us['role'][0]['name'] eq '科创管理员')">
-	                		<div id='supmagpro' style="display: block;>
+    					<?php else: endif; ?>
+	                	<?php if(($us['role'][0]['name'] == '高级管理员') or ($us['role'][0]['name'] == '科创管理员')): ?><div id='supmagpro' style="display: block;>
 		             			<label class="col-sm-2  control-label" >竞赛:</label>
 								<div class="col-sm-10 col-sm-offset-2">
 									<label class="col-sm-3  control-label" >管理员未审核:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='race' item='v'>
-	             							<p><a href="{:U('Admin/SuperManage/racegroup',array('unum'=>$unum,'uname'=>$uname,'rid'=>$v['race_id']))}">{$v.race_name}</a></p>
-	             						</foreach>
+										<?php if(is_array($race)): foreach($race as $key=>$v): ?><p><a href="<?php echo U('Admin/SuperManage/racegroup',array('unum'=>$unum,'uname'=>$uname,'rid'=>$v['race_id']));?>"><?php echo ($v["race_name"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									
 								</div>
@@ -161,21 +136,15 @@
 								<div class="col-sm-10 col-sm-offset-2">
 									<label class="col-sm-3  control-label" >管理员未审核:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='projectunckeck' item='v'>
-	             							<p><a href="{:U('Admin/SuperManage/projectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($projectunckeck)): foreach($projectunckeck as $key=>$v): ?><p><a href="<?php echo U('Admin/SuperManage/projectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >中期检查材料未审核:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='projectmiddleuncheck' item='v'>
-	             							<p><a href="{:U('Admin/SuperManage/projectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($projectmiddleuncheck)): foreach($projectmiddleuncheck as $key=>$v): ?><p><a href="<?php echo U('Admin/SuperManage/projectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									<label class="col-sm-3  control-label" >结题材料未审核:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='projectlastuncheck' item='v'>
-	             							<p><a href="{:U('Admin/SuperManage/projectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']))}">{$v.pname}</a></p>
-	             						</foreach>
+										<?php if(is_array($projectlastuncheck)): foreach($projectlastuncheck as $key=>$v): ?><p><a href="<?php echo U('Admin/SuperManage/projectread',array('unum'=>$unum,'uname'=>$uname,'pid'=>$v['pid']));?>"><?php echo ($v["pname"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 								</div>
 							</div>
@@ -184,9 +153,7 @@
 								<div class="col-sm-10 col-sm-offset-2">
 									<label class="col-sm-3  control-label" >管理员未审核:</label>
 									<div class="col-sm-9 col-sm-offset-2">
-										<foreach name='lecture' item='v'>
-	             							<p><a href="{:U('Admin/SuperManage/lectureread',array('unum'=>$unum,'uname'=>$uname,'lid'=>$v['lid']))}">{$v.ltitle}</a></p>
-	             						</foreach>
+										<?php if(is_array($lecture)): foreach($lecture as $key=>$v): ?><p><a href="<?php echo U('Admin/SuperManage/lectureread',array('unum'=>$unum,'uname'=>$uname,'lid'=>$v['lid']));?>"><?php echo ($v["ltitle"]); ?></a></p><?php endforeach; endif; ?>
 									</div>
 									
 								</div>
@@ -196,8 +163,7 @@
 							</div>
 							<hr/>
 	             			<label>&nbsp;</label>
-	                	<else/>
-	                	</if>
+	                	<?php else: endif; ?>
 	              </div>
 	          </div>
 	        </div>

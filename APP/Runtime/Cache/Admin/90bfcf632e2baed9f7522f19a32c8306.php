@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,10 +9,10 @@
     <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.js"></script>
     
     <script type="text/javascript">
-   			var verifyUrl='{:U("Admin/Login/verify",'','')}';
-   			var loginindexUrl='{:U("Admin/Login/index",'','')}';
-   			var loginloginUrl='{:U("Admin/Login/login",'','')}';
-   			var indexUrl='{:U("Admin/Index/index",'','')}';
+   			var verifyUrl='<?php echo U("Admin/Login/verify",'','');?>';
+   			var loginindexUrl='<?php echo U("Admin/Login/index",'','');?>';
+   			var loginloginUrl='<?php echo U("Admin/Login/login",'','');?>';
+   			var indexUrl='<?php echo U("Admin/Index/index",'','');?>';
            
     </script>
   <style>
@@ -59,7 +59,7 @@
                     <tr>
                         <td class="code">
                             <input type="text" class="input-mini" tabindex="3" name="code" id="code" />
-                            <img id="verify_code" src="{:U('Admin/Login/verify','','')}" onclick="change_code()"/>
+                            <img id="verify_code" src="<?php echo U('Admin/Login/verify','','');?>" onclick="change_code()"/>
                             <a href="javascript:void(0)" onclick="change_code()">看不清，换一张</a>
                         </td>
                     </tr>

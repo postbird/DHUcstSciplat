@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en" >
 <head>
 	<meta charset="UTF-8">
@@ -34,15 +34,15 @@
 				</div>
 				<div class="col-md-12">
 					<div class="col-md-3"><h4>邮箱</h4></div>
-					<div class="col-md-6"><h4>jsjkczx@qq.com 【推荐】</h4></div>
-				</div>
-				<div class="col-md-12">
-					<div class="col-md-3"><h4>QQ群</h4></div>
-					<div class="col-md-6"><h4>592312697 【推荐】</h4></div>
+					<div class="col-md-6"><h4>ptbird@yeah.net 【推荐】</h4></div>
 				</div>
 				<div class="col-md-12">
 					<div class="col-md-3"><h4>QQ</h4></div>
-					<div class="col-md-6"><h4>jsjkczx@qq.com </h4></div>
+					<div class="col-md-6"><h4>592312697</h4></div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-3"><h4>微信</h4></div>
+					<div class="col-md-6"><h4>592312697</h4></div>
 				</div>	
 			</div>
 		</div>
