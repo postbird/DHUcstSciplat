@@ -1501,27 +1501,30 @@ class SuperManageAction extends CommonAction{
 			$c=0;
 			for($i=0;$i<count($user);$i++){
 				if(!empty($user[$i]['unum'])){
-					if($user[$i]['uprofession']=="学生"){
-						$data=$user[$i];
-						$data['upassword']=md5($user[$i]['unum']);
-						$result=M('user')->add($data);
-						//插入role_user
-						$role=M('role')->where(array('name'=>"学生"))->find();
-						$data=array("role_id"=>$role['id'],"user_id"=>$result);
-						$result2=M('role_user')->where($data)->add($data);
-						if(!($result && $result2))
-							$c++;
-						
+					if(count(M('user')->where(array("unum"=>$user[$i]["unum"]))->select())>0){
 					}else{
-						$data=$user[$i];
-						$data['upassword']=md5($user[$i]['unum']);
-						$result=M('user')->add($data);
-						//插入role_user
-						$role=M('role')->where(array('name'=>"教师"))->find();
-						$data=array("role_id"=>$role['id'],"user_id"=>$result);
-						$result2=M('role_user')->where($data)->add($data);
-						if(!($result && $result2))
-							$c++;
+						if($user[$i]['uprofession']=="学生"){
+							$data=$user[$i];
+							$data['upassword']=md5($user[$i]['unum']);
+							$result=M('user')->add($data);
+							//插入role_user
+							$role=M('role')->where(array('name'=>"学生"))->find();
+							$data=array("role_id"=>$role['id'],"user_id"=>$result);
+							$result2=M('role_user')->where($data)->add($data);
+							if(!($result && $result2))
+								$c++;
+							
+						}else{
+							$data=$user[$i];
+							$data['upassword']=md5($user[$i]['unum']);
+							$result=M('user')->add($data);
+							//插入role_user
+							$role=M('role')->where(array('name'=>"教师"))->find();
+							$data=array("role_id"=>$role['id'],"user_id"=>$result);
+							$result2=M('role_user')->where($data)->add($data);
+							if(!($result && $result2))
+								$c++;
+						}
 					}
 				}
 			}

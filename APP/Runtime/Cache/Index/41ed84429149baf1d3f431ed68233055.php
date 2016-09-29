@@ -26,10 +26,36 @@
 	<div class='container'>
 		<h2 class="text-center"><i class="fa fa-cubes"></i></h2>
 		<h2 class="text-center">计算机科创中心管理平台</h2>
-		<h4 class="text-center"><small>当前版本:V2.0.3 | 更新时间:2016-9-27</small></h4>
+		<h4 class="text-center"><small>当前版本:V2.1.0 | 更新时间:2016-9-28</small></h4>
 	</div>
 	<div class="container">
 		<div class="panel panel-primary">
+			<div class="panel-heading">
+				V 2.1.0
+			</div>
+			<div class="panel-body">
+				<p>放弃原始版本登录界面以及验证规则</p>
+				<p>增加注册功能,但是已经导入的学生不需要注册，注册只是为没有导入学生以及外学院服务</p>
+				<p>放弃原始数据同步规则,增加自动化注册同步功能,不需要等待兴趣小组系统同步用户数据</p>
+				<p>开启首页注册以及登陆功能</p>
+				<p>修复部分bug</p>
+			</div>
+			<div class="panel-footer text-right">
+				powered by postbird.
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				V 2.0.4
+			</div>
+			<div class="panel-body">
+				<p>修复部分导入数据缺失问题,进行数据同步更新</p>
+			</div>
+			<div class="panel-footer text-right">
+				powered by postbird.
+			</div>
+		</div>
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				V 2.0.3
 			</div>

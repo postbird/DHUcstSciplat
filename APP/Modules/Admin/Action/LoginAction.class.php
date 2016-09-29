@@ -1,8 +1,11 @@
 <?php
 class LoginAction extends Action{
 	public function index(){
-
-		$this->display();
+		//之前的登录已经废弃
+		//使用新的登录
+		$url="/Index";
+		$this->redirect($url);
+		// $this->display();
 	}
 	
 	//登陆处理

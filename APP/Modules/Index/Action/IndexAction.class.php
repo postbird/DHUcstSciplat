@@ -1,8 +1,7 @@
 <?php
 class IndexAction extends Action{
 	
-	public function index(){
-		
+	public function index(){	
 		if(isset($_SESSION['uid'])){
 			$user=M('user')->where(array('uid'=>$_SESSION['uid']))->find();
 		}
@@ -10,8 +9,7 @@ class IndexAction extends Action{
 		$this->display();
 	}
 	public function home(){
-		$news=M('news')->where(array('nstatus'=>1,))->order('ntop desc,ndate desc')->limit(7)->select();
-
+		$news=M('news')->where(array('nstatus'=>1,))->order('ntop desc,ndate desc,nid desc')->limit(7)->select();
 		//p($news);
 		$lecture=M('lecture')->where(array('lcheckstatus'=>1,'lstatus'=>1,))->limit(7)->order('ldatestart desc')->select();
 		$user=M('user')->where("usuper = 0 AND upoint >0")->limit(10)->order('upoint desc')->select();
@@ -67,7 +65,7 @@ class IndexAction extends Action{
 		$count=M('news')->count();
 		$page=new Page($count,20);
 		$limit = $page->firstRow . ',' . $page->listRows;
-		$news=M('news')->limit($limit)->where(array('nstatus'=>1,))->order('ntop desc,ndate desc')->select();
+		$news=M('news')->limit($limit)->where(array('nstatus'=>1,))->order('ntop desc,ndate desc,nid desc')->select();
 		
 		$this->news=$news;
 		$this->page=$page->show ();
@@ -141,7 +139,7 @@ class IndexAction extends Action{
 	public function elite(){
 		$this->unum=I("unum");
 		$this->uname=I("uname");
-		$elitegroup=D('EliteRelation')->relation(true)->order('eid')->select();
+		$elitegroup=D('EliteRelation')->relation(true)->order('eid ')->select();
 		//p($elitegroup);
 		$this->elitegroup=$elitegroup;
 		$this->display();
@@ -162,4 +160,88 @@ class IndexAction extends Action{
 	public function suggest(){
 		$this->display();
 	}
+	//用户注册行为
+	//school master unum uname ugrade
+	//默认设置  uprofession = 学生 
+	//默认设置 邮箱为空
+	//默认设置 电话为空
+	//默认设置 密码为md5(学号)
+	public function regist(){
+		$data["unum"]=$_POST['unum'];//141340120
+		$data["master"]=$_POST['master'];
+		$data["uname"]=$_POST['uname'];
+		$data["school"]=$_POST['school'];
+		$data["ugrade"]=$_POST['ugrade'];
+		$data["umail"]="";
+		$data["utel"]="";
+		$data["upassword"]=md5($unum);
+		// p($data);exit();
+		if(strlen($data["unum"])!=9 || strlen($data["master"])==0 || strlen($data["uname"])==0  || strlen($data["school"])==0 || strlen($data["ugrade"])==0 || strlen($data["upassword"])==0 ){
+			$this->error("信息填写有误！");
+			echo "unum error".$data["unum"];
+			exit();
+		}
+
+		if(count(M("user")->where(array("unum"=>$data['unum']))->select())>0){
+			$this->error("用户已经存在,请使用学号(密码为学号)登录！");
+			// echo "user already exists";
+			exit();
+		}
+		if(M("user")->add($data)){
+			//等级写入
+			$roleData['role_id']=1;
+			$roleData['user_id']=M("user")->where(array("unum"=>$data['unum']))->getField("uid");
+			if(M("role_user")->add($roleData)){
+				//添加成功后进行登陆
+				//三个必要的session内容
+				session('uid',$roleData['user_id']);
+				session('unum',$data['unum']);
+				session('uname',$data['uname']);
+				//进行首页状态的更改
+				//向兴趣小组系统发送post，添加数据
+				//url和data
+				$postUrl="";//url
+				$res=$this->sendPost($postUrl,$data);//发送
+				// echo $res;
+				// exit();
+				//成功跳转
+				$this->success("添加成功,请修改个人信息！","__URL__/Index/");
+
+				exit();
+			}else{
+				$this->error("用户等级写入失败,请联系维护人员反馈！");
+				exit();
+			}
+			
+		}else{
+			$this->error("用户写入失败,请联系维护人员反馈！");
+			exit();
+		}
+		$this->display();
+	}
+	//用户登录
+	public function login(){
+
+		
+
+
+	}
+	 public function sendPost($url, $param=array()){
+	    if(!is_array($param)){
+	        throw new Exception("参数必须为array");
+	    }
+	    $httph =curl_init($url);
+	    curl_setopt($httph, CURLOPT_SSL_VERIFYPEER, 0);
+	    curl_setopt($httph, CURLOPT_SSL_VERIFYHOST, 1);
+	    curl_setopt($httph,CURLOPT_RETURNTRANSFER,1);
+	    curl_setopt($httph, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+	    curl_setopt($httph, CURLOPT_POST, 1);//设置为POST方式 
+	    curl_setopt($httph, CURLOPT_POSTFIELDS, $param);
+	    curl_setopt($httph, CURLOPT_RETURNTRANSFER,1);
+	    curl_setopt($httph, CURLOPT_HEADER,1);
+	    $rst=curl_exec($httph);
+	    curl_close($httph);
+	    return $rst;
+	 }
+
 }

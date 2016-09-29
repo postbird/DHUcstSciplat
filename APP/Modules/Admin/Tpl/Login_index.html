@@ -47,7 +47,7 @@
                         <td><input type="text" class="input-xlarge" tabindex="1" name="username" id="username" /></td>
                     </tr>
                     <tr>
-                        <th><span class="login-input"><label for="pwd">密码：</label><a href=""></a></span> </th>
+                        <th><span class="login-input"><label for="pwd">密码：</label></span> </th>
                     </tr>
                     <tr>
                         <td><input type="password" class="input-xlarge" tabindex="2" name="password" id="password" /></td>

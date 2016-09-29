@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -41,56 +41,8 @@ function iFrameHeight() {
 <!-- background-image: url(__PUBLICFILE__/image/bg.png);background-size: cover; -->
 </head>
 <body style="padding-top:70px;">
-<!--登录 modal-->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="loginModalLabel">登录</h4>
-      </div>
-        <div class="modal-body col-md-12">
-            <p class="text-danger">
-              初始密码为学号，登录后请进行 【<strong>个人信息</strong>】的设置。
-            </p>
-            <div class="col-md-12">
-               <div class="col-sm-4 text-center">
-                <label for="name"><h4 >用户名：</h4></label>
-              </div>
-               <div class="col-sm-6">
-                <input type="text" tabindex="1" name="username" id="username" class="form-control"/>
-              </div>
-            </div>
-            <div class="col-md-12">
-               <div class="col-sm-4 text-center">
-                <label for="name"><h4>密码：</h4></label>
-              </div>
-               <div class="col-sm-6">
-                <input type="password" class="form-control" tabindex="2" name="password" id="password" />
-              </div>
-            </div>
-             <div class="col-md-12">
-               <div class="col-sm-4 text-center">
-                <label for="code"><h4>验证码：</h4></label>
-              </div>
-               <div class="col-sm-4">
-                  <input type="text" class="form-control" tabindex="3" name="code" id="code" />
-              </div>
-              <div class="col-sm-4">
-                  <img id="verify_code" src="{:U('Admin/Login/verify','','')}" onclick="change_code()" style="cursor:pointer;"/>
-              </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-          <!-- <button type="submit" class="btn btn-primary">登录</button> -->
-          <button onclick="logincheck()" class="btn btn-primary" tabindex="3">登录</button>
-        </div>
-    </div>
-  </div>
-</div>
-<!--注册modal 结束-->
 <!--注册 modal-->
+  <!-- Modal -->
 <div class="modal fade" id="registModal" tabindex="-1" role="dialog" aria-labelledby="registModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -98,6 +50,7 @@ function iFrameHeight() {
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="registModalLabel">注册</h4>
       </div>
+      <form action="__URL__/Index/regist" method="post">
         <div class="modal-body col-md-12">
           <p class="text-danger text-indent">
               本注册适用于无法登陆系统或外学院同学,系统已经录入学号，可以直接凭借学号(初始密码为学号)登陆.
@@ -156,6 +109,7 @@ function iFrameHeight() {
           <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
           <button type="submit" class="btn btn-primary">注册</button>
         </div>
+    </form>
     </div>
   </div>
 </div>
@@ -169,16 +123,13 @@ function iFrameHeight() {
   </div>
   <div class="col-md-6 col-xs-6">
      <div class=" text-right overflow-div"style="text-align:right;padding-top:20px;">
-            <if condition="$user neq ''">
-              <h4 ><a href="{:U('Admin/Index/index')}"><i class="fa fa-user"></i>   用户:{$user['uname']}({$user['unum']})</a></h4>
-            <else/>
+            <?php if($user != ''): ?><h4 ><a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-user"></i>   用户:<?php echo ($user['uname']); ?>(<?php echo ($user['unum']); ?>)</a></h4>
+            <?php else: ?>
               <h4 >
-                <!-- <a href="{:U('Admin/Login/index')}"><i class="fa fa-user"></i>   登录</a> -->
-                <a  href="javascript:;"data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>   登录</a>
-                  &nbsp;|&nbsp;
+                <a href="<?php echo U('Admin/Login/index');?>"><i class="fa fa-user"></i>   登录</a>
+                  &nbsp;&nbsp;&nbsp;
                 <a  href="javascript:;"data-toggle="modal" data-target="#registModal"><i class="fa fa-user-plus"></i>   注册</a>
-              </h4>
-            </if> 
+              </h4><?php endif; ?> 
       </div>
   </div>
 </div>
@@ -201,13 +152,13 @@ function iFrameHeight() {
       <div class="container">
         <ul class="nav navbar-nav menu">
           <li class="nav-font"><a href="__ROOT__" >首页 <span class="sr-only">(current)</span></a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/newslist')}" target="opt">新闻</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/lecturelist')}" target="opt">讲座</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/racelist')}" target="opt">竞赛</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/projectnewslist')}" target="opt">项目</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/elite')}" target="opt">人才库</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/about')}" target="opt">关于</a></li>
-          <li class="nav-font"><a href="{:U('Index/Index/suggest')}" target="opt">反馈</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/newslist');?>" target="opt">新闻</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/lecturelist');?>" target="opt">讲座</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/racelist');?>" target="opt">竞赛</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/projectnewslist');?>" target="opt">项目</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/elite');?>" target="opt">人才库</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/about');?>" target="opt">关于</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/suggest');?>" target="opt">反馈</a></li>
         </ul>
        
       </div>
@@ -255,7 +206,7 @@ function iFrameHeight() {
 <div class="container">
   
 <div class="maincontent">
-        <iframe name="opt" id="iframepage" src="{:U('Index/Index/home')}" frameborder="0" scrolling="no" style="width:100%;" onLoad="iFrameHeight()"></iframe>
+        <iframe name="opt" id="iframepage" src="<?php echo U('Index/Index/home');?>" frameborder="0" scrolling="no" style="width:100%;" onLoad="iFrameHeight()"></iframe>
 </div>
 </div>
 <div class="container text-center" >
@@ -268,73 +219,4 @@ function iFrameHeight() {
 </footer> 
 </div>
 </body>
-<script type="text/javascript">
-    //需要的全局变量
-        var verifyUrl='{:U("Admin/Login/verify",'','')}';
-        var loginindexUrl='{:U("Index/Index/index",'','')}';
-        var loginloginUrl='{:U("Admin/Login/login",'','')}';
-        var indexUrl='{:U("Index/Index/index",'','')}';
-        var indexUrl="__APP__/Index/";
-           
-    //登录页面,验证码
-    function change_code(){
-      $('#verify_code').attr("src",verifyUrl+'/'+Math.random());
-      return false;
-    }
-   function logincheck(){
-     var username = $('#username');
-    var password = $('#password');
-    var verify_code = $('#code');
-    
-    if(username.val() == ''){
-      alert('用户名不能为空');
-      username.focus();
-      return ;
-    }
-    if(password.val() == ''){
-      alert('密码名不能为空');
-      password.focus();
-      return ;
-    }
-    
-    if(verify_code.val() == ''){
-      alert('验证码码不能为空');
-      verify_code.focus();
-      return ;
-    }
-    
-    $.post(loginloginUrl,{username:username.val(),password:password.val(),verify_code:verify_code.val()},function (data) {
-      if(data.status == 2){
-        alert('验证码错误');
-        return false;
-      }else if(data.status == 3){
-        
-        window.location.href = indexUrl ;
-      }else if(data.status == 0){
-        alert('登录失败，请重新尝试');
-        return false;
-        // window.location.href = loginindexUrl;
-      }else if(data.status==4)
-      {
-        alert('用户名或密码错误');
-        return false;
-        // window.location.href = loginindexUrl;
-      }
-      else{
-        
-        alert('用户名或密码错误');
-        return false;
-        // window.location.href = loginindexUrl;
-      }
-      
-    },'json');
-    }
-    //enter响应
-    function onEnterDown(){
-    if(window.event.keyCode==13){
-        logincheck();
-      }
-        } 
-    
-    </script>
 </html>

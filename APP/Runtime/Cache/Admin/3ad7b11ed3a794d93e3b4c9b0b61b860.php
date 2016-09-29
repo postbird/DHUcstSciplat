@@ -52,30 +52,30 @@
 	<div class='container'>
 	<h2 class='head'>用户信息读取修改</h2>
 	<hr/>
-	 <form id="form2" method='post' action="__URL__/updateselfmsghandle" class="form-horizontal" enctype="multipart/form-data">
-	 		 <div class="form-group">
-	 			<label for="usernum" class="col-sm-2  control-label" >学院:</label>
+	 <form id="form2" method='post' action="__URL__/userupdate" class="form-horizontal" enctype="multipart/form-data">
+	 		<div class="form-group">
+	 			<label for="school" class="col-sm-2  control-label" >学院:</label>
 			    <div class="col-sm-8">
 			      <input type="text" class="form-control" id="school" name="school" value='<?php echo ($user["school"]); ?>' readonly='true' >
 			    </div>
 	 		</div>
 	 		<div class="form-group">
-	 			<label for="usernum" class="col-sm-2  control-label" >学号/工号:</label>
+	 			<label for="num" class="col-sm-2  control-label" >学号/工号:</label>
 			    <div class="col-sm-3">
 			      <input type="text" class="form-control" id="num" name="num" value='<?php echo ($user["unum"]); ?>' readonly='true' >
 			    </div>
-			    <label for="usernum" class="col-sm-2  control-label" >姓名:</label>
+			    <label for="name" class="col-sm-2  control-label" >姓名:</label>
 			    <div class="col-sm-3">
 			      <input type="text" class="form-control" id="name" name="name" value='<?php echo ($user["uname"]); ?>' readonly='true' >
 			    </div>
 	 		</div>
 	 		
 			<div class="form-group">
-	 			<label for="usernum" class="col-sm-2  control-label" >专业:</label>
+	 			<label for="master" class="col-sm-2  control-label" >专业:</label>
 			    <div class="col-sm-3">
 			      <input type="text" class="form-control" id="master" name="master" value='<?php echo ($user["master"]); ?>' readonly='true' >
 			    </div>
-			    <label for="usernum" class="col-sm-2  control-label" >班级:</label>
+			    <label for="grade" class="col-sm-2  control-label" >班级:</label>
 			    <div class="col-sm-3">
 			      <input type="text" class="form-control" id="grade" name="grade" value='<?php echo ($user["ugrade"]); ?>' readonly='true' >
 			    </div>
@@ -83,19 +83,15 @@
 			<div class="form-group">
 				<label for="usernum" class="col-sm-2  control-label" >角色:</label>
 			    <div class="col-sm-3">
-			     		<select id="role" name="role" class="form-control" disabled="disabled">
-							<?php if(is_array($role)): foreach($role as $key=>$v): if($user['role'][0]['name'] == $v['name']): ?><option value='<?php echo ($v['id']); ?>' selected="selected"><?php echo ($v["name"]); ?></option>
+			     		<select id="role" name="role" class="form-control" >
+							<?php if(is_array($role)): foreach($role as $key=>$v): if($user['role'][0]['name'] == $v['name']): ?><option value='<?php echo ($v["id"]); ?>' selected="selected"><?php echo ($v["name"]); ?></option>
 								<?php else: ?>
-									<option value='<?php echo ($v['id']); ?>'><?php echo ($v["name"]); ?></option><?php endif; endforeach; endif; ?>
+									<option value='<?php echo ($v["id"]); ?>'><?php echo ($v["name"]); ?></option><?php endif; endforeach; endif; ?>
 						</select>
 			    </div>
 	 			<label for="usernum" class="col-sm-2  control-label" >职称:</label>
 			    <div class="col-sm-3">
-	     			<?php if($user['uprofession'] == '学生'): ?><select id="profession" name="profession" class="form-control" disabled="disabled">
-	     					<option value='学生' selected='selected'>学生</option>
-     					</select>
-	     			<?php else: ?>
-	     				<select id="profession" name="profession" class="form-control" >
+	     			<select id="profession" name="profession" class="form-control">
 	     					<?php if($user['uprofession'] == '学生'): ?><option value='学生' selected='selected'>学生</option>
 							<?php else: ?>
 								<option value='学生' >学生</option><?php endif; ?>
@@ -111,23 +107,23 @@
 							<?php if($user['uprofession'] == '教授'): ?><option value='教授' selected='selected'>教授</option>
 							<?php else: ?>
 								<option value='教授'>教授</option><?php endif; ?>
-						</select><?php endif; ?>
+						</select>
 			    </div>
 			</div>
 			<div class="form-group">
 	 			<label for="usernum" class="col-sm-2  control-label" >电话:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="tel" name="tel" value='<?php echo ($user["utel"]); ?>'  >
+			      <input type="text" class="form-control" id="tel" name="tel" value='<?php echo ($user["utel"]); ?>' readonly='true' >
 			    </div>
 			    <label for="usernum" class="col-sm-2  control-label" >邮箱:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="mail" name="mail" value='<?php echo ($user["umail"]); ?>'  >
+			      <input type="text" class="form-control" id="mail" name="mail" value='<?php echo ($user["umail"]); ?>' readonly='true' >
 			    </div>
 	 		</div>
 	 		<div class="form-group">
 	 			<label for="usernum" class="col-sm-2  control-label" >科创积分:</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="point" name="point" value='<?php echo ($user["upoint"]); ?>' disabled="disabled">
+			      <input type="text" class="form-control" id="point" name="point" value='<?php echo ($user["upoint"]); ?>' >
 			    </div>
 			    <label for="usernum" class="col-sm-2  control-label" >人才库:</label>
 			    <div class="col-sm-3" style="padding-top:7px;">
@@ -137,12 +133,61 @@
 			    </div>
 	 		</div>
 	 		<hr/>
-	 		
+	 		<div class="form-group">
+	 			<label for="usernum" class="col-sm-2  control-label" >科创详情:</label>
+	 			<div class="col-sm-10">
+			    	<table class='table'>
+			    		<thead>
+			    			<th>类别</th>
+			    			<th>名称</th>
+			    			<th>描述</th>
+			    			<th>分数</th>
+			    		</thead>
+			    		<tbody>
+			    			<?php if(is_array($race)): foreach($race as $key=>$v): ?><tr>
+			    					<td>竞赛</td>
+			    					<td><?php echo ($v["race_name"]); ?></td>
+			    					<td><?php echo ($v["bonus"]); ?></td>
+			    					<td>
+			    						<?php switch($v["bonus"]): case "参与奖": ?>+1<?php break;?>
+			    							<?php case "三等奖": ?>+2<?php break;?>
+			    							<?php case "二等奖": ?>+3<?php break;?>
+			    							<?php case "一等奖": ?>+4<?php break; endswitch;?>
+			    					</td>
+			    				</tr><?php endforeach; endif; ?>
+			    			<?php if(is_array($project)): foreach($project as $key=>$v): ?><tr>
+			    					<td>项目</td>
+			    					<td><?php echo ($v["pname"]); ?></td>
+			    					<td><?php echo ($v["assign"]); ?></td>
+			    					<td>
+			    						<?php switch($v["assign"]): case "报名": ?>+1<?php break;?>
+			    							<?php case "国家级": ?>+3<?php break;?>
+			    							<?php case "上海市级": ?>+2<?php break;?>
+			    							<?php case "校级": ?>+1<?php break;?>
+			    							<?php case "院级": ?>+1<?php break;?>
+			    							<?php case "中期答辩": ?>+1<?php break;?>
+			    							<?php case "结题答辩": ?>+2<?php break; endswitch;?>
+			    					</td>
+			    					
+			    				</tr><?php endforeach; endif; ?>
+			    			<?php if(is_array($lecture)): foreach($lecture as $key=>$v): ?><tr>
+			    					<td>讲座</td>
+			    					<td><?php echo ($v["lecture_title"]); ?></td>
+			    					<td>已参加</td>
+			    					<td>
+			    						+1
+			    					</td>
+			    				</tr><?php endforeach; endif; ?>
+			    		</tbody>
+			    	</table>
+			    </div>
+	 		</div>
 		   <div class="modal-footer">
 		   			<input type='hidden',id='uid' name='uid' value='<?php echo ($user["uid"]); ?>'>
 			  		<input type='hidden',id='unum' name='unum' value='<?php echo ($unum); ?>'>
 		   			<input type='hidden',id='uname' name='uname' value='<?php echo ($uname); ?>'>
-		   			<input type="submit" class="btn btn-primary" value="保 存" >
+				   	 <a class="btn btn-primary" href="<?php echo U('Admin/SuperManage/user',array('unum'=>$unum,'uname'=>$uname));?>" target="opt"><span>返回</span></a>
+				   	 <input type="submit" class="btn btn-primary" value="保 存" >
 				   	 &nbsp;&nbsp;<span class='red'><?php echo ($msg); ?></span>
 			   </div>
 		  </form>

@@ -23,7 +23,28 @@
 		.pantssize{font-size:14px;}
 		.back{position:absolute;right:10px;top:10px;}
 	</style>
-	
+	<script>
+		$(document).ready(function(){
+			
+             $("#checkAll").click(function(){
+            	 var a=0;
+				  $(".sub-box").each(function(){
+				  	if(a>=($(".sub-box").length)){
+				  		return 0;
+				  	}else{
+				  		$(this).prop("checked",true);
+				  		a++;
+				  	}
+				  });
+			 });
+             $("#delAll").click(function(){  
+			  $(".sub-box").each(function(){
+			   $(this).prop("checked",false);
+			  });  
+			 });
+        });
+
+	</script>
 	<script>
 	window.UEDITOR_HOME_URL='__ROOT__/Data/Ueditor/';
 	window.onload=function(){
@@ -49,55 +70,36 @@
 <script type="text/javascript" src="__ROOT__/Data/Ueditor/ueditor.all.min.js"></script>
 </head>
 <body>
-	<div class='container'>
-	<h2 class='head'>用户信息读取修改</h2>
-	<hr/>
-	 <form id="form2" method='post' action="__URL__/updatepwdhandle" class="form-horizontal" enctype="multipart/form-data">
-	 		 <div class="form-group">
-						    <label for="usernum" class="col-sm-2 control-label">学号/工号:</label>
-						    <div class="col-sm-4">
-						      <input type="text" class="form-control"  name="unum"  value='<?php echo ($us["unum"]); ?>' readonly="true">
-						     </div>
-					  </div>
-  					 <div class="form-group">
-						    <label for="usernum" class="col-sm-2 control-label">姓名:</label>
-						    <div class="col-sm-4">
-						      <input type="text" class="form-control"  name="uname"  value='<?php echo ($us["uname"]); ?>' readonly="true">
-						     </div>
-				  	 </div>
-  					 <div class="form-group">
-						    <label for="usernum" class="col-sm-2 control-label">原始密码:</label>
-						    <div class="col-sm-4">
-						      <input type="password" class="form-control"  name="upasswordold" >
-						     </div>
-					  </div>
-  					 <div class="form-group">
-						    <label for="usernum" class="col-sm-2 control-label">新密码:</label>
-						    <div class="col-sm-4">
-						      <input type="password" class="form-control"  name="upasswordnew" >
-						     </div>
-					  </div>
-  					 <div class="form-group">
-						    <label for="usernum" class="col-sm-2 control-label">确认密码:</label>
-						    <div class="col-sm-4">
-						      <input type="password" class="form-control"  name="upasswordrenew" >
-						     </div>
-				  </div>
-			  	 	      
-		  	 <div class="modal-footer">
-		   			<input type='hidden',id='uid' name='uid' value='<?php echo ($us["uid"]); ?>'>
-			  		<input type='hidden',id='unum' name='unum' value='<?php echo ($unum); ?>'>
-		   			<input type='hidden',id='uname' name='uname' value='<?php echo ($uname); ?>'>
-		   			<input type="submit" class="btn btn-primary" value="保 存" >
-				   	 &nbsp;&nbsp;<span class='red'><?php echo ($msg); ?></span>
-			   </div>
+	<div class="col-md-12"  >
+	      <div class="page-header">
+	        <h2 class="text-center" id="">发布信息</h2>
+	      </div>
+	        <form id="form1" method='post' action="__URL__/newsinsert" class="form-horizontal" enctype="multipart/form-data">
+			    <div class="col-md-12" >
+				    <div class="col-sm-12">
+				      <input type='text' class="form-control " id="title" name="title"  placeholder="标题">
+				    </div>
+				    <div class="col-sm-12 ">
+				      <textarea  id="content" name="content" ></textarea>
+				    </div>
+				</div>
+				<div class="col-md-12">
+					<div style="height:30px;"><br><br></div>
+				</div>
+			 <div class="col-md-12">
+			 	<label for="username" class="col-sm-2  control-label" >附件:</label>
+			 	<div class="">
+			     请选择需要上传的文件(大小不超过10M，文件类型为.rar,.zip)：
+			     <input type='file' name="newsFile"/>
+			    </div>	
+			    <div class=" text-center">
+				   	<input type='hidden',id='unum' name='unum' value='<?php echo ($unum); ?>'>
+				   	<input type='hidden',id='uname' name='uname' value='<?php echo ($uname); ?>'>
+				   	<input type="submit" class="btn btn-primary" value="保 存" id="adduserbtn" name="adduserbtn">
+	     		 </div>
+			 </div>
+		   
 		  </form>
-		  
-   
 	</div>
-	<script>
-		
-	</script>
-	
 </body>
 </html>

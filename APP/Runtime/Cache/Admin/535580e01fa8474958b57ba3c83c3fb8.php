@@ -460,7 +460,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer" style="text-align:center;">
     <div class="pull-right hidden-xs">
-      <b>Version</b> V2.0.3
+      <b>Version</b> V2.1.0
     </div>
     <strong> powered by 东华大学计算机科学与技术学院科技创新中心</strong>
   </footer>
