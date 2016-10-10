@@ -18,6 +18,5 @@ return array(
      'DB_PREFIX'=>'sp_',
 	//默认过滤函数
 	'DEFAULT_FILTER'=>'htmlspecialchars',
-	
 );
 ?>

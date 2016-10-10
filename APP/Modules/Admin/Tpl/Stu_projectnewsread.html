@@ -71,14 +71,14 @@
 					<div class="form-group">
 						<div style="margin:1em auto;width:10%;">
 							<if condition="$projectnews['subtime'] eq 1">
-								<label " class="control-label" >已截止</label>
+								<label class="control-label" >已截止</label>
 							<else/>
 								<if condition="$isleader eq 0">
 									<button class="btn btn-default "  data-toggle="modal" data-target="#adduserModal">
 										申报项目
 									</button>
 								<else/>
-									<label " class="control-label" >已担任队长</label>
+									<label  class="control-label" >已担任队长</label>
 								</if>
 							</if>
 						</div>
@@ -95,8 +95,7 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title head" id="myModalLabel">{$projectnews['ptitle']}</h4>
-		        <h3 class='head'>项目申报</h3>
+		        <h3 class="modal-title head " id="myModalLabel">{$projectnews['ptitle']} <small>项目申报</small></h3>
 		      </div>
 		      <div class="modal-body">
 		        <form id="form2" method='post' action="__URL__/projectinsert" class="form-horizontal" enctype="multipart/form-data">
@@ -167,13 +166,27 @@
 					<hr/>
 					<div class="form-group">
 						<label for="username" class="col-sm-2  control-label" >指导老师:</label>
-						<div class="col-sm-4">
-							<select id="teachernum" name="teachernum" class="form-control">
-								<option value='0'>=请选择指导老师=</option>
-								<foreach name="teacher" item='v'>
-									<option value="{$v['unum']}">{$v['uname']}</option>
-								</foreach>
-							</select>
+
+						<div class="col-sm-6" id="teachgroup">
+							<div class="col-sm-6">
+								<select id="teachernum" name="teachernum[]" class="form-control">
+									<option value='0'>=请选择指导老师=</option>
+									<foreach name="teacher" item='v'>
+										<option value="{$v['unum']}">{$v['uname']}</option>
+									</foreach>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<select id="teachernum" name="teachernum[]" class="form-control">
+									<option value='0'>=请选择指导老师=</option>
+									<foreach name="teacher" item='v'>
+										<option value="{$v['unum']}">{$v['uname']}</option>
+									</foreach>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label for=""><p class="text-danger">最多两名</p></label>
 						</div>
 					</div>
 					

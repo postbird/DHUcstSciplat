@@ -62,7 +62,7 @@
 		<td>{$u.pdatestart}</td>
 		<td>{$u.pdateend}</td>
 		<td>
-			<a href="{:U('Admin/Stu/projectnewsread',array('pid'=>$u['pid'],'unum'=>$unum,'uname'=>$uname,'isleader'=>$u['isleader']))}">读取</a>
+			<a href="{:U('Admin/Stu/projectnewsread',array('pid'=>$u['pid'],'unum'=>$unum,'uname'=>$uname,'isleader'=>$u['isleader']))}">查看</a>
 			<if condition="$u['isleader'] eq 1">
 				已担任队长
 			<else/>

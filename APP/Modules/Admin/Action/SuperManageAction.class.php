@@ -1494,10 +1494,13 @@ class SuperManageAction extends CommonAction{
 						if($currentColumn=='F'){
 							$user[$currentRow-2]['ugrade']=$val;
 						}
+						if($currentColumn=='G'){
+							$user[$currentRow-2]['uflag']=$val;
+						}
 					}
 				}
 			//写入数据库
-			//p($user);die;
+			// p($user);die;
 			$c=0;
 			for($i=0;$i<count($user);$i++){
 				if(!empty($user[$i]['unum'])){

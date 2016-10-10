@@ -3,7 +3,10 @@ class StuAction extends CommonAction{
 	//========竞赛中心开始========
 	public function race(){
 		$this->unum=I("unum");
-		$this->uname=I("uname");
+		//$uname=iconv("gb2312","utf-8",I("param.uname"));
+		$uname=I("param.uname");
+		$this->uname=$uname;
+		//p($uname);die;
 		import("ORG.Util.Page");
 		$count=M('race')->count();
 		$page=new Page($count,12);
@@ -368,7 +371,7 @@ class StuAction extends CommonAction{
 		else 
 		$projectnews['subtime']=0;
 		$this->projectnews=$projectnews;
-		//知道老师列表
+		//指导老师列表
 		$teacher=M('user')->where(array('uflag'=>"教师"))->field(array('unum','uname'))->order('unum')->select();
 		$this->teacher=$teacher;
 		//项目信息
@@ -390,9 +393,48 @@ class StuAction extends CommonAction{
 				$this->error("学号为:".$num."的姓名不匹配！");
 			}
 		}
+		//老师为两名
 		//检测老师是否正确
-		if(empty($_POST['teachernum']))
-			$this->error("教师工号不能为空");
+		//考虑情况如下：
+		/*
+			1、选择一个老师，第一个选择，第二个没有选择【允许】
+			2、选择一个老师，第一个没有选择，第二个选择【允许】
+			3、选择两个老师，两个不一样【允许】
+			4、选择两个老师，两个一样【允许--但是要进行过滤】
+			5、一个老师都没有选择【不允许】
+		*/
+		//检查规则  设置一个标记  teacherEmptyFlag=0; 如果 第二次 teacherEmptyFlag==1 则认为已经有一个老师都没有选择，进行跳转
+		//为了方便以及过滤内容，同时将teachernum进行过滤，如果已经存在，那么就不再写入。 $teacherNumArray 存放最后要处理的教师
+		//	为了添加到新的数组的teacherNumArray 需要一个变量teacherNumArrayCount进行控制
+		$teacherEmptyFlag=0;
+		$teacherNumArray=array();
+		$teacherNumArrayCount=0;
+		$teacher=$_POST['teachernum'];
+		// p($teacher);die;
+		for($i=0; $i<count($teacher);$i++){
+			if(($teacher[$i]==0) || empty($teacher[$i])){
+				if($teacherEmptyFlag==1){
+					$this->error("必须选择一位指导老师");
+				}else{
+					$teacherEmptyFlag+=1;
+				}
+			}else{
+				if(count($teacherNumArray)==0){
+						$teacherNumArray[$teacherNumArrayCount]=$teacher[$i];
+						$teacherNumArrayCount+=1;
+				}else{
+					for($j=0;$j<count($teacherNumArray);$j++){
+						if($teacherNumArray[$j]==$teacher[$i]){
+							continue;
+						}else{
+							$teacherNumArray[$teacherNumArrayCount]=$teacher[$i];
+							$teacherNumArrayCount+=1;
+						}
+					}
+				}
+			}
+		}
+		// p($teacherNumArray);exit();
 		//查询项目信息
 		$result=M('projectnews')->where(array('pid'=>$_POST['pid']))->field(array('pid','ptitle'))->find();
 		$title=$result['ptitle'];	
@@ -460,11 +502,15 @@ class StuAction extends CommonAction{
 			if(!$tmpresult)
 				$b++;
 		}
-		$user=M('user')->where(array('unum'=>$_POST['teachernum']))->find();
-		$data=array('project_id'=>$result,'user_id'=>$user['uid']);
-		$tmpresult=M('project_user')->add($data);
-		if(!$tmpresult)
+		for($i=0;$i<count($teacherNumArray);$i++){
+			$user=M('user')->where(array('unum'=>$teacherNumArray[$i]))->find();
+			$data=array('project_id'=>$result,'user_id'=>$user['uid']);
+			$tmpresult=M('project_user')->add($data);
+			if(!$tmpresult){
 				$b++;
+			}
+		}
+		
 		if(!$b)
 				$this->success("申请成功！");
 			else 

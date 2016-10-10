@@ -9,12 +9,12 @@ class IndexAction extends Action{
 		$this->display();
 	}
 	public function home(){
-		$news=M('news')->where(array('nstatus'=>1,))->order('ntop desc,ndate desc,nid desc')->limit(7)->select();
+		$news=M('news')->where(array('nstatus'=>1,))->order('ntop desc,ndate desc,nid desc')->limit(5)->select();
 		//p($news);
-		$lecture=M('lecture')->where(array('lcheckstatus'=>1,'lstatus'=>1,))->limit(7)->order('ldatestart desc')->select();
-		$user=M('user')->where("usuper = 0 AND upoint >0")->limit(10)->order('upoint desc')->select();
-		$race=M('race')->where(array('rstatus'=>1,))->order('rdatestart desc, rid desc')->limit(7)->select();
-		$projectnews=M('projectnews')->where(array('pstatus'=>1,))->order('pdatestart desc, pid desc')->limit(7)->select();
+		$lecture=M('lecture')->where(array('lcheckstatus'=>1,'lstatus'=>1,))->limit(5)->order('ldatestart desc')->select();
+		$user=M('user')->where("usuper = 0 AND upoint >0 AND uflag <> '教师'")->limit(10)->order('upoint desc')->select();
+		$race=M('race')->where(array('rstatus'=>1,))->order('rdatestart desc, rid desc')->limit(5)->select();
+		$projectnews=M('projectnews')->where(array('pstatus'=>1,))->order('pdatestart desc, pid desc')->limit(5)->select();
 		$elite=M('elite')->select();
 		if(count($news)==0){
 			$newsFlag=0;
