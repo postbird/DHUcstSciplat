@@ -449,6 +449,15 @@
 			            <li><a href="{:U('Admin/SuperManage/updatepwd',array('uid'=>$us['uid'],'uname'=>$us['uname'],'unum'=>$us['unum']))}" target="opt"><i class="fa fa-circle-o"></i>密码设置</a></li>
 			          </ul>
 			        </li>
+			        <li class="treeview">
+			          <a href="{:U('Admin/SuperManage/lastip',array('uid'=>$us['uid'],'uname'=>$us['uname'],'unum'=>$us['unum']))}" target="opt">
+			            <i class="fa fa-pie-chart"></i>
+			            访问记录
+			            <span class="pull-right-container">
+			              <i class="fa fa-angle-left pull-right"></i>
+			            </span>
+			          </a>
+			        </li>
 				 </case>
 				 <default />
 			 </switch>
@@ -472,7 +481,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer" style="text-align:center;">
     <div class="pull-right hidden-xs">
-      <b>Version</b> V2.2.0
+      <b>Version</b> V2.2.1
     </div>
     <strong> powered by 东华大学计算机科学与技术学院科技创新中心</strong>
   </footer>

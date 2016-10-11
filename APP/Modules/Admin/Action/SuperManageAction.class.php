@@ -1856,6 +1856,45 @@ class SuperManageAction extends CommonAction{
 		echo json_encode($name);
 	}
 	//=========用户名查询结束=======
-
+	//=========查看访问记录开始=======
+	public function lastip(){
+		import("ORG.Util.Page");
+		$count=M('lastip')->where("ip != '127.0.0.1'")->count();
+		$page=new Page($count,30);
+		$limit = $page->firstRow . ',' . $page->listRows;
+		$lastip=M('lastip')->where("ip != '127.0.0.1'")->limit($limit)->order('time_stamp desc')->select();
+		$this->lastip=$lastip;
+		$this->page=$page->show();
+		$this->display();
+	}
+	//删除一定时间前的ip记录
+	public function deleteip(){
+		$day=$_POST['time'];
+		if($day != 1 && $day != 2 && $day != 3 && $day != 4 && $day != 5){
+			$this->error("非法操作");
+			exit();
+		}
+		$time=time();
+		$second = $day*24*60*60;
+		// p($second);die;
+		$allip=M("lastip")->where($time."-time_stamp > ".$second)->delete();
+		if($allip){
+			$this->redirect();
+		}else{
+			$this->error("删除失败");
+		}
+	}
+	//根据ip查看是否是已经在系统中的用户
+		public function ipread(){
+			$ip=$_GET['ip'];
+			$user= M("user")->where("lastip = ".$ip)->find();
+			if(count($user) >0 ){
+				$this->user=$user;
+				$this->display();
+			}else{
+				$this->error("该IP未登录过");
+			}
+		}
+	//=========查看访问记录关闭=======
 	
 }

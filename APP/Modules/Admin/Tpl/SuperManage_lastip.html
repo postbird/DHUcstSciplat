@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/jquery-easyui-1.3.5/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/jquery-easyui-1.3.5/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap-responsive.min.css">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+<style>
+		.head{text-align:center;}
+		.container{width:1000px;}
+		.red{color:red;}
+		.blue{color:blue;}
+		.operate{color:#428bca;}
+		.modal-dialog{width:100%;}
+		.inputpadding{padding-left:1px;}
+		.pantssize{font-size:14px;}
+		.back{position:absolute;right:10px;top:10px;}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+	<!-- <h1>访问记录 <small>五分钟内不记录</small></h1>
+	<hr> -->
+	<h1>
+		<br>
+		<br>
+	</h1>
+	<form action="__APP__/Admin/SuperManage/deleteip" method="post">
+		Delete the record of 
+		<select name="time" id="time">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		days ago.
+		<button class="btn btn-danger btn-xs" type="submit">Submit</button>
+	</form>
+	<hr>
+		<table class="table table-hover table-striped">
+			<tbody>
+				<volist name="lastip" id="ip">
+					<tr>
+						<td><a href="{:U('Admin/SuperManage/ipread',array('ip'=>$ip['ip']))}">{$ip.ip}</a></td>
+						<td>{$ip.time_date}</td>
+						<td>{$ip.description}</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		{$page}
+	</div>
+</body>
+</html>

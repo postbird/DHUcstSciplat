@@ -39,7 +39,10 @@ class LoginAction extends Action{
 				$this->ajaxReturn ( array ('status' => 4), 'json' );
 			}
 			else{
-							
+				
+				$ip=get_client_ip2();
+				$data['lastip']=$ip;
+				M("user")->where("uid=".$result['uid'])->save($data);			
 				session('uid',$result['uid']);
 				session('unum',$result['unum']);
 				session('uname',$result['uname']);
