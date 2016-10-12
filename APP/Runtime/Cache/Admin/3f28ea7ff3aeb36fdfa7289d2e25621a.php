@@ -52,6 +52,7 @@
 						<td><a href="<?php echo U('Admin/SuperManage/ipread',array('ip'=>$ip['ip']));?>"><?php echo ($ip["ip"]); ?></a></td>
 						<td><?php echo ($ip["time_date"]); ?></td>
 						<td><?php echo ($ip["description"]); ?></td>
+						<td><?php echo ($ip["user"]); ?></td>
 					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>

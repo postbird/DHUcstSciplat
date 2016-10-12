@@ -32,7 +32,7 @@
 		<br>
 	</h1>
 	<hr>
-	<table class="table  table-striped">
+	<table class="table table-hover table-striped">
 		<thead>
 			<th>Number</th>
 			<th>Name</th>

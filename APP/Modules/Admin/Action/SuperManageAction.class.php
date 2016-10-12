@@ -1859,10 +1859,23 @@ class SuperManageAction extends CommonAction{
 	//=========查看访问记录开始=======
 	public function lastip(){
 		import("ORG.Util.Page");
-		$count=M('lastip')->where("ip != '127.0.0.1'")->count();
+		$Lastip=M('lastip');
+		$User=M("user");
+		$count=$Lastip->where("ip != '127.0.0.1'")->count();
 		$page=new Page($count,30);
 		$limit = $page->firstRow . ',' . $page->listRows;
-		$lastip=M('lastip')->where("ip != '127.0.0.1'")->limit($limit)->order('time_stamp desc')->select();
+		$lastip=$Lastip->where("ip != '127.0.0.1' ")->limit($limit)->order('time_stamp desc')->select();
+		for($i=0;$i<count($lastip);$i++){
+			
+			$tempUser=$User->where("lastip = '".$lastip[$i]['ip']."'")->select();
+			//p($tempUser);exit();
+			$lastip[$i]['user']=" ";
+			if(count($tempUser)>0){
+				for($j=0;$j<count($tempUser);$j++){
+					$lastip[$i]['user']=$lastip[$i]['user']." ".$tempUser[$j]['uname'];
+				}
+			}
+		}
 		$this->lastip=$lastip;
 		$this->page=$page->show();
 		$this->display();
@@ -1877,7 +1890,7 @@ class SuperManageAction extends CommonAction{
 		$time=time();
 		$second = $day*24*60*60;
 		// p($second);die;
-		$allip=M("lastip")->where($time."-time_stamp > ".$second)->delete();
+		$allip=M("lastip")->where($time." - time_stamp > ".$second)->delete();
 		if($allip){
 			$this->redirect();
 		}else{
@@ -1887,7 +1900,7 @@ class SuperManageAction extends CommonAction{
 	//根据ip查看是否是已经在系统中的用户
 		public function ipread(){
 			$ip=$_GET['ip'];
-			$user= M("user")->where("lastip = ".$ip)->find();
+			$user= M("user")->where("lastip = '".$ip."'")->select();
 			if(count($user) >0 ){
 				$this->user=$user;
 				$this->display();

@@ -42,6 +42,7 @@ class LoginAction extends Action{
 				
 				$ip=get_client_ip2();
 				$data['lastip']=$ip;
+				$data['lasttime']=date("Y-m-d H:i:s");
 				M("user")->where("uid=".$result['uid'])->save($data);			
 				session('uid',$result['uid']);
 				session('unum',$result['unum']);

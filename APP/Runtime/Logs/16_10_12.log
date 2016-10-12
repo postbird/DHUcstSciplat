@@ -1,0 +1,949 @@
+[ 2016-10-12T14:28:51+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001044s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001161s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.003240s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000405s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.002855s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000323s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253731,'2016-10-12 14:28:51') [ RunTime:0.057462s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000343s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000461s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001553s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001538s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001846s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001799s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001591s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001562s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001573s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001582s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001664s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001582s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001554s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001548s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001571s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001635s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002476s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001599s ]
+NOTIC: [8] Undefined offset: 15 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001548s ]
+NOTIC: [8] Undefined offset: 16 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001547s ]
+NOTIC: [8] Undefined offset: 17 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001802s ]
+NOTIC: [8] Undefined offset: 18 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001550s ]
+NOTIC: [8] Undefined offset: 19 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001528s ]
+NOTIC: [8] Undefined offset: 20 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001515s ]
+NOTIC: [8] Undefined offset: 21 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001627s ]
+NOTIC: [8] Undefined offset: 22 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001624s ]
+NOTIC: [8] Undefined offset: 23 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001571s ]
+NOTIC: [8] Undefined offset: 24 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001542s ]
+NOTIC: [8] Undefined offset: 25 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001553s ]
+NOTIC: [8] Undefined offset: 26 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001517s ]
+NOTIC: [8] Undefined offset: 27 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001505s ]
+NOTIC: [8] Undefined offset: 28 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002010s ]
+NOTIC: [8] Undefined offset: 29 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 30 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1869 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = null )  [ RunTime:0.001532s ]
+
+[ 2016-10-12T14:29:14+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000942s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001019s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.004447s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000546s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.007157s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000431s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253754,'2016-10-12 14:29:14') [ RunTime:0.046218s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000452s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000493s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001590s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001552s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001550s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001779s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001587s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001535s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001528s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001568s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001596s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002531s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002684s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002573s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002467s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002448s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001953s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001561s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001521s ]
+NOTIC: [8] Undefined offset: 16 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001507s ]
+NOTIC: [8] Undefined offset: 17 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001499s ]
+NOTIC: [8] Undefined offset: 18 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001521s ]
+NOTIC: [8] Undefined offset: 19 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001477s ]
+NOTIC: [8] Undefined offset: 20 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001464s ]
+NOTIC: [8] Undefined offset: 21 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001651s ]
+NOTIC: [8] Undefined offset: 22 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002433s ]
+NOTIC: [8] Undefined offset: 23 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001627s ]
+NOTIC: [8] Undefined offset: 24 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001549s ]
+NOTIC: [8] Undefined offset: 25 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001535s ]
+NOTIC: [8] Undefined offset: 26 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001523s ]
+NOTIC: [8] Undefined offset: 27 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001523s ]
+NOTIC: [8] Undefined offset: 28 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001521s ]
+NOTIC: [8] Undefined offset: 29 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 30 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1869 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = null )  [ RunTime:0.001484s ]
+
+[ 2016-10-12T14:29:19+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000680s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000756s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.004520s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000478s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.002929s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000324s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253758,'2016-10-12 14:29:18') [ RunTime:0.032308s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000404s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000468s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001602s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001584s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001665s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001600s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001594s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001576s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001582s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001578s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001591s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001684s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001943s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001619s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001532s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001514s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001509s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001531s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002012s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001717s ]
+NOTIC: [8] Undefined offset: 17 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001537s ]
+NOTIC: [8] Undefined offset: 18 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001524s ]
+NOTIC: [8] Undefined offset: 19 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001811s ]
+NOTIC: [8] Undefined offset: 20 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001536s ]
+NOTIC: [8] Undefined offset: 21 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001522s ]
+NOTIC: [8] Undefined offset: 22 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001515s ]
+NOTIC: [8] Undefined offset: 23 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001516s ]
+NOTIC: [8] Undefined offset: 24 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001544s ]
+NOTIC: [8] Undefined offset: 25 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002338s ]
+NOTIC: [8] Undefined offset: 26 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001613s ]
+NOTIC: [8] Undefined offset: 27 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001551s ]
+NOTIC: [8] Undefined offset: 28 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001530s ]
+NOTIC: [8] Undefined offset: 29 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 30 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1869 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = null )  [ RunTime:0.001490s ]
+
+[ 2016-10-12T14:29:19+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000677s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000756s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.004791s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000403s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.002982s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000308s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253759,'2016-10-12 14:29:19') [ RunTime:0.075380s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000443s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000617s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001661s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002494s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002436s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002472s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002474s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001760s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001618s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001588s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001593s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002455s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001592s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001590s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001607s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001587s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001663s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001999s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001684s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001560s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001533s ]
+NOTIC: [8] Undefined offset: 18 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001525s ]
+NOTIC: [8] Undefined offset: 19 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001532s ]
+NOTIC: [8] Undefined offset: 20 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001527s ]
+NOTIC: [8] Undefined offset: 21 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001529s ]
+NOTIC: [8] Undefined offset: 22 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001651s ]
+NOTIC: [8] Undefined offset: 23 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001954s ]
+NOTIC: [8] Undefined offset: 24 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001564s ]
+NOTIC: [8] Undefined offset: 25 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001535s ]
+NOTIC: [8] Undefined offset: 26 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001531s ]
+NOTIC: [8] Undefined offset: 27 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001523s ]
+NOTIC: [8] Undefined offset: 28 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001831s ]
+NOTIC: [8] Undefined offset: 29 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 30 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1869 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = null )  [ RunTime:0.001500s ]
+
+[ 2016-10-12T14:29:31+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000788s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000885s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.003594s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000374s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.003985s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000333s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253771,'2016-10-12 14:29:31') [ RunTime:0.073962s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000434s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000610s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002204s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001647s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001539s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001581s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001573s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001574s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001568s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002275s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002646s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001649s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001587s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001569s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001574s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001569s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001580s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002173s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002366s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001630s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001587s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001555s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 19 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001546s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 20 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002484s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 21 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002366s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 22 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002430s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 23 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002443s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 24 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002382s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 25 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002391s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 26 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002408s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 27 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001550s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 28 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002230s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 29 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+
+[ 2016-10-12T14:29:32+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000745s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000828s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.003395s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000400s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.002857s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000342s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253771,'2016-10-12 14:29:31') [ RunTime:0.121179s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000394s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000597s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001631s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001849s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001985s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002464s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002434s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002452s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002447s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002470s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002037s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001586s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001548s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001533s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001532s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001548s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001662s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002313s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001680s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001585s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001580s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001569s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001532s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 20 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001532s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 21 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001559s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 22 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001557s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 23 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001569s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 24 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001740s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 25 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001787s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 26 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001596s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 27 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001569s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 28 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001585s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+NOTIC: [8] Undefined offset: 29 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1873 行.
+
+[ 2016-10-12T14:29:45+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000668s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000746s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.004531s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000416s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.003098s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000426s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253785,'2016-10-12 14:29:45') [ RunTime:0.029519s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000359s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000452s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001924s ]
+
+[ 2016-10-12T14:29:49+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001008s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001121s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.004542s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000429s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.002828s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000338s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253789,'2016-10-12 14:29:49') [ RunTime:0.044372s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000460s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000650s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001636s ]
+
+[ 2016-10-12T14:30:12+08:00 ] 10.202.205.16 /sciplat/index.php/Admin/SuperManage/lastip/uid/2/uname/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/unum/10000
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000756s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000859s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.003784s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000392s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.003377s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '10.202.205.16' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.000336s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('后台-10000-系统管理员','10.202.205.16',1476253812,'2016-10-12 14:30:12') [ RunTime:0.053839s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_lastip` WHERE ( ip != '127.0.0.1' ) LIMIT 1   [ RunTime:0.000373s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( ip != '127.0.0.1'  ) ORDER BY time_stamp desc LIMIT 0,30   [ RunTime:0.000489s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001690s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.002356s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001624s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001597s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001597s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001615s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001538s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001795s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001553s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001701s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001693s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001716s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001743s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001597s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001572s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001656s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001575s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001768s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001797s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001649s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001654s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001606s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '10.202.205.1' )  [ RunTime:0.001561s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001554s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8] Undefined offset: 23 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001578s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8] Undefined offset: 24 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001564s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8] Undefined offset: 25 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001528s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8] Undefined offset: 26 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.002506s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8] Undefined offset: 27 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001629s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8] Undefined offset: 28 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `lastip` = '0.0.0.0' )  [ RunTime:0.001554s ]
+NOTIC: [8] Undefined index: user I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+NOTIC: [8] Undefined offset: 29 I:\softwarework\xampp\htdocs\sciplat\APP\Modules\Admin\Action\SuperManageAction.class.php 第 1874 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 273 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 168 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 273 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 168 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 197 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 197 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 137 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013731s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013801s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000621s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000533s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000419s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000637s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002375s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000919s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000999s ]
+
