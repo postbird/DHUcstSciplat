@@ -26,13 +26,7 @@
 
 </head>
 <body>
-	<div class="container">
-	<!-- <h1>访问记录 <small>五分钟内不记录</small></h1>
-	<hr> -->
-	<h1>
-		<br>
-		<br>
-	</h1>
+	<div class="container"style="padding-top:40px;">
 	<form action="__APP__/Admin/SuperManage/deleteip" method="post">
 		Delete the record of 
 		<select name="time" id="time">

@@ -7,7 +7,7 @@ class CommonAction extends Action{
 			$this->redirect('Admin/Login/index');
 		}else{
 			//ip追踪描述desc 说明是哪个module 并且是谁
-			$description="后台-";
+			$description=__ACTION__."-";
 			$user=M('user')->where(array('uid'=>$_SESSION['uid']))->find();
 			// p($user);die;
 			$description=$description.$user['unum']."-".$user['uname'];

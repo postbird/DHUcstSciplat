@@ -3,7 +3,7 @@ class IndexAction extends Action{
 	
 	public function index(){
 		//ip追踪描述desc 说明是哪个module 并且是谁
-		$description="首页-";
+		$description=__ACTION__."-";
 		if(isset($_SESSION['uid'])){
 			$user=M('user')->where(array('uid'=>$_SESSION['uid']))->find();
 			// p($user);die;
