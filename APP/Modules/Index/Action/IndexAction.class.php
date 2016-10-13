@@ -2,35 +2,35 @@
 class IndexAction extends Action{
 	
 	public function index(){
-		//ip追踪描述desc 说明是哪个module 并且是谁
-		$description=__ACTION__."-";
+		// //ip追踪描述desc 说明是哪个module 并且是谁
+		// $description=__ACTION__."-";
 		if(isset($_SESSION['uid'])){
 			$user=M('user')->where(array('uid'=>$_SESSION['uid']))->find();
 			// p($user);die;
-			$description=$description.$user['unum']."-".$user['uname'];
+			//$description=$description.$user['unum']."-".$user['uname'];
 			// p($description);die;
 		}
 
-		//开启ip追踪
-		$ip=get_client_ip2();
-		$data['description']=$description;
-		$data['ip']=$ip;
-		$data['time_stamp']=time();
-		$data['time_date']=date("Y-m-d H:i:s",$data['time_stamp']);
-		// p($data);die;
-		$ipCheck=M("lastip")->where(array("ip"=>$data['ip']))->order("time_stamp desc")->find();
-		if(count($ipCheck)>0){
-			//五分钟以内的，不进行更改
-			//超过五分钟,进行新的记录
-			// p($data['time_stamp']-$ipCheck[0]['time_stamp']);die;
-			if($data['time_stamp']-$ipCheck['time_stamp'] <= 300 ){
-				;
-			}else{
-				M("lastip")->add($data);
-			}
-		}else{
-				M("lastip")->add($data);
-			}
+		// //开启ip追踪
+		// $ip=get_client_ip2();
+		// $data['description']=$description;
+		// $data['ip']=$ip;
+		// $data['time_stamp']=time();
+		// $data['time_date']=date("Y-m-d H:i:s",$data['time_stamp']);
+		// // p($data);die;
+		// $ipCheck=M("lastip")->where(array("ip"=>$data['ip']))->order("time_stamp desc")->find();
+		// if(count($ipCheck)>0){
+		// 	//五分钟以内的，不进行更改
+		// 	//超过五分钟,进行新的记录
+		// 	// p($data['time_stamp']-$ipCheck[0]['time_stamp']);die;
+		// 	if($data['time_stamp']-$ipCheck['time_stamp'] <= 300 ){
+		// 		;
+		// 	}else{
+		// 		M("lastip")->add($data);
+		// 	}
+		// }else{
+		// 		M("lastip")->add($data);
+		// 	}
 
 		$this->user=$user;
 		$this->display();

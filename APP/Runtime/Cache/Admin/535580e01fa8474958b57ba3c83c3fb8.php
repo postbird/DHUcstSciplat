@@ -441,7 +441,7 @@
 			          </ul>
 			        </li>
 			        <li class="treeview">
-			          <a href="<?php echo U('Admin/SuperManage/lastip',array('uid'=>$us['uid'],'uname'=>$us['uname'],'unum'=>$us['unum']));?>" target="opt">
+			          <a href="<?php echo U('Admin/SuperManage/lastipPasswd',array('uid'=>$us['uid'],'uname'=>$us['uname'],'unum'=>$us['unum']));?>" target="opt">
 			            <i class="fa fa-pie-chart"></i>
 			            访问记录
 			            <span class="pull-right-container">
@@ -470,7 +470,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer" style="text-align:center;">
     <div class="pull-right hidden-xs">
-      <b>Version</b> V2.2.2
+      <b>Version</b> V2.2.4
     </div>
     <strong> powered by 东华大学计算机科学与技术学院科技创新中心</strong>
   </footer>

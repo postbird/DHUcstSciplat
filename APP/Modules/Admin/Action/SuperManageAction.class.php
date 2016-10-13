@@ -1861,10 +1861,10 @@ class SuperManageAction extends CommonAction{
 		import("ORG.Util.Page");
 		$Lastip=M('lastip');
 		$User=M("user");
-		$count=$Lastip->where("ip != '127.0.0.1'")->count();
+		$count=$Lastip->where("ip != '127.0.0.1' AND ip!='10.202.205.16'")->count();
 		$page=new Page($count,30);
 		$limit = $page->firstRow . ',' . $page->listRows;
-		$lastip=$Lastip->where("ip != '127.0.0.1' ")->limit($limit)->order('time_stamp desc')->select();
+		$lastip=$Lastip->where("ip != '127.0.0.1' AND ip!='10.202.205.16'")->limit($limit)->order('time_stamp desc')->select();
 		for($i=0;$i<count($lastip);$i++){
 			
 			$tempUser=$User->where("lastip = '".$lastip[$i]['ip']."'")->select();
@@ -1888,19 +1888,21 @@ class SuperManageAction extends CommonAction{
 			exit();
 		}
 		$time=time();
+		//p($time);exit();
 		$second = $day*24*60*60;
 		// p($second);die;
-		$allip=M("lastip")->where($time." - time_stamp > ".$second)->delete();
-		if($allip){
-			$this->redirect();
+		
+		//p($time-$second.' >= time_stamp');exit();
+		if(M("lastip")->where($time-$second.' >= time_stamp')->delete()){
+			$this->success("操作成功");
 		}else{
 			$this->error("删除失败");
 		}
 	}
 	//根据ip查看是否是已经在系统中的用户
-		public function ipread(){
+	public function ipread(){
 			$ip=$_GET['ip'];
-			$user= M("user")->where("lastip = '".$ip."'")->select();
+			$user= M("user")->where("lastip = '".$ip."'")->order("lasttime desc")->select();
 			if(count($user) >0 ){
 				$this->user=$user;
 				$this->display();
@@ -1908,6 +1910,38 @@ class SuperManageAction extends CommonAction{
 				$this->error("该IP未登录过");
 			}
 		}
+	//删除admin记录  目前是10.202.205.16 postbird的校园ip 
+	public function deleteAdminLastip(){
+		$adminIp="10.202.205.16";
+		$Lastip=M('lastip');
+		if($Lastip->where('ip="'.$adminIp.'"')->delete()){
+			$this->success("操作成功");
+		}else{
+			$this->error("删除失败");
+		}
+	}
+	//开启密码访问
+
+	public function lastipPasswd(){
+		$this->display();
+	}
+	//密码查看验证
+	public function lastipPasswdCheck(){
+		$password=$_REQUEST['check'];
+		if(strlen(trim($password))==0){
+			$this->error("无权限");
+		}else{
+			$password=md5($password);
+		}
+		$Lastip_pwd=M("lastip_pwd");
+		$flag=$Lastip_pwd->find();
+		if($password==$flag['check']){
+			$this->redirect("lastip");
+		}else{
+			$this->error("无权限");
+		}
+
+	}	
 	//=========查看访问记录关闭=======
 	
 }

@@ -7,7 +7,7 @@ class CommonAction extends Action{
 			$this->redirect('Admin/Login/index');
 		}else{
 			//ip追踪描述desc 说明是哪个module 并且是谁
-			$description=__ACTION__."-";
+			$description=substr(__ACTION__,strlen("index.php/Admin/"),strlen(__ACTION__)-1)."-";
 			$user=M('user')->where(array('uid'=>$_SESSION['uid']))->find();
 			// p($user);die;
 			$description=$description.$user['unum']."-".$user['uname'];
@@ -27,11 +27,13 @@ class CommonAction extends Action{
 				//五分钟以内的，不进行更改
 				//超过五分钟,进行新的记录
 				// p($data['time_stamp']-$ipCheck['time_stamp']);die;
-				if($data['time_stamp']-$ipCheck['time_stamp'] <= 300 ){
+				//暂时开启全部的ip操作记录
+				// if($data['time_stamp']-$ipCheck['time_stamp'] <= 300 ){
 
-				}else{
-					M("lastip")->add($data);
-				}
+				// }else{
+				// 	M("lastip")->add($data);
+				// }
+				M("lastip")->add($data);
 			}else{
 				M("lastip")->add($data);
 			}

@@ -38,6 +38,8 @@
 		</select>
 		days ago.
 		<button class="btn btn-danger btn-xs" type="submit">Submit</button>
+		|
+		<a class="btn btn-warning btn-xs" href="<?php echo U('Admin/SuperManage/deleteAdminLastip');?>">delete admin last ip</a>
 	</form>
 	<hr>
 		<table class="table table-hover table-striped">
