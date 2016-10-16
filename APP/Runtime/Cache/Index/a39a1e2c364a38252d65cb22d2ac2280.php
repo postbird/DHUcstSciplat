@@ -98,64 +98,66 @@ function iFrameHeight() {
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="registModalLabel">注册</h4>
       </div>
-        <div class="modal-body col-md-12">
-          <p class="text-danger text-indent">
-              本注册适用于无法登陆系统或外学院同学,系统已经录入学号，可以直接凭借学号(初始密码为学号)登陆.
-          </p>
-          <p class="text-danger text-indent">
-             <strong>本注册为简单注册,成功登陆后,建议根据后台指引修改密码以及个人信息.</strong> 
-          </p>
-          <p class="text-danger text-indent">
-              教师请联系管理员加入.(暂行)
-          </p>
-          <p class="text-danger text-indent">
-              外学院同学请直接选择计算机类专业即可,班级正确填写.(暂行)
-          </p>
-          <div class="col-md-12">
-            <div class="col-sm-2"><label for="school"><h4>学院：</h4></label></div> 
-            <div class="col-sm-8">
-              <select name="school" id="school" class="form-control">
-                <option value="计算机科学与技术学院">计算机科学与技术学院</option>
-                <option value="机械工程学院">机械工程学院</option>
-                <option value="信息科学与技术学院">信息科学与技术学院</option>
-                <option value="化学化工与生物工程学院">化学化工与生物工程学院</option>
-                <option value="材料科学与工程学院">材料科学与工程学院</option>
-                <option value="环境科学与工程学院">环境科学与工程学院</option>
-                <option value="纺织学院">纺织学院</option>
-                <option value="人文学院">人文学院</option>
-                <option value="理学院">理 学 院</option>
-                <option value="外语学院">外语学院</option>
-                <option value="马克思主义学院">马克思主义学院</option>
-                <option value="服装与艺术设计学院">服装与艺术设计学院</option>
-                <option value="旭日工商管理学院">旭日工商管理学院</option>
-              </select>
-            </div> 
-          </div>
-          <div class="col-md-12">
-            <div class="col-sm-2"><label for="unum"><h4>学号：</h4></label></div> 
-            <div class="col-sm-4"><input type="text" class="form-control" name="unum" id="unum" placeholder="学号..." required="true"></div> 
-            <div class="col-sm-2"><label for="uname"><h4>姓名：</h4></label></div> 
-            <div class="col-sm-4"><input type="text" class="form-control" name="uname" id="uname" placeholder="姓名..." required="true"></div> 
-          </div>
-          <div class="col-md-12">
-            <div class="col-sm-2"><label for="master"><h4>专业：</h4></label></div> 
-            <div class="col-sm-4">
-                <select name="master" id="master" class="form-control">
-                  <option value="计算机类">计算机类</option>
-                  <option value="软件工程">软件工程</option>
-                  <option value="网络工程">网络工程</option>
-                  <option value="计算机科学与技术">计算机科学与技术</option>
-                  <option value="信息安全">信息安全</option>
+        <form action="<?php echo U('Index/Index/regist');?>" method="post">
+          <div class="modal-body col-md-12">
+            <p class="text-danger text-indent">
+                本注册适用于无法登陆系统或外学院同学,系统已经录入学号，可以直接凭借学号(初始密码为学号)登陆.
+            </p>
+            <p class="text-danger text-indent">
+               <strong>本注册为简单注册,成功登陆后,建议根据后台指引修改密码以及个人信息.</strong> 
+            </p>
+            <p class="text-danger text-indent">
+                教师请联系管理员加入.(暂行)
+            </p>
+            <p class="text-danger text-indent">
+                外学院同学请直接选择计算机类专业即可,班级正确填写.(暂行)
+            </p>
+            <div class="col-md-12">
+              <div class="col-sm-2"><label for="school"><h4>学院：</h4></label></div> 
+              <div class="col-sm-8">
+                <select name="school" id="school" class="form-control">
+                  <option value="计算机科学与技术学院">计算机科学与技术学院</option>
+                  <option value="机械工程学院">机械工程学院</option>
+                  <option value="信息科学与技术学院">信息科学与技术学院</option>
+                  <option value="化学化工与生物工程学院">化学化工与生物工程学院</option>
+                  <option value="材料科学与工程学院">材料科学与工程学院</option>
+                  <option value="环境科学与工程学院">环境科学与工程学院</option>
+                  <option value="纺织学院">纺织学院</option>
+                  <option value="人文学院">人文学院</option>
+                  <option value="理学院">理 学 院</option>
+                  <option value="外语学院">外语学院</option>
+                  <option value="马克思主义学院">马克思主义学院</option>
+                  <option value="服装与艺术设计学院">服装与艺术设计学院</option>
+                  <option value="旭日工商管理学院">旭日工商管理学院</option>
                 </select>
-            </div> 
-            <div class="col-sm-2"><label for="ugrade"><h4>班级：</h4></label></div> 
-            <div class="col-sm-4"><input type="text" class="form-control" name="ugrade" id="ugrade" placeholder="如：计算机类1601" required="true"></div> 
+              </div> 
+            </div>
+            <div class="col-md-12">
+              <div class="col-sm-2"><label for="unum"><h4>学号：</h4></label></div> 
+              <div class="col-sm-4"><input type="text" class="form-control" name="unum" id="unum" placeholder="学号..." required="true"></div> 
+              <div class="col-sm-2"><label for="uname"><h4>姓名：</h4></label></div> 
+              <div class="col-sm-4"><input type="text" class="form-control" name="uname" id="uname" placeholder="姓名..." required="true"></div> 
+            </div>
+            <div class="col-md-12">
+              <div class="col-sm-2"><label for="master"><h4>专业：</h4></label></div> 
+              <div class="col-sm-4">
+                  <select name="master" id="master" class="form-control">
+                    <option value="计算机类">计算机类</option>
+                    <option value="软件工程">软件工程</option>
+                    <option value="网络工程">网络工程</option>
+                    <option value="计算机科学与技术">计算机科学与技术</option>
+                    <option value="信息安全">信息安全</option>
+                  </select>
+              </div> 
+              <div class="col-sm-2"><label for="ugrade"><h4>班级：</h4></label></div> 
+              <div class="col-sm-4"><input type="text" class="form-control" name="ugrade" id="ugrade" placeholder="如：计算机类1601" required="true"></div> 
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-          <button type="submit" class="btn btn-primary">注册</button>
-        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="submit" class="btn btn-primary">注册</button>
+          </div>
+        </form>
     </div>
   </div>
 </div>

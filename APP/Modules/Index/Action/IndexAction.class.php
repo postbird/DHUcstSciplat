@@ -194,18 +194,19 @@ class IndexAction extends Action{
 	//默认设置 电话为空
 	//默认设置 密码为md5(学号)
 	public function regist(){
-		$data["unum"]=$_POST['unum'];//141340120
-		$data["master"]=$_POST['master'];
-		$data["uname"]=$_POST['uname'];
-		$data["school"]=$_POST['school'];
-		$data["ugrade"]=$_POST['ugrade'];
+		$data["unum"]=trim($_POST['unum']);
+		$data["master"]=trim($_POST['master']);
+		$data["uname"]=trim($_POST['uname']);
+		$data["school"]=trim($_POST['school']);
+		$data["ugrade"]=trim($_POST['ugrade']);
 		$data["umail"]="";
 		$data["utel"]="";
-		$data["upassword"]=md5($unum);
-		// p($data);exit();
+		$data["upassword"]=md5($data["unum"]);
+		// p(" ".md5($data["unum"])."  ".$data['upassword']." ".md5("151100206"));die;
+		 // p(strlen($data["unum"]));exit();
 		if(strlen($data["unum"])!=9 || strlen($data["master"])==0 || strlen($data["uname"])==0  || strlen($data["school"])==0 || strlen($data["ugrade"])==0 || strlen($data["upassword"])==0 ){
 			$this->error("信息填写有误！");
-			echo "unum error".$data["unum"];
+			// echo "unum error".$data["unum"];
 			exit();
 		}
 
@@ -248,8 +249,6 @@ class IndexAction extends Action{
 	}
 	//用户登录
 	public function login(){
-
-		
 
 
 	}
