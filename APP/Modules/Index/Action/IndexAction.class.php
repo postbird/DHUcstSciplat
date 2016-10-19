@@ -199,6 +199,8 @@ class IndexAction extends Action{
 		$data["uname"]=trim($_POST['uname']);
 		$data["school"]=trim($_POST['school']);
 		$data["ugrade"]=trim($_POST['ugrade']);
+		$data['uflag']="学生";
+		$data['uprofession']='学生';
 		$data["umail"]="";
 		$data["utel"]="";
 		$data["upassword"]=md5($data["unum"]);
@@ -228,12 +230,19 @@ class IndexAction extends Action{
 				//进行首页状态的更改
 				//向兴趣小组系统发送post，添加数据
 				//url和data
-				$postUrl="";//url
-				$res=$this->sendPost($postUrl,$data);//发送
+				$postUrl="http://cst.shiroimagnolia.com/accounts/kc_sign/";//url
+				// $postUrl="http://localhost/sciplat/Admin/Test/postTest/";
+				$res=$this->sendPost($postUrl,$data);
+				// p($res);exit();
+				if($res){
+					$this->success("添加成功,请修改个人信息！","__URL__/Index/");
+				}else{
+					$this->error("添加成功,但是兴趣小组信息同步失败,请联系管理员！","__URL__/Index/");
+				}//发送
 				// echo $res;
 				// exit();
 				//成功跳转
-				$this->success("添加成功,请修改个人信息！","__URL__/Index/");
+				
 
 				exit();
 			}else{
@@ -255,6 +264,7 @@ class IndexAction extends Action{
 	 public function sendPost($url, $param=array()){
 	    if(!is_array($param)){
 	        throw new Exception("参数必须为array");
+	        exit();
 	    }
 	    $httph =curl_init($url);
 	    curl_setopt($httph, CURLOPT_SSL_VERIFYPEER, 0);

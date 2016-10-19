@@ -45,4 +45,10 @@ class TestAction extends Action{
 			echo "目前使用 returnJson函数可以直接返回json数据";
 		echo "</pre>";
 	}
+	public function postTest(){
+		$data=$_POST;
+		$str['name']=$data['uname'];
+		M("test")->add($str);
+		return "hello marker";
+	}
 }
