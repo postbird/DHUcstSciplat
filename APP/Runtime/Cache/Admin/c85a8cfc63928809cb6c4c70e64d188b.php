@@ -61,6 +61,13 @@
 					      <?php echo ($lecture['lcontent']); ?>
 					    </div>
 					</div>
+					<hr>
+					<div class="form-group">
+						<label  class="col-sm-2  control-label" >限制人数:</label>
+					    <label  class="col-sm-2 control-label normalfont" ><?php echo ($lecture['lnum']); ?></label>	
+					    <label  class="col-sm-2  control-label" >已报名:</label>
+					    <label  class="col-sm-2 control-label normalfont" ><?php echo ($usercount); ?></label>							
+					</div>
 					<hr/>
 					<div class="form-group">
 						<label  class="col-sm-2  control-label" >主讲人:</label>
@@ -98,44 +105,44 @@
 					    	<label  class="col-sm-2 control-label normalfont" >否</label><?php endif; ?>							
 					</div>
 					<hr/>
-					
 					<div class="form-group">
 						<div style="margin:1em auto;width:10%;">
 							<?php if($lecture['subtime'] == 1): ?><label  class="control-label" >已截止</label>
+							<?php elseif($isapply == 1): ?>
+									<label  class="control-label" >已报名</label>
+							<?php elseif($userspill == 1): ?>
+									<label  class="control-label" >人数已满</label>
 							<?php else: ?>
-								<?php if($isapply == 1): ?><label  class="control-label" >已申请</label>
-								<?php else: ?>
-									<a href="javascript:void(0)" onclick="lectureapply(<?php echo ($lecture["lid"]); ?>,<?php echo ($unum); ?>)">申请讲座</a><?php endif; endif; ?>
+									<a href="javascript:void(0)" onclick="lectureapply(<?php echo ($lecture["lid"]); ?>,<?php echo ($unum); ?>)">申请讲座</a><?php endif; ?>
 						</div>
-						
 					</div>
 			  		<div class="modal-footer">
 		   			 	 <a class="btn btn-primary" href="<?php echo U('Admin/Stu/lecture',array('unum'=>$unum,'uname'=>$uname));?>" target="opt"><span>返回</span></a>
 					</div>
 		</form>
 	</div>
-	
 <script>
-	
 	function lectureapply(lid,unum){
-		alert("申请后不可撤销，确认申请？");
+		alert("报名后不可撤销，确认报名？");
 		if(confirm("确认申请")){
 			$.ajax({
 				type:"POST",
-				url:"__URL__/lectureapply/lid/"+lid+"/unum/"+unum,
-				success:function(data,textStatus,jqXHR){
-				alert("申请成功");
-					window.location.reload();
-	
+				 url:"__APP__/Admin/Stu/lectureapply/",
+         		 data:{'lid':lid,'unum':unum},
+				success:function(data){
+					if(data.status=="ok"){
+						alert("报名成功");
+						window.location.reload();
+					}else{
+						alert(data.msg);
+					}
 				},
-				error:function(jqXHR,textStatus,errorThrown){
-					alert("申请失败");
+				error:function(jqXHR){
+					alert("报名失败");
 				}
 			})
-				
 			}
 			else{
-			
 				return;
 			}
 	}

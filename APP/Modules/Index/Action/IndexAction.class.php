@@ -33,12 +33,31 @@ class IndexAction extends Action{
 		// 	}
 		$this->user=$user;
 	}
+	//判断结果是否为空，为空则重定向到入口
+	//防止查询空结果
 	public function redirectParam($param){
 		if(count($param)==0){
 			$this->redirect("Index.html");
 			return;
 		}
 	}
+	//判断参数内容，防止sql注入
+	//如果发现非法参数则直接重定向
+	public function checkParam($param){
+		if(strpos($param,';')||strpos($param,'"')||strpos($param,',')||strpos($param,'(')||strpos($param,')')||strpos($param,'*')||strpos($param,"'")){
+			$description=$param."-".$this->user."-".__ACTION__;
+			$ip=get_client_ip2();
+			$data['description']=$description;
+			$data['ip']=$ip;
+			$data['time_stamp']=time();
+			$data['time_date']=date("Y-m-d H:i:s",$data['time_stamp']);
+			M("lastsql")->add($data);
+			$this->redirect("Index.html");
+		}else{
+			return true;
+		}
+	}
+
 	public function index(){
 		$this->home();
 		$this->page_title="计算机学院科创管理系统";
@@ -97,9 +116,14 @@ class IndexAction extends Action{
 		// $this->display();
 	}
 	public function pointlist(){
+		// p(UU());
 		import("ORG.Util.Page");
 		$count=M('user')->where("usuper = 0 AND upoint >0 AND uflag <> '教师'")->count();
-		$page=new Page($count,100);
+		$page=new Page($count,100,'',UU());
+		$page->setConfig('header','人');
+		$page->setConfig('prev','<i class="fa fa-chevron-left"></i>');
+		$page->setConfig('next','<i class="fa fa-chevron-right"></i>');
+		$page->setConfig("theme","<li  class='total-span'><a>共 %totalRow% %header% </a></li> <li> %first% </li> <li> %upPage% </li> <li> %linkPage% </li> <li> %downPage% </li> <li> %end% </li>");
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$stu=M('user')->limit($limit)->where("usuper = 0 AND upoint >0 AND uflag <> '教师'")->order('upoint desc')->select();
 		$this->redirectParam($stu);
@@ -111,7 +135,11 @@ class IndexAction extends Action{
 	public function newslist(){
 		import("ORG.Util.Page");
 		$count=M('news')->count();
-		$page=new Page($count,30);
+		$page=new Page($count,30,'',UU());
+		$page->setConfig('header','条新闻');
+		$page->setConfig('prev','<i class="fa fa-chevron-left"></i>');
+		$page->setConfig('next','<i class="fa fa-chevron-right"></i>');
+		$page->setConfig("theme","<li class='total-span'><a>共 %totalRow% %header% </a></li> <li> %first% </li> <li> %upPage% </li> <li> %linkPage% </li> <li> %downPage% </li> <li> %end% </li>");
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$news=M('news')->limit($limit)->where(array('nstatus'=>1,))->order('ntop desc,ndate desc,nid desc')->select();
 		$this->news=$news;
@@ -123,6 +151,7 @@ class IndexAction extends Action{
 	}
 	public function news(){
 		$nid=I("view");
+		$this->checkParam($nid);
 		$news=M('news')->where(array('nid'=>$nid))->find();
 		$this->news=$news;
 		$this->redirectParam($news);
@@ -133,7 +162,11 @@ class IndexAction extends Action{
 	public function lecturelist(){
 		import("ORG.Util.Page");
 		$count=M('lecture')->count();
-		$page=new Page($count,20);
+		$page=new Page($count,20,'',UU());
+		$page->setConfig('header','场讲座');
+		$page->setConfig('prev','<i class="fa fa-chevron-left"></i>');
+		$page->setConfig('next','<i class="fa fa-chevron-right"></i>');
+		$page->setConfig("theme","<li class='total-span'><a>共 %totalRow% %header% </a></li> <li> %first% </li> <li> %upPage% </li> <li> %linkPage% </li> <li> %downPage% </li> <li> %end% </li>");
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$lecture=M('lecture')->limit($limit)->where(array('lcheckstatus'=>1,'lstatus'=>1,))->order('ldatestart desc')->select();
 		$this->redirectParam($lecture);
@@ -145,6 +178,7 @@ class IndexAction extends Action{
 	}
 	public function lecture(){
 		$lid=I("view");
+		$this->checkParam($lid);
 		$unum=$this->user['unum'];
 		$lecture=M('lecture')->where(array('lid'=>$lid))->find();
 		$this->redirectParam($lecture);
@@ -161,8 +195,18 @@ class IndexAction extends Action{
 			$isapply=0;
 		else
 			$isapply=1;
+		$userCount=M("lecture_user")->where(array("lecture_id"=>$lid,))->count();
+		//判断人数满了
+		if($userCount>=$lecture['lnum']){
+			$userSpill=1;
+		}else{
+			$userSpill=0;
+		}
+		// p($userCount);
+		$this->userspill=$userSpill;
 		//输出
 		$this->lecture=$lecture;
+		$this->usercount=$userCount;
 		$this->isapply=$isapply;
 		$this->page_title=$lecture['ltitle']." | 计算机学院科创管理系统";
 		$this->display();
@@ -171,7 +215,11 @@ class IndexAction extends Action{
 	public function racelist(){
 		import("ORG.Util.Page");
 		$count=M('race')->count();
-		$page=new Page($count,20);
+		$page=new Page($count,20,'',UU());
+		$page->setConfig('header','场竞赛');
+		$page->setConfig('prev','<i class="fa fa-chevron-left"></i>');
+		$page->setConfig('next','<i class="fa fa-chevron-right"></i>');
+		$page->setConfig("theme","<li class='total-span'><a>共 %totalRow% %header% </a></li> <li> %first% </li> <li> %upPage% </li> <li> %linkPage% </li> <li> %downPage% </li> <li> %end% </li>");
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$race=M('race')->limit($limit)->where(array('rstatus'=>1,))->order('rdatestart desc, rid desc')->select();
 		$this->redirectParam($race);
@@ -182,6 +230,7 @@ class IndexAction extends Action{
 	}
 	public function race(){
 		$rid=I("view");
+		$this->checkParam($rid);
 		$race=M('race')->where(array('rid'=>$rid))->find();
 		$this->race=$race;
 		$this->redirectParam($race);
@@ -193,7 +242,11 @@ class IndexAction extends Action{
 	public function projectnewslist(){
 		import("ORG.Util.Page");
 		$count=M('projectnews')->count();
-		$page=new Page($count,20);
+		$page=new Page($count,20,'',UU());
+		$page->setConfig('header','个项目');
+		$page->setConfig('prev','<i class="fa fa-chevron-left"></i>');
+		$page->setConfig('next','<i class="fa fa-chevron-right"></i>');
+		$page->setConfig("theme","<li class='total-span'><a>共 %totalRow% %header% </a></li> <li> %first% </li> <li> %upPage% </li> <li> %linkPage% </li> <li> %downPage% </li> <li> %end% </li>");
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$projectnews=M('projectnews')->limit($limit)->where(array('pstatus'=>1,))->order('pdatestart desc, pid desc')->select();
 		$this->projectnews=$projectnews;
@@ -203,6 +256,7 @@ class IndexAction extends Action{
 	}
 	public function projectnews(){
 		$pid=I("view");
+		$this->checkParam($pid);
 		$projectnews=M('projectnews')->where(array('pid'=>$pid))->find();
 		$this->projectnews=$projectnews;
 		$this->redirectParam($projectnews);
@@ -291,7 +345,6 @@ class IndexAction extends Action{
 				// echo $res;
 				// exit();
 				//成功跳转
-				
 
 				exit();
 			}else{

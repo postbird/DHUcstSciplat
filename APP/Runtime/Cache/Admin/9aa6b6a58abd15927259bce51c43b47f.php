@@ -50,10 +50,7 @@
 <body style="padding:20px 20px 0px 20px">
 	<h2 align="center">讲座列表</h2>
 	<hr/>
-	
 	<div style="margin:10px 0;"></div>
-	
-	
 	<table id="dg" title="讲座列表" style="width:1080px;height:380px" >
 	<?php if(is_array($lecture)): foreach($lecture as $key=>$u): ?><tr>
 		<td><?php echo ($u["lid"]); ?></td>
@@ -69,8 +66,10 @@
 				否<?php endif; ?>
 		</td>
 		<td>
-			<a href="<?php echo U('Admin/Stu/lectureread',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname));?>">读取</a>
-			
+			<a href="<?php echo U('Admin/Stu/lectureread',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname));?>">报名</a>
+			<?php if($stusuper == 1): ?><a href="<?php echo U('Admin/Stu/mylectureread',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname));?>">修改</a>
+				<a href="<?php echo U('Admin/Stu/mylectureapply',array('lid'=>$u['lid'],'unum'=>$unum,'uname'=>$uname));?>">查看报名</a>
+			<?php else: endif; ?>
 		</td>		
 	</tr><?php endforeach; endif; ?>
 	</table>
@@ -126,7 +125,6 @@
 					rownumbers:true,
 					singleSelect:true,
 					autoRowHeight:false,
-					
 				  columns:[[
 					{field:'lid',hidden:true},
 					{field:'ltitle',title:"主题",width:90},
@@ -136,8 +134,7 @@
 			        {field:'ldatestart',title:"报名开始时间",width:30},
 			        {field:'ldateend',title:"报名结束时间",width:30},
 			        {field:'lsheet',title:"是否有讲座单",width:30},
-			        {field:'op',title:"操作",width:35},
-			        		        
+			        {field:'op',title:"操作",width:50},
 			   	  ]]
 				});
 		});

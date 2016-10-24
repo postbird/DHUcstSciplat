@@ -14,9 +14,16 @@
 		 			
 					<div class="form-group">
 						<div class="col-sm-2 info-box text-center ">描述:</div>
-						<div class="col-sm-10 text-center">
+						<div class="col-sm-10">
 					      {$lecture['lcontent']}
 					    </div>
+					</div>
+					<hr>
+					<div class="form-group">
+						<label  class="col-sm-2 text-center  primary-box" >限制人数:</label>
+					    <label  class="col-sm-4  text-center " >{$lecture['lnum']}</label>	
+					    <label  class="col-sm-2 text-center  danger-box" >已报名:</label>
+					    <label  class="col-sm-4   text-center" >{$usercount}</label>							
 					</div>
 					<hr/>
 					<div class="form-group">
@@ -59,15 +66,15 @@
 					
 			  		<div class="modal-footer">
 			  			<if condition=" $user['unum'] eq ''">
-		   			 	 <a class="btn btn-warning disabled" href="javascript:;" disabled>登陆后报名</a>
-						<else />
-							<if condition="$lecture['subtime'] eq 1">
-		   			 			 <a class="btn btn-warning disabled" href="javascript:;" disabled>已经截止</a>
-		   			 		<elseif condition="$isapply eq 1"/>
+		   			 		 <a class="btn btn-warning disabled" href="javascript:;" disabled>登陆后报名</a>
+		   			 	<elseif condition="$isapply eq 1"/>
 		   			 			 <a class="btn btn-warning disabled" href="javascript:;" disabled>已经报名</a>
-		   			 		<else />
+						<elseif  condition="$lecture['subtime'] eq 1"/>
+		   			 			 <a class="btn btn-warning disabled" href="javascript:;" disabled>已经截止</a>
+   			 			<elseif condition="$userspill eq 1" />
+								 <a class="btn btn-danger disabled" href="javascript:;" disabled>人数已满</a>	
+	   			 		<else/>
 		   			 		 	 <a class="btn btn-success" href="javascript:;" onclick="lectureapply({$lecture.lid},{$user['unum']})">报名</a>
-		   			 		 </if>
 			  			</if>
 		   			 	 <a class="btn btn-primary" href="{:U('Index/Index/lecturelist')}.html" target=""><span>返回</span></a>
 					</div>

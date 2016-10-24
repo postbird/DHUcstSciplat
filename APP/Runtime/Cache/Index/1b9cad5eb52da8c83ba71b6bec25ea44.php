@@ -251,7 +251,7 @@
 				<?php if($race['raccessory'] == ''): else: ?>
 			    <hr/>
 			   		 <label for="username" class="col-sm-2  control-label" >附件:</label>
-			    	 <label  class="col-sm-2 control-label normalfont" ><a href="<?php echo U('Index/Index/downfile.html');?>?filename=.<?php echo ($race["raccessory"]); ?>">附件下载</a></label><?php endif; ?>   
+			    	 <label  class="col-sm-2 control-label normalfont" ><a href="<?php echo U('Index/Index/downfile.html');?>?back=.<?php echo ($race["raccessory"]); ?>">附件下载</a></label><?php endif; ?>   
 			</div>
 			
 	  		<div class="modal-footer">

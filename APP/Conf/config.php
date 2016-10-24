@@ -1,8 +1,9 @@
 <?php
+
 return array(
 	//'配置项'=>'配置值'
 
-	'APP_GROUP_LIST'=>'Home,Index,Admin',
+	'APP_GROUP_LIST'=>'Index,Admin',
 	'DEFAULT_GROUP'=>'Index',
 	'APP_GROUP_MODE'=>1,
 	'APP_GROUP_PATH'=>'Modules',
@@ -17,7 +18,7 @@ return array(
      'DB_NAME'=>'sciplat',
      'DB_PREFIX'=>'sp_',
 	//默认过滤函数
-	'DEFAULT_FILTER'=>'htmlspecialchars',
+	'DEFAULT_FILTER'=>'htmlspecialchars,strip_tags',
 	// 标签最大嵌套
 	'TAG_NESTED_LEVEL' =>5,
 );

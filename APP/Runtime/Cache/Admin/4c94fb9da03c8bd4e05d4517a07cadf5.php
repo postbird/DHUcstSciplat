@@ -132,12 +132,16 @@
 		<div>
 		
 			<hr/>
-			<input  type="hidden" name="lecture_id" value="<?php echo ($lecture[0]['lecture_id']); ?>"/>
-			<a id="checkAll" href="javascript:;"class="btn btn-default">全选</a>
-			<a id="delAll" href="javascript:;" class="btn btn-default">取消全选</a>
-			<input type="submit" name='option3' value="选中导出" class="btn btn-primary">
-			<input type="submit" name='option1' value="选中标记" class="btn btn-primary">
-			<input type="submit" name='option2' value="取消标记" class="btn btn-primary">
+			<?php if($stusuper == 1): ?><input  type="hidden" name="lecture_id" value="<?php echo ($lecture[0]['lecture_id']); ?>"/>
+				<a id="checkAll" href="javascript:;"class="btn btn-default">全选</a>
+				<a id="delAll" href="javascript:;" class="btn btn-default">取消全选</a>
+				<input type="submit" name='option3' value="选中导出" class="btn btn-primary">
+				<input type="submit" name='option1' value="确认参加" class="btn btn-primary">
+				<input type="submit" name='option2' value="取消参加" class="btn btn-primary">		
+			<?php else: ?>
+				<p class=text-danger><strong>目前暂时限定科创管理员拥有确认参加讲座的权限</strong></p>
+				<p class=text-danger><strong>请关注后期系统更新</strong></p><?php endif; ?>
+			
 			
 		</div>
 		<div class="modal-footer">

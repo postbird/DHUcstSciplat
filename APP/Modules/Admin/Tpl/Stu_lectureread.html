@@ -61,6 +61,13 @@
 					      {$lecture['lcontent']}
 					    </div>
 					</div>
+					<hr>
+					<div class="form-group">
+						<label  class="col-sm-2  control-label" >限制人数:</label>
+					    <label  class="col-sm-2 control-label normalfont" >{$lecture['lnum']}</label>	
+					    <label  class="col-sm-2  control-label" >已报名:</label>
+					    <label  class="col-sm-2 control-label normalfont" >{$usercount}</label>							
+					</div>
 					<hr/>
 					<div class="form-group">
 						<label  class="col-sm-2  control-label" >主讲人:</label>
@@ -100,49 +107,46 @@
 					    </if>							
 					</div>
 					<hr/>
-					
 					<div class="form-group">
 						<div style="margin:1em auto;width:10%;">
 							<if condition="$lecture['subtime'] eq 1">
 								<label  class="control-label" >已截止</label>
-							<else/>
-								<if condition="$isapply eq 1">
-									<label  class="control-label" >已申请</label>
-								<else/>
+							<elseif  condition="$isapply eq 1"/>
+									<label  class="control-label" >已报名</label>
+							<elseif condition="$userspill eq 1"/>
+									<label  class="control-label" >人数已满</label>
+							<else />
 									<a href="javascript:void(0)" onclick="lectureapply({$lecture.lid},{$unum})">申请讲座</a>
-	   			 				</if>
 							</if>
 						</div>
-						
 					</div>
 			  		<div class="modal-footer">
 		   			 	 <a class="btn btn-primary" href="{:U('Admin/Stu/lecture',array('unum'=>$unum,'uname'=>$uname))}" target="opt"><span>返回</span></a>
 					</div>
 		</form>
 	</div>
-	
 <script>
-	
 	function lectureapply(lid,unum){
-		alert("申请后不可撤销，确认申请？");
+		alert("报名后不可撤销，确认报名？");
 		if(confirm("确认申请")){
 			$.ajax({
 				type:"POST",
 				 url:"__APP__/Admin/Stu/lectureapply/",
          		 data:{'lid':lid,'unum':unum},
-				success:function(data,textStatus,jqXHR){
-				alert("申请成功");
-					window.location.reload();
-	
+				success:function(data){
+					if(data.status=="ok"){
+						alert("报名成功");
+						window.location.reload();
+					}else{
+						alert(data.msg);
+					}
 				},
-				error:function(jqXHR,textStatus,errorThrown){
-					alert("申请失败");
+				error:function(jqXHR){
+					alert("报名失败");
 				}
 			})
-				
 			}
 			else{
-			
 				return;
 			}
 	}

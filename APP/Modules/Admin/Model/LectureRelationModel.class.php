@@ -2,7 +2,7 @@
 /*
  * 人才库与用户关联模型
  */
-Class EliteRelationModel extends RelationModel{
+Class LectureRelationModel extends RelationModel{
 	
 		//定义主表名称
 	Protected $tableName='lecture';

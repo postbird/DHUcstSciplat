@@ -151,6 +151,7 @@
    			<input type='hidden',id='uname' name='uname' value='{$uname}'>
 		   	 <a class="btn btn-primary" href="{:U('Admin/Stu/mydirectlecture',array('unum'=>$unum,'uname'=>$uname))}" target="opt"><span>返回</span></a>
 		   	 <if condition="$lecture['lcheckstatus'] eq 1">
+		   	 	<input type="submit" class="btn btn-primary" value="保 存" >
 		   	 <else/>
 		   	 	<input type="submit" class="btn btn-primary" value="保 存" >
 		   	 </if>

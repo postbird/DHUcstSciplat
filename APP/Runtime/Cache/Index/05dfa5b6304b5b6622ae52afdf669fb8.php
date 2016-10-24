@@ -12,6 +12,7 @@
   <script src="__PUBLICFILE__/js/jquery.min.js"></script>
   <script src="__PUBLICFILE__/js/bootstrap.min.js"></script>
   <script src="__PUBLICFILE__/js/wow.min.js"></script>
+  <script src="__PUBLICFILE__/js/jquery.goup.min.js"></script>
   <link rel="icon" href="__PUBLICFILE__/image/icon.png" sizes="32x32" />
 <style>
 	.loginfont{font-size:1.1em;}
@@ -31,6 +32,16 @@
   li span{float:right;}
   li span{float:right;}
 </style>
+<script>
+  $(document).ready(function () {
+            $.goup({
+                trigger: 100,
+                bottomOffset: 150,
+                locationOffset: 100,
+                titleAsText: true
+            });
+        });
+</script>
 </head>
 <body style="padding-top:70px;">
 <!--登录 modal-->

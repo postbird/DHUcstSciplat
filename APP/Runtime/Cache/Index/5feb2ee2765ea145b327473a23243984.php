@@ -12,6 +12,7 @@
   <script src="__PUBLICFILE__/js/jquery.min.js"></script>
   <script src="__PUBLICFILE__/js/bootstrap.min.js"></script>
   <script src="__PUBLICFILE__/js/wow.min.js"></script>
+  <script src="__PUBLICFILE__/js/jquery.goup.min.js"></script>
   <link rel="icon" href="__PUBLICFILE__/image/icon.png" sizes="32x32" />
 <style>
 	.loginfont{font-size:1.1em;}
@@ -31,6 +32,16 @@
   li span{float:right;}
   li span{float:right;}
 </style>
+<script>
+  $(document).ready(function () {
+            $.goup({
+                trigger: 100,
+                bottomOffset: 150,
+                locationOffset: 100,
+                titleAsText: true
+            });
+        });
+</script>
 </head>
 <body style="padding-top:70px;">
 <!--登录 modal-->
@@ -229,6 +240,13 @@
 					      <?php echo ($lecture['lcontent']); ?>
 					    </div>
 					</div>
+					<hr>
+					<div class="form-group">
+						<label  class="col-sm-2 text-center  primary-box" >限制人数:</label>
+					    <label  class="col-sm-4  text-center " ><?php echo ($lecture['lnum']); ?></label>	
+					    <label  class="col-sm-2 text-center  danger-box" >已报名:</label>
+					    <label  class="col-sm-4   text-center" ><?php echo ($usercount); ?></label>							
+					</div>
 					<hr/>
 					<div class="form-group">
 						<div class="col-sm-2 primary-box text-center">主讲人:</div>
@@ -268,12 +286,14 @@
 					
 			  		<div class="modal-footer">
 			  			<?php if( $user['unum'] == ''): ?><a class="btn btn-warning disabled" href="javascript:;" disabled>登陆后报名</a>
-						<?php else: ?>
-							<?php if($lecture['subtime'] == 1): ?><a class="btn btn-warning disabled" href="javascript:;" disabled>已经截止</a>
-		   			 		<?php elseif($isapply == 1): ?>
+		   			 	<?php elseif($isapply == 1): ?>
 		   			 			 <a class="btn btn-warning disabled" href="javascript:;" disabled>已经报名</a>
-		   			 		<?php else: ?>
-		   			 		 	 <a class="btn btn-success" href="javascript:;" onclick="lectureapply(<?php echo ($lecture["lid"]); ?>,<?php echo ($user['unum']); ?>)">报名</a><?php endif; endif; ?>
+						<?php elseif($lecture['subtime'] == 1): ?>
+		   			 			 <a class="btn btn-warning disabled" href="javascript:;" disabled>已经截止</a>
+   			 			<?php elseif($userspill == 1): ?>
+								 <a class="btn btn-danger disabled" href="javascript:;" disabled>人数已满</a>	
+	   			 		<?php else: ?>
+		   			 		 	 <a class="btn btn-success" href="javascript:;" onclick="lectureapply(<?php echo ($lecture["lid"]); ?>,<?php echo ($user['unum']); ?>)">报名</a><?php endif; ?>
 		   			 	 <a class="btn btn-primary" href="<?php echo U('Index/Index/lecturelist');?>.html" target=""><span>返回</span></a>
 					</div>
 
@@ -370,7 +390,6 @@
           success:function(data,textStatus,jqXHR){
           alert("报名成功");
             window.location.reload();
-    
           },
           error:function(jqXHR,textStatus,errorThrown){
             alert("报名失败");

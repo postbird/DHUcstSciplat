@@ -1,5 +1,19 @@
 <?php
 class StuAction extends CommonAction{
+	//判断是否是科创管理员
+	//如果是返回1 不是返回0
+	public function checkStuSuper($num){
+		$flag=0;
+		$userid=M("user")->where(array("unum"=>$num))->getField("uid");
+		$res=M("role_user")->where(array("user_id"=>$userid))->find();
+		if($res['role_id']>=3){
+			$flag= 1;
+		}else{
+			$flag= 0;
+		}
+		$this->stusuper=$flag;
+		// return $flag;
+	}
 	//========竞赛中心开始========
 	public function race(){
 		$this->unum=I("unum");
@@ -761,8 +775,11 @@ class StuAction extends CommonAction{
 
 	//========讲座中心开始========
 	public function lecture(){
-		$this->unum=I("unum");
-		$this->uname=I("uname");
+		$unum=I("unum");
+		$uname=I("uname");
+		$this->unum=$unum;
+		$this->uname=$uname;
+		$this->checkStuSuper($unum);
 		import("ORG.Util.Page");
 		$count=M('lecture')->count();
 		$page=new Page($count,12);
@@ -830,18 +847,38 @@ class StuAction extends CommonAction{
 			$isapply=0;
 		else
 			$isapply=1;
+		$userCount=M("lecture_user")->where(array("lecture_id"=>$lid,))->count();
+		if($userCount>=$lecture['lnum']){
+			$userSpill=1;
+		}else{
+			$userSpill=0;
+		}
+		$this->userspill=$userSpill;
+		$this->usercount=$userCount;
 		$this->isapply=$isapply;
 		$this->display();
 	}
 	public function lectureapply($lid=0,$unum=0){
+		$lecture=M('lecture')->where(array('lid'=>$lid,))->find();
+		$userCount=M("lecture_user")->where(array("lecture_id"=>$lid,))->count();
+		if($userCount>=$lecture['lnum']){
+			$res['status']='no';
+			$res['msg']='人数已满';
+			$this->ajaxReturn($res,'json');
+		}
 		if (! empty ( $lid ) && ! empty ( $unum )||(0==$lid  || 0== $unum )) {
-				$lecture=M('lecture')->where(array('lid'=>$lid,))->find();
 				$user=M('user')->where(array('unum'=>$unum))->find();
 				$data=array("lecture_id"=>$lid,"lecture_title"=>$lecture['ltitle'],"user_num"=>$unum,"user_name"=>$user['uname']);
-					M('lecture_user')->add($data);
+					if(M('lecture_user')->add($data)){
+						$res['status']='yes';
+						$res['msg']='报名成功';
+						$this->ajaxReturn($res,'json');
+					}
 				}
 		 else {
-					$this->error ( '获取信息失败！' );
+					$res['status']='no';
+					$res['msg']='人数已满';
+					$this->ajaxReturn($res,'获取信息失败！');
 				}
 	}
 	public function mydirectlecture(){
@@ -900,6 +937,7 @@ class StuAction extends CommonAction{
 		$uname=I("uname");
 		$this->unum=$unum;
 		$this->uname=$uname;
+		$this->checkStuSuper($unum);
 		$lid=I('lid');
 		$lecture=M('lecture_user')->where(array('lecture_id'=>$lid))->order('lpresent desc')->select();
 		$this->lecture=$lecture;

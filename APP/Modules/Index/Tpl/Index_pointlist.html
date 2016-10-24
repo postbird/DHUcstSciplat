@@ -14,12 +14,12 @@
 	 	<div class="list-group row">
 			<volist name="stu" id="v">
 			<div class="col-md-3">
- 				 <li class="list-group-item" style="margin:4px;">【{$i}】{$v.uname}<span>{$v.upoint}分</span></li>
+ 				 <li class="list-group-item" style="margin:4px;">{$v.uname}<span>{$v.upoint}分</span></li>
 			</div>
  			</volist>
 	 	</div>
-	 	<div style="height:4em;margin:0 auto;text-align:center;">
-			{$page}
+	 	<div class="text-center">
+			<ul class="pagination">{$page}</ul>
 		</div>
 	</div>
 <include file="./APP/Modules/Index/Public/all-footer.html"  />

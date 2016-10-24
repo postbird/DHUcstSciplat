@@ -42,7 +42,7 @@
 		<a class="btn btn-warning btn-xs" href="<?php echo U('Admin/SuperManage/deleteAdminLastip');?>">delete admin last ip</a>
 	</form>
 	<hr>
-		<table class="table table-hover table-striped">
+		<table class="table table-hover table-striped  table-responsive  table-condensed ">
 			<tbody>
 				<?php if(is_array($lastip)): $i = 0; $__LIST__ = $lastip;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ip): $mod = ($i % 2 );++$i;?><tr>
 						<td><a href="<?php echo U('Admin/SuperManage/ipread',array('ip'=>$ip['ip']));?>"><?php echo ($ip["ip"]); ?></a></td>
