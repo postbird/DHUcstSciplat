@@ -758,6 +758,7 @@ class StuAction extends CommonAction{
 				}
 	}
 	//========项目中心结束========
+
 	//========讲座中心开始========
 	public function lecture(){
 		$this->unum=I("unum");
@@ -832,8 +833,8 @@ class StuAction extends CommonAction{
 		$this->isapply=$isapply;
 		$this->display();
 	}
-	public function lectureapply($lid,$unum){
-		if (! empty ( $lid ) && ! empty ( $unum )) {
+	public function lectureapply($lid=0,$unum=0){
+		if (! empty ( $lid ) && ! empty ( $unum )||(0==$lid  || 0== $unum )) {
 				$lecture=M('lecture')->where(array('lid'=>$lid,))->find();
 				$user=M('user')->where(array('unum'=>$unum))->find();
 				$data=array("lecture_id"=>$lid,"lecture_title"=>$lecture['ltitle'],"user_num"=>$unum,"user_name"=>$user['uname']);

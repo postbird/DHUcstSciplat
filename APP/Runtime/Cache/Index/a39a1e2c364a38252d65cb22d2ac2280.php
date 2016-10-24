@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>科创管理平台首页</title>
+	<title><?php echo ($page_title); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css">
   <link rel="stylesheet" href="__PUBLICFILE__/css/bootstrap.css">
@@ -12,10 +12,8 @@
   <script src="__PUBLICFILE__/js/jquery.min.js"></script>
   <script src="__PUBLICFILE__/js/bootstrap.min.js"></script>
   <script src="__PUBLICFILE__/js/wow.min.js"></script>
-    <link rel="icon" href="__PUBLICFILE__/image/icon.png" sizes="32x32" />
+  <link rel="icon" href="__PUBLICFILE__/image/icon.png" sizes="32x32" />
 <style>
-	body{width:100%;margin:0 auto;}
-	.menu{font-size:1.2em;}
 	.loginfont{font-size:1.1em;}
   .nav-font a{color:#333;}
   .navbar-inverse .navbar-nav > li > a {
@@ -25,20 +23,14 @@
     color: #000000 ;
     /*border-bottom: solid 1px #fff;*/
     background-color: #fdfdfd;
-
   }
+  .content-top{margin-top:50px}
+  .menu{font-size:1.2em;}
+  .menu-title{font-size:1.1em;}
+  li a{color:black;}
+  li span{float:right;}
+  li span{float:right;}
 </style>
-<script>
-function iFrameHeight() {  
-	var ifm= document.getElementById("iframepage");  
-	var subWeb = document.frames ? document.frames["iframepage"].document : ifm.contentDocument;  
-	if(ifm != null && subWeb != null) {
-	   ifm.height = subWeb.body.scrollHeight;
-	   ifm.width = subWeb.body.scrollWidth;
-	}  
-	}   
-</script>
-<!-- background-image: url(__PUBLICFILE__/image/bg.png);background-size: cover; -->
 </head>
 <body style="padding-top:70px;">
 <!--登录 modal-->
@@ -171,7 +163,7 @@ function iFrameHeight() {
   </div>
   <div class="col-md-6 col-xs-6">
      <div class=" text-right overflow-div"style="text-align:right;padding-top:20px;">
-            <?php if($user != ''): ?><h4 ><a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-user"></i>   用户:<?php echo ($user['uname']); ?>(<?php echo ($user['unum']); ?>)</a></h4>
+            <?php if($user != '' ): ?><h4 ><a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-user"></i>   用户:<?php echo ($user['uname']); ?>(<?php echo ($user['unum']); ?>)</a></h4>
             <?php else: ?>
               <h4 >
                 <!-- <a href="<?php echo U('Admin/Login/index');?>"><i class="fa fa-user"></i>   登录</a> -->
@@ -200,14 +192,14 @@ function iFrameHeight() {
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="container">
         <ul class="nav navbar-nav menu">
-          <li class="nav-font"><a href="__ROOT__" >首页 <span class="sr-only">(current)</span></a></li>
-          <li class="nav-font"><a href="<?php echo U('Index/Index/newslist');?>" target="opt">新闻</a></li>
-          <li class="nav-font"><a href="<?php echo U('Index/Index/lecturelist');?>" target="opt">讲座</a></li>
-          <li class="nav-font"><a href="<?php echo U('Index/Index/racelist');?>" target="opt">竞赛</a></li>
-          <li class="nav-font"><a href="<?php echo U('Index/Index/projectnewslist');?>" target="opt">项目</a></li>
-          <li class="nav-font"><a href="<?php echo U('Index/Index/elite');?>" target="opt">人才库</a></li>
-          <li class="nav-font"><a href="<?php echo U('Index/Index/about');?>" target="opt">关于</a></li>
-          <li class="nav-font"><a href="<?php echo U('Index/Index/suggest');?>" target="opt">反馈</a></li>
+          <li class="nav-font"><a href="__ROOT__/" >首页 <span class="sr-only">(current)</span></a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/newslist');?>.html" target="">新闻</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/lecturelist');?>.html" target="">讲座</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/racelist');?>.html" target="">竞赛</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/projectnewslist');?>.html" target="">项目</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/elite');?>.html" target="">人才库</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/about');?>.html" target="">关于</a></li>
+          <li class="nav-font"><a href="<?php echo U('Index/Index/suggest');?>.html" target="">反馈</a></li>
         </ul>
        
       </div>
@@ -218,6 +210,7 @@ function iFrameHeight() {
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 <div class="page-header">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -228,11 +221,6 @@ function iFrameHeight() {
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-     <!--  <div class="item active">
-        <img src="__PUBLICFILE__/image/banner1.jpg" alt="cstkc-banner1">
-        <div class="carousel-caption">
-        </div>
-      </div> -->
       <div class="item active">
         <img src="__PUBLICFILE__/image/banner2.jpg" alt="cstkc-banner2">
         <div class="carousel-caption">
@@ -252,12 +240,123 @@ function iFrameHeight() {
     </a>
   </div>
 </div>
-<div class="container">
+
+<div class="container" style="font-size:16px;">
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-primary panel_col panel-item-box">
+      <div class="panel-heading menu-title"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;新闻</div>
+      <?php if($newsFlag == 1): ?><ul class="list-group ">
+          <?php if(is_array($news)): foreach($news as $key=>$v): ?><li class="list-group-item"><a href="<?php echo U('Index/Index/news',array('view'=>$v['nid']));?>.html"><?php echo ($v["ntitle"]); ?></a><span><?php echo ($v["ndate"]); ?></span></li><?php endforeach; endif; ?>
+          </ul>
+          <ul class="text-right" style="padding-top:10px;padding-right:20px;">
+          <a href="<?php echo U('Index/Index/newslist.html');?>" >更多>></a>
+          </ul>
+      <?php else: ?>
+        <h4 class="text-center red-font" style="padding-top:40px;">
+          <i class="fa fa-warning"></i>
+          <br>暂无新闻
+        </h4><?php endif; ?>
+    </div>
+  </div> 
+
+  <div class="col-md-4">
+    <div class="panel panel-primary panel_col panel-item-box">
+    
+      <div class="panel-heading menu-title"><i class="fa fa-qrcode"></i>&nbsp;&nbsp;讲座</div>
+
+      <?php if($lectureFlag == 1): ?><ul class="list-group">
+          <?php if(is_array($lecture)): foreach($lecture as $key=>$v): ?><li class="list-group-item"><a href="<?php echo U('Index/Index/lecture',array('view'=>$v['lid']));?>.html"><?php echo ($v["ltitle"]); ?></a><span><?php echo ($v["ldatestart"]); ?></span></li><?php endforeach; endif; ?>
+        </ul>
+         <ul class="text-right" style="padding-top:10px;padding-right:20px;">
+          <a href="<?php echo U('Index/Index/lecturelist');?>.html" >更多>></a>
+          </ul>
+        <?php else: ?>
+        <h4 class="text-center red-font" style="padding-top:40px;">
+          <i class="fa fa-warning"></i>
+          <br>暂无讲座
+        </h4><?php endif; ?>
+    </div>
+  </div> 
+  <div class="col-md-4">
+    <div class="panel panel-danger panel_col panel-item-box">
+      <div class="panel-heading menu-title">
+        <i class="fa fa-trophy"></i>&nbsp;&nbsp;科创达人榜 
+        <span style="float:right;"><small><a href="<?php echo U('Index/Index/pointlist');?>.html" >更多>></a></small></span>
+      </div>
+      <?php if($userFlag == 1): ?><ul class="list-group">
+          <?php if(is_array($stu)): foreach($stu as $key=>$v): ?><li class="list-group-item"><?php echo ($v["uname"]); ?><span><?php echo ($v["upoint"]); ?>分</span></li><?php endforeach; endif; ?>
+        </ul>
+       <?php else: ?>
+        <h4 class="text-center red-font" style="padding-top:40px;">
+          <i class="fa fa-warning"></i>
+          <br>等你上榜
+        </h4><?php endif; ?> 
+    </div>
+  </div>  
+</div>
+<hr/>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-info panel_col panel-item-box">
+    
+      <div class="panel-heading menu-title"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;竞赛</div>
+
+      <?php if($raceFlag == 1): ?><ul class="list-group">
+          <?php if(is_array($race)): foreach($race as $key=>$v): ?><li class="list-group-item"><a href="<?php echo U('Index/Index/race',array('view'=>$v['rid']));?>.html"><?php echo ($v["rname"]); ?></a><span><?php echo ($v["rdatestart"]); ?></span></li><?php endforeach; endif; ?>
+        </ul>
+         <ul class="text-right" style="padding-top:10px;padding-right:20px;">
+          <a href="<?php echo U('Index/Index/racelist');?>.html" >更多>></a>
+          </ul>
+
+         <?php else: ?>
+        <h4 class="text-center red-font" style="padding-top:40px;">
+          <i class="fa fa-warning"></i>
+          <br>暂无信息
+        </h4><?php endif; ?>
+    </div>
+  </div> 
+  <div class="col-md-4">
+    <div class="panel panel-info panel_col panel-item-box">
+    
+      <div class="panel-heading menu-title"><i class="fa fa-database"></i>&nbsp;&nbsp;项目</div>
+
+      <?php if($projectnewsFlag == 1): ?><ul class="list-group">
+          <?php if(is_array($projectnews)): foreach($projectnews as $key=>$v): ?><li class="list-group-item"><a href="<?php echo U('Index/Index/projectnews',array('view'=>$v['pid']));?>.html"><?php echo ($v["ptitle"]); ?></a><span><?php echo ($v["pdatestart"]); ?></span></li><?php endforeach; endif; ?>
+        </ul>
+        <ul class="text-right" style="padding-top:10px;padding-right:20px;">
+          <a href="<?php echo U('Index/Index/projectnewslist');?>.html">更多>></a>
+          </ul>
+        <?php else: ?>
+        <h4 class="text-center red-font" style="padding-top:40px;">
+          <i class="fa fa-warning"></i>
+          <br>暂无信息
+        </h4><?php endif; ?>
+    </div>
+  </div> 
+  <div class="col-md-4">
+    <div class="panel panel-info panel_col panel-item-box">
+    
+      <div class="panel-heading menu-title"><i class="fa fa-mortar-board"></i>&nbsp;&nbsp;人才库</div>
+
+      <?php if($eliteFlag == 1): ?><ul class="list-group">
+          <?php if(is_array($elite)): foreach($elite as $key=>$v): ?><li class="list-group-item"><?php echo ($v["ename"]); ?></li><?php endforeach; endif; ?>
+        </ul>
+        <ul class="text-right" style="padding-top:10px;padding-right:20px;">
+          <a href="<?php echo U('Index/Index/elite');?>.html" >详情>></a>
+          </ul>
+        <?php else: ?>
+        <h4 class="text-center red-font" style="padding-top:40px;">
+          <i class="fa fa-warning"></i>
+          <br>暂无信息
+        </h4><?php endif; ?>  
+    </div>
+  </div>  
+</div>
   
-<div class="maincontent">
-        <iframe name="opt" id="iframepage" src="<?php echo U('Index/Index/home');?>" frameborder="0" scrolling="no" style="width:100%;" onLoad="iFrameHeight()"></iframe>
-</div>
-</div>
+</div><!--container-->
+
 <div class="container text-center" >
   <footer style="color:#cccccc;">©2016 Powered By 东华大学计算机科学与技术学院科技创新中心
   <div style="marin:0 auto;">
@@ -330,11 +429,37 @@ function iFrameHeight() {
     },'json');
     }
     //enter响应
-    function onEnterDown(){
-    if(window.event.keyCode==13){
-        logincheck();
+    // function onEnterDown(){
+    // if(window.event.keyCode==13){
+    //     logincheck();
+    //   }
+    //     } 
+    function lectureapply(lid=0,unum=0){
+      if(lid==0 || unum==0){
+        alert("请先登录");
+        return ;
       }
-        } 
+      alert("报名后不可撤销，确认报名？");
+      if(confirm("再次确认报名!")){
+        $.ajax({
+          type:"POST",
+          url:"__APP__/Admin/Stu/lectureapply/",
+          data:{'lid':lid,'unum':unum},
+          success:function(data,textStatus,jqXHR){
+          alert("报名成功");
+            window.location.reload();
     
+          },
+          error:function(jqXHR,textStatus,errorThrown){
+            alert("报名失败");
+          }
+        })
+          
+        }
+        else{
+        
+          return;
+        }
+    }
     </script>
 </html>

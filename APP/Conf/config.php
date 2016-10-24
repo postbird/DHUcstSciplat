@@ -18,5 +18,7 @@ return array(
      'DB_PREFIX'=>'sp_',
 	//默认过滤函数
 	'DEFAULT_FILTER'=>'htmlspecialchars',
+	// 标签最大嵌套
+	'TAG_NESTED_LEVEL' =>5,
 );
 ?>

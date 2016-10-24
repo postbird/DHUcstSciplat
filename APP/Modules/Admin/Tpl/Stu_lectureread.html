@@ -104,10 +104,10 @@
 					<div class="form-group">
 						<div style="margin:1em auto;width:10%;">
 							<if condition="$lecture['subtime'] eq 1">
-								<label " class="control-label" >已截止</label>
+								<label  class="control-label" >已截止</label>
 							<else/>
 								<if condition="$isapply eq 1">
-									<label " class="control-label" >已申请</label>
+									<label  class="control-label" >已申请</label>
 								<else/>
 									<a href="javascript:void(0)" onclick="lectureapply({$lecture.lid},{$unum})">申请讲座</a>
 	   			 				</if>
@@ -128,7 +128,8 @@
 		if(confirm("确认申请")){
 			$.ajax({
 				type:"POST",
-				url:"__URL__/lectureapply/lid/"+lid+"/unum/"+unum,
+				 url:"__APP__/Admin/Stu/lectureapply/",
+         		 data:{'lid':lid,'unum':unum},
 				success:function(data,textStatus,jqXHR){
 				alert("申请成功");
 					window.location.reload();

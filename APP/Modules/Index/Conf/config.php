@@ -5,7 +5,8 @@ return array(
 	'__PUBLICFILE__'=>__ROOT__.'/PublicFile',
     ),
     'URL_HTML_SUFFIX'=>'',
-	
+	// / 标签最大嵌套
+	'TAG_NESTED_LEVEL' =>5,
     
    
 );

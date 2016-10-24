@@ -141,5 +141,5 @@ return  array(
 
     'OUTPUT_ENCODE'         =>  false, // 页面压缩输出
     'HTTP_CACHE_CONTROL'    =>  'private', // 网页缓存控制
-
+    'TAG_NESTED_LEVEL'      =>  5,//最大嵌套
 );

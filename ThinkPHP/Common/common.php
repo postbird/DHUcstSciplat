@@ -138,6 +138,18 @@ function I($name,$default='',$filter=null) {
         $data       =	 isset($default)?$default:NULL;
     }
     is_array($data) && array_walk_recursive($data,'think_filter');
+    // if(stripos($name,"'")===false && stripos($name,";")===false  && stripos($name,".")===false && stripos($name,",")===false  && stripos($name,'"')===false  && stripos($name,"(")===false && stripos($name,")")===false ){
+    //     return $data;
+    // }else{
+    //     //错误记录 修改get参数
+    //     $ip=get_client_ip2();
+    //     $data['description']=$description;
+    //     $data['ip']=$ip;
+    //     $data['time_stamp']=time();
+    //     $data['time_date']=date("Y-m-d H:i:s",$data['time_stamp']);
+    //     M("lastsql")->
+    //     header("Location:http://218.193.156.232");
+    // }
     return $data;
 }
 

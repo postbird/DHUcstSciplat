@@ -1,9 +1,9 @@
 <?php
 class IndexAction extends Action{
-	
-	public function index(){
+	public function _initialize(){
 		// //ip追踪描述desc 说明是哪个module 并且是谁
 		// $description=__ACTION__."-";
+		$user='';
 		if(isset($_SESSION['uid'])){
 			$user=M('user')->where(array('uid'=>$_SESSION['uid']))->find();
 			// p($user);die;
@@ -31,15 +31,24 @@ class IndexAction extends Action{
 		// }else{
 		// 		M("lastip")->add($data);
 		// 	}
-
 		$this->user=$user;
+	}
+	public function redirectParam($param){
+		if(count($param)==0){
+			$this->redirect("Index.html");
+			return;
+		}
+	}
+	public function index(){
+		$this->home();
+		$this->page_title="计算机学院科创管理系统";
 		$this->display();
 	}
 	public function home(){
 		$news=M('news')->where(array('nstatus'=>1,))->order('ntop desc,ndate desc,nid desc')->limit(5)->select();
 		//p($news);
 		$lecture=M('lecture')->where(array('lcheckstatus'=>1,'lstatus'=>1,))->limit(5)->order('ldatestart desc')->select();
-		$user=M('user')->where("usuper = 0 AND upoint >0 AND uflag <> '教师'")->limit(10)->order('upoint desc')->select();
+		$stu=M('user')->where("usuper = 0 AND upoint >0 AND uflag <> '教师'")->limit(10)->order('upoint desc')->select();
 		$race=M('race')->where(array('rstatus'=>1,))->order('rdatestart desc, rid desc')->limit(5)->select();
 		$projectnews=M('projectnews')->where(array('pstatus'=>1,))->order('pdatestart desc, pid desc')->limit(5)->select();
 		$elite=M('elite')->select();
@@ -53,7 +62,7 @@ class IndexAction extends Action{
 		}else{
 			$lectureFlag=1;
 		}
-		if(count($user)==0){
+		if(count($stu)==0){
 			$userFlag=0;
 		}else{
 			$userFlag=1;
@@ -81,28 +90,43 @@ class IndexAction extends Action{
 		$this->eliteFlag=$eliteFlag;
 		$this->news=$news;
 		$this->lecture=$lecture;
-		$this->user=$user;
+		$this->stu=$stu;
 		$this->race=$race;
 		$this->projectnews=$projectnews;
 		$this->elite=$elite;
+		// $this->display();
+	}
+	public function pointlist(){
+		import("ORG.Util.Page");
+		$count=M('user')->where("usuper = 0 AND upoint >0 AND uflag <> '教师'")->count();
+		$page=new Page($count,100);
+		$limit = $page->firstRow . ',' . $page->listRows;
+		$stu=M('user')->limit($limit)->where("usuper = 0 AND upoint >0 AND uflag <> '教师'")->order('upoint desc')->select();
+		$this->redirectParam($stu);
+		$this->stu=$stu;
+		$this->page=$page->show();
+		$this->page_title="科创积分榜 | 计算机学院科创管理系统";
 		$this->display();
 	}
 	public function newslist(){
 		import("ORG.Util.Page");
 		$count=M('news')->count();
-		$page=new Page($count,20);
+		$page=new Page($count,30);
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$news=M('news')->limit($limit)->where(array('nstatus'=>1,))->order('ntop desc,ndate desc,nid desc')->select();
-		
 		$this->news=$news;
-		$this->page=$page->show ();
-		$this->display();
+		$this->redirectParam($news);
 		
+		$this->page=$page->show ();
+		$this->page_title="新闻 | 计算机学院科创管理系统";
+		$this->display();
 	}
 	public function news(){
-		$nid=I("nid");
+		$nid=I("view");
 		$news=M('news')->where(array('nid'=>$nid))->find();
 		$this->news=$news;
+		$this->redirectParam($news);
+		$this->page_title=$news['ntitle']." | 计算机学院科创管理系统";
 		//p($news);
 		$this->display();
 	}
@@ -112,16 +136,35 @@ class IndexAction extends Action{
 		$page=new Page($count,20);
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$lecture=M('lecture')->limit($limit)->where(array('lcheckstatus'=>1,'lstatus'=>1,))->order('ldatestart desc')->select();
-		
+		$this->redirectParam($lecture);
+		$this->page_title="讲座 | 计算机学院科创管理系统";
 		$this->lecture=$lecture;
+		
 		$this->page=$page->show ();
 		$this->display();
 	}
 	public function lecture(){
-		$lid=I("lid");
+		$lid=I("view");
+		$unum=$this->user['unum'];
 		$lecture=M('lecture')->where(array('lid'=>$lid))->find();
+		$this->redirectParam($lecture);
+		//判定是否过期
+		$sub=(time()-strtotime($lecture['ldateend']))-1*24*60*60;
+		if($sub>0){
+			$lecture['subtime']=1;
+		}
+		else 
+			$lecture['subtime']=0;
+		//判定是否已经报名
+		$lectureuser=M('lecture_user')->where(array('lecture_id'=>$lid,'user_num'=>$unum))->find();
+		if(empty($lectureuser))
+			$isapply=0;
+		else
+			$isapply=1;
+		//输出
 		$this->lecture=$lecture;
-		//p($news);
+		$this->isapply=$isapply;
+		$this->page_title=$lecture['ltitle']." | 计算机学院科创管理系统";
 		$this->display();
 	}
 	
@@ -131,17 +174,20 @@ class IndexAction extends Action{
 		$page=new Page($count,20);
 		$limit = $page->firstRow . ',' . $page->listRows;
 		$race=M('race')->limit($limit)->where(array('rstatus'=>1,))->order('rdatestart desc, rid desc')->select();
-		
+		$this->redirectParam($race);
 		$this->race=$race;
+		$this->page_title="竞赛 | 计算机学院科创管理系统";
 		$this->page=$page->show ();
 		$this->display();
 	}
 	public function race(){
-		$rid=I("rid");
+		$rid=I("view");
 		$race=M('race')->where(array('rid'=>$rid))->find();
 		$this->race=$race;
+		$this->redirectParam($race);
 		//p($race);
 		//p($news);
+		$this->page_title=$race['rname']." | 计算机学院科创管理系统";
 		$this->display();
 	}
 	public function projectnewslist(){
@@ -152,29 +198,30 @@ class IndexAction extends Action{
 		$projectnews=M('projectnews')->limit($limit)->where(array('pstatus'=>1,))->order('pdatestart desc, pid desc')->select();
 		$this->projectnews=$projectnews;
 		$this->page=$page->show ();
+		$this->page_title="项目 | 计算机学院科创管理系统";
 		$this->display();
 	}
 	public function projectnews(){
-		$pid=I("pid");
+		$pid=I("view");
 		$projectnews=M('projectnews')->where(array('pid'=>$pid))->find();
 		$this->projectnews=$projectnews;
+		$this->redirectParam($projectnews);
 		//p($race);
 		//p($news);
+		$this->page_title=$projectnews['ptitle']." | 计算机学院科创管理系统";
 		$this->display();
 	}
-	
+
 	public function elite(){
-		$this->unum=I("unum");
-		$this->uname=I("uname");
 		$elitegroup=D('EliteRelation')->relation(true)->order('eid ')->select();
 		//p($elitegroup);
 		$this->elitegroup=$elitegroup;
+		$this->page_title="科创人才库 | 计算机学院科创管理系统";
 		$this->display();
 	}
 	public function downfile(){
-		
 			header("Content-type:text/html;charset=utf-8"); 
-			$filename=$_GET['filename'];
+			$filename=I('back');
 			
 			header('Content-Disposition: attachment; filename="'.$filename.'"'); //指定下载文件的描述
 			header('Content-Length:'.filesize($filename)); //指定下载文件的大小
@@ -182,9 +229,11 @@ class IndexAction extends Action{
 			readfile($filename);
 	}
 	public function about(){
+		$this->page_title="版本历史 | 计算机学院科创管理系统";
 		$this->display();
 	}
 	public function suggest(){
+		$this->page_title="建议反馈 | 计算机学院科创管理系统";
 		$this->display();
 	}
 	//用户注册行为

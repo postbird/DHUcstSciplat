@@ -1,49 +1,32 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-<meta charset="UTF-8">
-<title>Document</title>
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css">
-  <link rel="stylesheet" href="__PUBLICFILE__/css/bootstrap.css">
-  <link rel="stylesheet" href="__PUBLICFILE__/css/font-awesome.min.css">
-  <link rel="stylesheet" href="__PUBLICFILE__/css/animate.min.css">
-  <link rel="stylesheet" href="__PUBLICFILE__/css/all.css">
-  <script src="__PUBLICFILE__/js/jquery.min.js"></script>
-  <script src="__PUBLICFILE__/js/bootstrap.min.js"></script>
-  <script src="__PUBLICFILE__/js/wow.min.js"></script>
+<include file="./APP/Modules/Index/Public/all-index.html"  title="{$page_title}"/>
+
 <style>
 	.head{text-align:center;}
-	a{target:"opt";}
 	.page-header{height:400px;}
 	.menu{font-size:1.2em;}
 	.menu-title{font-size:1.1em;}
 	li a{color:black;}
-	li span{float:right;}
 </style>
-</head>
-<body>
-	<div class=''>
-		<h2 class='head'>¿Æ´´ÈË²Å·Ö×éÁĞ±í</h2>
+	<div class='container content-top'>
+		<h2 class='head'>ç§‘åˆ›äººæ‰åº“</h2>
 		<hr/>
-		
 	 	<foreach name='elitegroup' item='v' key='i'>
-				<label for="usernum" class="col-sm-2 control-label" ><div class="primary-box"><h4>·Ö×é{$i+1}:&nbsp;&nbsp;&nbsp;{$v['ename']}</h4></div></label>
+				<label for="usernum" class="col-sm-2 control-label" ><div class="primary-box"><h4>åˆ†ç»„{$i+1}:&nbsp;&nbsp;&nbsp;{$v['ename']}</h4></div></label>
 			 	<div class="col-sm-10  ">
 					<div class="col-sm-12 ">
 						<table class="table table-hover table-striped table-responsive text-center" >
 							<thead>
 								<tr>
-									<th class="text-center">Ñ§ºÅ</th>
-									<th class="text-center">ĞÕÃû</th>
+									<!-- <th class="text-center">å­¦å·</th> -->
+									<th class="text-center">å§“å</th>
 								</tr>
 							</thead>
 							<tbody>
 								<foreach name='v.elite' item='u'>
 							    	<tr>
-							    		<td>
+							    		<!-- <td>
 							    			{$u['unum']}&nbsp;&nbsp;
-							    		</td>
+							    		</td> -->
 							    		<td>
 							    			{$u['uname']}
 							    		</td>
@@ -60,7 +43,4 @@
 		</foreach>
 	</div>
 	
-
-	
-</body>
-</html>
+<include file="./APP/Modules/Index/Public/all-footer.html"  />

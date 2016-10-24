@@ -1,0 +1,25 @@
+<include file="./APP/Modules/Index/Public/all-index.html"  title="{$page_title}"/>
+<style>
+	.head{text-align:center;}
+	.menu{font-size:1.2em;}
+	.menu-title{font-size:1.1em;}
+	li a{color:black;}
+</style>
+	<div class='container content-top'>
+		<div class='page-header'>
+			<h3 class="text-center">
+				科创积分榜
+			</h3>
+		</div>
+	 	<div class="list-group row">
+			<volist name="stu" id="v">
+			<div class="col-md-3">
+ 				 <li class="list-group-item" style="margin:4px;">【{$i}】{$v.uname}<span>{$v.upoint}分</span></li>
+			</div>
+ 			</volist>
+	 	</div>
+	 	<div style="height:4em;margin:0 auto;text-align:center;">
+			{$page}
+		</div>
+	</div>
+<include file="./APP/Modules/Index/Public/all-footer.html"  />
