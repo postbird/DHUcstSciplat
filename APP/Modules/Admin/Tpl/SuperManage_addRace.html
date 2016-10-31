@@ -78,19 +78,26 @@
 		        <form id="form1" method='post' action="__URL__/raceinsert" class="form-horizontal" enctype="multipart/form-data">
 			
 				  	<div class="form-group">
-					 	<div class="col-sm-10 col-sm-offset-1">
+				  		<label for="" class="col-sm-2 control-label">竞赛名称</label>
+					 	<div class="col-sm-8">
 					      <input type='text' class="form-control " id="name" name="name"  placeholder="竞赛名称">
 					    </div>
 				    </div>
 					<div class="form-group">
-						<label for="username" class="col-sm-2 control-label" >开始日期:</label>
+						<label for="username" class="col-sm-2 control-label" >系统录入开始日期:</label>
 					    <div class="col-sm-3">
 					      <input type="text" class="form-control " id="datestart" name="datestart"  onClick="WdatePicker()" placeholder="不能为空">
 					    </div>
-					    <label for="username" class="col-sm-2  control-label" >截止日期:</label>
+					    <label for="username" class="col-sm-2  control-label" >系统录入截止日期:</label>
 					    <div class="col-sm-3">
 					      <input type="text" class="form-control " id="dateend" name="dateend"  onClick="WdatePicker()" placeholder="不能为空">
 					    </div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">竞赛时间</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control"id="rdate"name="rdate" placeholder="竞赛时间是比赛的时间，手动填写" required="true">
+						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-10 col-sm-offset-1">

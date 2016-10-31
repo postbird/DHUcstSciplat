@@ -1,0 +1,138 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link type="text/css" rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css"/><link rel="stylesheet" type="text/css" href="__PUBLIC__/jquery-easyui-1.3.5/themes/default/easyui.css"><link rel="stylesheet" type="text/css" href="__PUBLIC__/jquery-easyui-1.3.5/themes/icon.css"><link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap.css"><link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap-theme.css"><link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/bootstrap-responsive.min.css"><script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script><script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.js"></script><script type="text/javascript" src="__PUBLIC__/bootstrap/bootstrap.js"></script><script type="text/javascript" src="__PUBLIC__/jquery-easyui-1.3.5/jquery.easyui.min.js"></script><style>		.head{text-align:center;}
+		.container{width:1000px;}
+		.red{color:red;}
+		.blue{color:blue;}
+		.operate{color:#428bca;}
+		.modal-dialog{width:40%;}
+		.inputpadding{padding-left:1px;}
+		.pantssize{font-size:14px;}
+		.back{position:absolute;right:10px;top:10px;}
+		
+	</style><script></script><script type="text/javascript" src="__ROOT__/Data/Ueditor/ueditor.config.js"></script><script type="text/javascript" src="__ROOT__/Data/Ueditor/ueditor.all.min.js"></script></head><body><div class='container'><div class="well"><p class="text-danger">看到这个页面说明你的项目申报没有通过科创审核,请注意查看未通过原因，并认真填写相关信息</p><p>其中,队长不可更改，但是队员可以进行更改。指导老师需要重新选择，最多两名，可以只选择一名。项目附件必须重新上传！</p></div><h2 class='head'>项目重新申请信息填写</h2><hr/><form id="form2" method='post' action="__URL__/mynoprojectupdate" class="form-horizontal" enctype="multipart/form-data"><div class="form-group"><label for="username" class="col-sm-2  control-label" >管理员审核:</label><div class="col-sm-5" style="margin-top:7px;"><?php if($myproject['pstatus'] == 0): ?>未审核
+							 <?php else: if($myproject['pstatus'] == 1): ?>已通过
+								<?php else: ?>									未通过
+									<p class="text-danger"><strong><?php echo ($myproject['gdescription']); ?></strong></p><?php endif; endif; ?></div></div><div class="form-group"><label for="" class="col-sm-2  control-label" >学校审核:</label><div class="col-sm-5" style="margin-top:7px;"><?php if($myproject['pleaderstatus'] == 0): ?>未审核
+							<?php else: if($myproject['pleaderstatus'] == 1): ?>已通过
+								<?php else: ?>								未通过
+									<p class="text-danger"><strong><?php echo ($myproject['sdescription']); ?></strong></p><?php endif; endif; ?></div></div><hr><div class="form-group"><label for="username" class="col-sm-2  control-label" >项目来源:</label><div class="col-sm-9"><input type="text" class="form-control " name="ftitle" value="<?php echo ($myproject['ftitle']); ?>" readonly="true"><input type="hidden" name="fid" value="<?php echo ($myproject['fid']); ?>"></div></div><div class="form-group"><label for="username" class="col-sm-2  control-label" >项目名称:</label><div class="col-sm-9"><input type="text"class="form-control" id="title" name="title" value="<?php echo ($myproject['pname']); ?>"></div></div><div class="form-group" ><label for="" class="col-sm-2  control-label" >项目级别:</label><div class="col-sm-2" style="margin-top:7px;"><input type="text" readonly class=" form-control " name="level"value="<?php echo ($myproject['plevel']); ?>"></div><label for="username" class="col-sm-2  control-label" >项目类型:</label><div class="col-sm-3"><select id="class" name="class" class="form-control" ><?php if($myproject['pclass'] == '创新训练'): ?><option value='创新训练' selected='selected'>创新训练</option><?php else: ?><option value='创新训练'>创新训练</option><?php endif; if($myproject['pclass'] == '创业训练'): ?><option value='创业训练' selected='selected'>创业训练</option><?php else: ?><option value='创业训练'>创业训练</option><?php endif; if($myproject['pclass'] == '创业实践'): ?><option value='创业实践' selected='selected'>创业实践</option><?php else: ?><option value='创业实践'>创业实践</option><?php endif; ?></select></div></div><div class="form-group"><label for="username" class="col-sm-2  control-label" >学生人数:</label><div class="col-sm-3"><input type="number" class="form-control" id="number" name="number"value="<?php echo ($myproject['pnumber']); ?>"required></div><label for="username" class="col-sm-2  control-label" >一级学科:</label><div class="col-sm-4"><select id="father" name="father" class="form-control"><?php if($myproject['pfather'] == '计算机科学与技术'): ?><option value='计算机科学与技术' selected='selected'>计算机科学与技术</option><?php else: ?><option value='计算机科学与技术'>计算机科学与技术</option><?php endif; if($myproject['pfather'] == '软件工程'): ?><option value='软件工程' selected='selected'>软件工程</option><?php else: ?><option value='软件工程'>软件工程</option><?php endif; ?></select></div></div><div class="form-group"><label class="col-sm-12" ><p class="text-danger"><strong>队长不可更改</strong></p></label><label for="username" class="col-sm-2  control-label" >组成员:</label><label for="username" class="col-sm-2  control-label" >学号</label><label for="username" class="col-sm-2 col-sm-offset-1 control-label" >姓名</label><div class="col-sm-2 col-sm-offset-2 " style="padding-top:7px;"><a href="javascript:void(0)" onclick="addStu()">新增+</a></div></div><div class="" id="stugroup"><?php if(is_array($myproject['user'])): foreach($myproject['user'] as $i=>$v): ?><div class="form-group"><div class="col-sm-3 col-sm-offset-2 stumargintop"><?php if($v['uprofession'] == '学生'): if($v['unum'] == $myproject['pcaptainnum']): ?><input type="text" class="form-control" id="num" name="num[]" value="<?php echo ($v['unum']); ?>" readonly><?php else: ?><input type="text" class="form-control" id="num" name="num[]" value="<?php echo ($v['unum']); ?>" ><?php endif; endif; ?></div><div class="col-sm-3  stumargintop"><?php if($v['uprofession'] == '学生'): if($v['unum'] == $myproject['pcaptainnum']): ?><input type="text" class="form-control" id="name" name="name[]" value="<?php echo ($v['uname']); ?>" readonly><?php else: ?><input type="text" class="form-control" id="name" name="name[]" value="<?php echo ($v['uname']); ?>" ><?php endif; endif; ?></div><?php if($v['uprofession'] == '学生'): ?><div class="col-sm-2 delete" ><a href="javascript:void(0)" onclick="deleterows(this)">删除</a></div><?php endif; ?></div><?php endforeach; endif; ?></div><hr/><div class="form-group"><label for="username" class="col-sm-2  control-label" >指导老师:</label><div class="col-sm-6" id="teachgroup"><div class="col-sm-6"><select id="teachernum" name="teachernum[]" class="form-control"><option value='0'>=请选择指导老师=</option><?php if(is_array($teacher)): foreach($teacher as $key=>$v): ?><option value="<?php echo ($v['unum']); ?>"><?php echo ($v['uname']); ?></option><?php endforeach; endif; ?></select></div><div class="col-sm-6"><select id="teachernum" name="teachernum[]" class="form-control"><option value='0'>=请选择指导老师=</option><?php if(is_array($teacher)): foreach($teacher as $key=>$v): ?><option value="<?php echo ($v['unum']); ?>"><?php echo ($v['uname']); ?></option><?php endforeach; endif; ?></select></div></div><div class="col-md-2"><label for=""><p class="text-danger">重新选择,最多两名</p></label></div></div><div class="form-group"><hr/><label for="username" class="col-sm-2  control-label" >项目简介:</label><label class="col-sm-3  control-label"  style='color:blue;'>字数在100字以内</label></div><div class="form-group"><div class="col-sm-10 col-sm-offset-1"><textarea  id="content" name="content" class="form-control" required style="height:200px;"><?php echo ($myproject['pcontent']); ?></textarea></div></div><div class="form-group" id="applydiv"><label for="username" class="col-sm-2  control-label" >注意*:</label><span class="text-danger">如果项目申请书没有更改，则无需上传，继续使用上次的申请书。</span><br><span>如果项目申请书修改过，请重新上传项目申请书(大小不超过10M，文件类型为.doc,.docx)：</span></div><div class="form-group" ><label for="username" class="col-sm-2  control-label" >附件:</label><input type='file' name="raceFile" id='raceFile' /><input type='hidden' name="paccessory" id='paccessory' value="<?php echo ($myproject['paccessory']); ?>"/><div class="col-sm-8 col-sm-offset-2" style='margin-top:7px;'><?php if($myproject['paccessory'] == ''): else: ?><a href="<?php echo U('Admin/Stu/downracefile');?>?filename=.<?php echo ($myproject['paccessory']); ?>">原项目申请书下载</a><?php endif; ?></div></div><div class="modal-footer"><input type='hidden',id='pid' name='pid' value="<?php echo ($myproject['pid']); ?>"><input type='hidden',id='uname' name='uname' value='<?php echo ($uname); ?>'><input type='hidden',id='unum' name='unum' value='<?php echo ($unum); ?>'><input type="submit" class="btn btn-primary" value="再次申请" ></div></form></div><script>	function deleterows(id){
+			var father1=id.parentNode;
+			var father2=father1.parentNode;
+			var childs=father2.childNodes;
+			for(var i=childs.length-1;i>=0;i--){
+				father2.removeChild(childs.item(i));		
+			}
+		}
+	function previewFile() {
+		var preview = document.querySelector('img');
+		 var file  = document.getElementById('imageread').files[0];
+		 var reader = new FileReader();
+		 reader.onloadend = function () {
+		  preview.src = reader.result;
+		 }
+		 if (file) {
+		  reader.readAsDataURL(file);
+		 } else {
+		  preview.src = "";
+		 }
+		}
+	function changeNext(){
+		
+		var parent=document.getElementById("stugroup");
+		var inputs=parent.getElementsByTagName("input");
+		var a=this.value;
+		//alert(a);
+		//for(var j=0;j<inputs.length;j++){
+		//		alert(inputs[j].value);
+		//	}
+		$.ajax({
+				url:"__URL__/getstunum/unum/"+a,
+				type:"GET",
+				dataType:'text',
+				timeout:2000,
+				success:function(data){
+					var name=eval('('+data+')');
+					for(var i=0;i<inputs.length;i++){
+							if(a==inputs[i].value)
+									inputs[i+1].value=name;
+								
+									
+						}
+				},
+				error:function(){
+					alert("fail");
+				}
+			})	
+		}
+		
+	function addStu(){
+		var stuinput=document.createElement("input");
+		stuinput.className="form-control";
+		stuinput.TYPE='text';
+		stuinput.name="num[]";
+		stuinput.onchange=changeNext;
+		var studiv=document.createElement("div");
+		studiv.className="col-sm-3 col-sm-offset-2 stumargintop";
+		studiv.appendChild(stuinput);
+		var father=document.createElement("div");
+		father.appendChild(studiv);
+		
+		var stuinput=document.createElement("input");
+		stuinput.className="form-control";
+		stuinput.TYPE='text';
+		//stuinput.redonly="true";
+		stuinput.name="name[]";
+		var studiv=document.createElement("div");
+		studiv.className="col-sm-3 stumargintop";
+		studiv.appendChild(stuinput);
+		father.appendChild(studiv);
+		
+		var stuinput=document.createElement("a");
+		stuinput.href="javascript:void(0)";
+		stuinput.onclick=function(){
+				var father1=stuinput.parentNode;
+				var father2=father1.parentNode;
+				var childs=father2.childNodes;
+				for(var i=childs.length-1;i>=0;i--){
+					father2.removeChild(childs.item(i));		
+				}
+			}
+		stuinput.innerHTML="删除";
+		var studiv=document.createElement("div");
+		studiv.className="col-sm-2 delete";
+		studiv.appendChild(stuinput);
+		father.appendChild(studiv);
+		document.getElementById('stugroup').appendChild(father);
+
+	}
+	$(function(){
+		$('#adduserbtn').click(function(){
+			if($('#adduserModal #title').val() ==''){
+				alert("项目名称不能位空！");
+				return false;
+			}
+			if($('#adduserModal #class').val() =='0'){
+					alert("请选择项目类型！");
+					return false;
+				}
+			if($('#adduserModal #number').val() ==''){
+				alert("请选择学生人数！");
+				return false;
+			}
+			if($('#adduserModal #father').val() =='0'){
+				alert("请选择所属一级学科！");
+				return false;
+			}
+			if($('#adduserModal #teachernum').val() =='0'){
+				alert("请选择指导老师！");
+				return false;
+			}
+			if($('#adduserModal #raceFile').val() ==''){
+				alert("请上传附件！");
+				return false;
+			}
+					
+		});
+		
+		
+	});
+	</script></body></html>

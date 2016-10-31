@@ -153,9 +153,12 @@ class IndexAction extends Action{
 		$nid=I("view");
 		$this->checkParam($nid);
 		$news=M('news')->where(array('nid'=>$nid))->find();
-		$this->news=$news;
 		$this->redirectParam($news);
+		$news['nview']=$news['nview']+1;
+		M('news')->where(array('nid'=>$nid))->save($news);
+		$this->news=$news;
 		$this->page_title=$news['ntitle']." | 计算机学院科创管理系统";
+		
 		//p($news);
 		$this->display();
 	}

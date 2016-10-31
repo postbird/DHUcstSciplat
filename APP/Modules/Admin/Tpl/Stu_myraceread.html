@@ -81,27 +81,30 @@
 					<label for="usernum" class="col-sm-1 control-label" >获奖:</label>
 				 	<div class="col-sm-11 col-sm-offset-1">
 				 		<div class="col-sm-3 inputpadding">
-							<select id="bonus" name="bonus" class="form-control">
-				   		 		
-				   		 		<if condition="$u['bonus'] eq '一等奖'">
+				 			<if condition="$race[0]['status'] eq 1">
+								<select id="bonus" name="bonus" class="form-control disabled" disabled="true">
+				       		<else/>
+								<select id="bonus" name="bonus" class="form-control " >
+				       		</if>
+				   		 		<if condition="$race[0]['bonus'] eq '一等奖'">
 				   		 			<option value='一等奖'  selected="selected">一等奖</option>
 				   		 		<else/>
 				   		 			<option value='一等奖'>一等奖</option>
 				   		 		</if>	
-				   		 		<if condition="$u['bonus'] eq '二等奖'">
+				   		 		<if condition="$race[0]['bonus'] eq '二等奖'">
 				   		 			<option value='二等奖'  selected="selected">二等奖</option>
 				   		 		<else/>
 				   		 			<option value='二等奖'>二等奖</option>
 				   		 		</if>	
-				   		 		<if condition="$u['bonus'] eq '三等奖'">
+				   		 		<if condition="$race[0]['bonus'] eq '三等奖'">
 				   		 			<option value='三等奖'  selected="selected">三等奖</option>
 				   		 		<else/>
 				   		 			<option value='三等奖'>三等奖</option>
 				   		 		</if>	
-				   		 		<if condition="$u['bonus'] eq '参与奖'">
-				   		 			<option value='参与奖'  selected="selected">参与奖</option>
+				   		 		<if condition="$race[0]['bonus'] eq '优秀奖'">
+				   		 			<option value='优秀奖'  selected="selected">优秀奖</option>
 				   		 		<else/>
-				   		 			<option value='参与奖'>参与奖</option>
+				   		 			<option value='优秀奖'>优秀奖</option>
 				   		 		</if>								
 							</select> 
 						</div>	 
@@ -109,32 +112,43 @@
 					<label for="username" class="col-sm-1  control-label" >图片上传:</label>
 						<div class="col-sm-11 col-sm-offset-1">
 					     请上传证书照片(图片类型：.jpg,.gif,.png)：<label style='color:red;'>不需修改，则不用重新上传</label>
-					     <input type='file' name="imageFile" onchange="previewFile()" id='imageread'/>
-			      		<img src="__ROOT__{$u['image']}" height="200" width="300" alt="图片 预览..."/>	
+					     <if condition="$race[0]['status'] eq 1">
+					    	 <input type='file' name="imageFile" onchange="previewFile()" id='imageread' disabled="true"/>
+			       		<else/>
+					    	 <input type='file' name="imageFile" onchange="previewFile()" id='imageread' />
+			       		</if>
+			      		<img src="__ROOT__{$race[0]['image']}" height="200" width="300" alt="图片 预览..."/>	
 					    </div>
 					    
 					<label for="usernum" class="col-sm-1 control-label" >附件:</label>
 					<div class="col-sm-11 col-sm-offset-1">
 						 请选择需要上传的文件(大小不超过10M，文件类型为.doc,.pdf,.zip)：<label style='color:red;'>不需修改，则不用重新上传</label>
-					     <input type='file' name="raceFile" />
-					     当前文件为：{$u["accessory"]}<br/>
+					     <if condition="$race[0]['status'] eq 1">
+					    	 <input type='file' name="raceFile" disabled="true"/>
+			       		<else/>
+					    	 <input type='file' name="raceFile" />
+			       		</if>
+					     当前文件为：{$race[0]["accessory"]}<br/>
 						<div class="col-sm-8 inputpadding">
-					        <if condition="$u['accessory'] eq ''">
+					        <if condition="$race[0]['accessory'] eq ''">
 						    <else/>
-						    	 <a href="{:U('Admin/SuperManage/downracefile')}?filename=.{$u['accessory']}">附件下载</a>
+						    	 <a href="{:U('Admin/SuperManage/downracefile')}?filename=.{$race[0]['accessory']}">附件下载</a>
 							</if>   			    	
 					    </div>		
 					</div>
 					<label for="usernum" class="col-sm-1 control-label" >审核:</label>
 					<div class="col-sm-11 col-sm-offset-1">
 						<div class="col-sm-8 inputpadding">
-							<if condition="$u['status'] eq 0">
+							<if condition="$race[0]['status'] eq 0">
 								未审核
 						    <else/>
-								<if condition="$u['status'] eq 1">
+								<if condition="$race[0]['status'] eq 1">
 									已通过
 					       		<else/>
 									未通过
+									<p class="text-danger">
+										{$race[0]['description']}
+									</p>
 					       		</if>
 							</if>
 						</div>	

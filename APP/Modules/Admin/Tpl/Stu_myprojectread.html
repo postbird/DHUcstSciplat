@@ -35,25 +35,14 @@
 <body>
 	<div class='container'>
 	<h2 class='head'>项目信息读取修改</h2>
-	<hr/>
 	 <form id="form2" method='post' action="__URL__/myprojectupdate" class="form-horizontal" enctype="multipart/form-data">
-	 
-				 <div class="form-group">
-					<label for="username" class="col-sm-2  control-label" >项目来源:</label>	
-					<div class="col-sm-9">
-						<input type="text" class="form-control" disabled="disabled" value="{$myproject['ftitle']}" readonly="true">
-					</div>
-					
+				<div class="form-group">
+					<if condition="$myproject['pendstatus']">
+					   <h3><span class="text-success">项目完结！</span></h3>
+					</if>
 				</div>
-	 			<div class="form-group">
-					<label for="username" class="col-sm-2  control-label" >项目名称:</label>		
-					<div class="col-sm-9">
-						<input type="text" disabled="disabled"class="form-control" id="title" name="title" value="{$myproject['pname']}">
-					</div>
-					
-				</div>
-			
-				<div class="form-group">	<hr/>
+				<hr/>
+	 			<div class="form-group">	
 					<label for="username" class="col-sm-2  control-label" >管理员审核:</label>
 					<div class="col-sm-5" style="margin-top:7px;">
 							<if condition="$myproject['pstatus'] eq 0">
@@ -63,12 +52,13 @@
 									已通过
 								<else/>
 									未通过
+									<p class="text-danger"><strong>{$myproject['gdescription']}</strong></p>
 								</if>
 							</if>
 				       </div>
 				</div>
 				<div class="form-group">
-					<label for="username" class="col-sm-2  control-label" >学校审核:</label>
+					<label for="" class="col-sm-2  control-label" >学校审核:</label>
 					<div class="col-sm-5" style="margin-top:7px;">
 							<if condition="$myproject['pleaderstatus'] eq 0">
 								未审核
@@ -77,12 +67,29 @@
 								已通过
 								<else/>
 								未通过
+									<p class="text-danger"><strong>{$myproject['sdescription']}</strong></p>
+
 								</if>
 							</if>
 				       </div>
 				</div>
+				<hr/>
+				 <div class="form-group">
+					<label for="username" class="col-sm-2  control-label" >项目来源:</label>	
+					<div class="col-sm-9">
+						<input type="text" class="form-control" value="{$myproject['ftitle']}" readonly="true">
+					</div>
+					
+				</div>
+	 			<div class="form-group">
+					<label for="username" class="col-sm-2  control-label" >项目名称:</label>		
+					<div class="col-sm-9">
+						<input type="text"class="form-control" id="title" name="title" value="{$myproject['pname']}">
+					</div>
+				</div>
+				
 				<div class="form-group" id='level'>
-					<label for="username" class="col-sm-2  control-label" >项目级别:</label>
+					<label for="" class="col-sm-2  control-label" >项目级别:</label>
 					<div class="col-sm-5" style="margin-top:7px;">
 						{$myproject['plevel']}
 					</div>	
@@ -241,29 +248,33 @@
 					</div>       		
 				</div>
 				
-					<div class="form-group">
-					<hr/>
-						<label for="username" class="col-sm-2  control-label" >项目类型:</label>
-						<div class="col-sm-3">
-							<select id="class" name="class" class="form-control" disabled="disabled">
-								<if condition="$myproject['pclass'] eq '创新训练'">
-									<option value='创新训练' selected='selected'>创新训练</option>
-								<else/>
-									<option value='创新训练'>创新训练</option>
-								</if>
-								<if condition="$myproject['pclass'] eq '创业训练'">
-									<option value='创业训练' selected='selected'>创业训练</option>
-								
-								<else/>
-									<option value='创业训练'>创业训练</option>
-								</if>
-								<if condition="$myproject['pclass'] eq '创业实践'">
-									<option value='创业实践' selected='selected'>创业实践</option>
-								<else/>
-									<option value='创业实践'>创业实践</option>
-								</if>
-							</select>
-						</div>
+					<div class="form-group" >
+					<label for="" class="col-sm-2  control-label" >项目级别:</label>
+					<div class="col-sm-2" style="margin-top:7px;">
+						<input type="text" readonly  class="  form-control " name="level"value="{$myproject['plevel']}">
+					</div>	
+					<label for="username" class="col-sm-2  control-label" >项目类型:</label>
+					<div class="col-sm-3">
+						<input type="hidden" name="class" value="{$myproject['pclass']}">
+						<select id="class" disabled class="disabled form-control" >
+							<if condition="$myproject['pclass'] eq '创新训练'">
+								<option  selected='selected'>创新训练</option>
+							<else/>
+								<option >创新训练</option>
+							</if>
+							<if condition="$myproject['pclass'] eq '创业训练'">
+								<option  selected='selected'>创业训练</option>
+							
+							<else/>
+								<option >创业训练</option>
+							</if>
+							<if condition="$myproject['pclass'] eq '创业实践'">
+								<option  selected='selected'>创业实践</option>
+							<else/>
+								<option >创业实践</option>
+							</if>
+						</select>
+					</div>
 					</div>
 					<div class="form-group">
 						<label for="username" class="col-sm-2  control-label" >学生人数:</label>
@@ -326,7 +337,9 @@
 						<div class="col-sm-9 col-sm-offset-1">
 							<foreach name="myproject['user']" item='v'>
 									<if condition="$v['uprofession'] neq '学生'">
-										<label for="username" class="col-sm-3  control-label" >{$v.uname}({$v.uprofession})</label>
+										<if condition="$v['uprofession'] neq ''">
+											<label for="username" class="col-sm-3  control-label" >{$v.uname}({$v.uprofession})</label>
+										</if>
 									<else/>
 									</if>
 								</foreach>
@@ -346,6 +359,7 @@
 						 <label for="username" class="col-sm-2  control-label" >附件:</label>
 						  请上传项目申请书(大小不超过10M，文件类型为.doc,.docx)：
 						 <input type='file' name="applyFile" id='applyFile'/>
+						 <input type='hidden' name="raceFile" id='raceFile' value="{$myproject['paccessory']}"/>
 					 		
 					</div>
 					<div class="form-group" >
@@ -357,12 +371,9 @@
 					    </div>	
 					</div>
 				<div class="modal-footer">
-					<input type='hidden',id='pid' name='pid' value="{$myproject['pid']}">
-					<input type='hidden',id='applyfile' name='applyfile' value="{$myproject['paccessory']}">
-					<input type='hidden',id='middlefile' name='middlefile' value="{$myproject['pmiddleaccessory']}">
-					<input type='hidden',id='lastfile' name='lastfile' value="{$myproject['plastaccessory']}">
-		   			<input type='hidden',id='unum' name='unum' value='{$unum}'>
-		   			<input type='hidden',id='uname' name='uname' value='{$uname}'>
+					<input type='hidden',id='unum' name='unum' value='{$unum}'>
+				   	<input type='hidden',id='pid' name='pid' value='{$myproject["pid"]}'>
+				   	<input type='hidden',id='uname' name='uname' value='{$uname}'>
 				   	 <a class="btn btn-primary" href="{:U('Admin/Stu/myproject',array('unum'=>$unum,'uname'=>$uname))}" target="opt"><span>返回</span></a>
 				   	 <if condition="$myproject['pendstatus']">
 					   <else/>

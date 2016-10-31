@@ -5,12 +5,21 @@
 	.menu{font-size:1.2em;}
 	.menu-title{font-size:1.1em;}
 	li a{color:black;}
+	.news-div img{max-width: 95%;text-align: center;}
 </style>
-	<div class='container content-top'>
+	<div class='container content-top news-div' >
 		<h3 class='head'>{$news['ntitle']}</h3>
-		<hr/>
+		<div class="text-center col-sm-3"><h3><small><i class="fa fa-clock-o"></i> 发布时间 · {$news['ndate']}</small></h3></div>
+		<div class="text-center col-sm-3"><h3><small><i class="fa fa-user"></i> 发布人 · {$news['nauthor']}</small></h3></div>
+		<div class="text-center col-sm-3"><h3><small><i class="fa fa-eye"></i> 浏览次数 · {$news['nview']}</small></h3></div>
+		<div class="col-sm-3">
+		<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		</div>
+		<div class="col-sm-12">
+			<hr/> 	
+		</div>
 	 	<form id="form1" method='post'  class="form-horizontal" enctype="multipart/form-data">
-		 			
 					<div class="form-group">
 						<div class="col-sm-10 col-sm-offset-1">
 					      {$news['ncontent']}

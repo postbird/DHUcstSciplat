@@ -222,7 +222,7 @@ class SuperManageAction extends CommonAction{
 		$count=M('race')->count();
 		$page=new Page($count,12);
 		$limit = $page->firstRow . ',' . $page->listRows;
-		$race=M('race')->limit($limit)->order('rdatestart desc,rid desc')->select();
+		$race=M('race')->where(array('delete'=>0,))->limit($limit)->order('rdatestart desc,rid desc')->select();
 		$this->race=$race;
 		$this->page=$page->show ();
 		$this->display();
@@ -276,6 +276,7 @@ class SuperManageAction extends CommonAction{
 			'rlevel'=>$_POST['level'],
 			'rstatus'=>1,
 			'raccessory'=>$raceFilePath,
+			'rdate'=>$_POST['rdate'],
 		);
 		
 		$result=M('race')->add($data);
@@ -291,7 +292,7 @@ class SuperManageAction extends CommonAction{
 		$this->unum=$unum;
 		$this->uname=$uname;
 		$rid=I('rid');
-		$race=M('race')->where(array('rid'=>$rid))->find();
+		$race=M('race')->where(array('rid'=>$rid,'delete'=>0))->find();
 		$this->race=$race;
 		$this->display();
 	}
@@ -365,7 +366,9 @@ class SuperManageAction extends CommonAction{
 							$tmpfile=".".$onerace['raccessory'];
 							unlink($tmpfile);
 						}
-						$result = $race->delete ( $rid );
+						$data['delete']=1;
+						// $result = $race->delete ( $rid );
+						$race->where(array("rid"=>$rid,))->save($data);
 						//删除race_user表中的数据
 						$raceuser=M('race_user')->where(array('race_id'=>$rid))->select();
 						for($j=0;$j<count($raceuser);$j++){
@@ -380,9 +383,8 @@ class SuperManageAction extends CommonAction{
 									}	
 										
 								}
-							M('race_user')->delete($raceuser[$j]['mid']);
+							M('race_user')->where(array("mid"=>$raceuser[$j]['mid'],))->save($data);
 						}
-						
 						
 					}
 			 else {
@@ -417,14 +419,14 @@ class SuperManageAction extends CommonAction{
 		$db=M('race_user');
 		//分组转换
 		$racegroup=array();
-		$captains=$db->query("select distinct captainnum from sp_race_user where race_id = $rid");
+		$captains=$db->query("select distinct captainnum from sp_race_user where race_id = $rid ");
 		//匹配队长的姓名
 		for($m=0;$m<count($captains);$m++){
 			$tmp=M('user')->where(array('unum'=>$captains[$m]['captainnum']))->field(array('uname'))->find();
 			$captains[$m]['captainname']=$tmp['uname'];	
 		}
 		//p($captains);die;
-		$raceuser=M('race_user')->where(array('race_id'=>$rid))->select();
+		$raceuser=M('race_user')->where(array('race_id'=>$rid,'delete'=>0))->select();
 		for($i=0;$i<count($captains);$i++){
 			$k=0;
 			for($j=0;$j<count($raceuser);$j++){
@@ -459,7 +461,7 @@ class SuperManageAction extends CommonAction{
 						$plus=3;break;
 					case "三等奖":
 						$plus=2;break;	
-					case "参与奖":
+					case "优秀奖":
 						$plus=1;break;
 				}
 				for($k=0;$k<count($oldrecord);$k++){
@@ -478,18 +480,42 @@ class SuperManageAction extends CommonAction{
 				'mid'=>$oldrecord[$j]['mid'],
 				'bonus'=>$_POST['bonus'],
 				'status'=>$_POST['status'],
+				'description'=>$_POST['description']
 			);
 			//p($data);die;
 			$db=M('race_user');
-			$result=$db->save($data);
-			p($db->getDbError());
-			if(!$result)$b++;
+			$result=$db->where(array('mid'=>$data['mid'],))->save($data);
+
+			if(0==$result){
+			}else if(0!=$result && false==$result){
+				$b++;
+			}
 		}
 		if($b)
-			$this->redirect('racegroup',array('unum'=>$unum,'uname'=>$uname,'rid'=>$_POST['race_id'],'captainnum'=>$_POST['captainnum'],'msg'=>"修改失败！"));
+			$this->redirect('/Admin/SuperManage/racegroup',array('unum'=>$unum,'uname'=>$uname,'rid'=>$_POST['race_id'],'captainnum'=>$_POST['captainnum'],'msg'=>"修改失败！"));
 		else
-			$this->redirect('racegroup',array('unum'=>$unum,'uname'=>$uname,'rid'=>$_POST['race_id'],'captainnum'=>$_POST['captainnum'],'msg'=>"修改成功！"));
+			$this->redirect('/Admin/SuperManage/racegroup',array('unum'=>$unum,'uname'=>$uname,'rid'=>$_POST['race_id'],'captainnum'=>$_POST['captainnum'],'msg'=>"修改成功！"));
 	}	
+	//在审核将爱的申请的时候 可以删除选中的申请
+	public function racegroupdelete(){
+		$mid=$_POST['mid'];
+		$data['mid']=$mid;
+		$data['delete']=1;
+		// dump($data);
+		$res=M("race_user")->where(array("mid"=>$data['mid'],))->save($data);
+		if(0==$res){
+			$returnData['status']="ok";
+			$returnData['msg']="操作成功";
+			$this->ajaxReturn($returnData,"json");
+		}else if(0!=$res && false==$res){
+			$returnData['status']="error";
+			$returnData['msg']="删除失败";
+			$this->ajaxReturn($returnData,"json");
+		}else{
+			$returnData['status']="ok";
+			$returnData['msg']="没有任何修改";
+		}
+	}
 	public function outputrace(){
 		
 		if(empty($_POST['subBox'])){
@@ -578,10 +604,18 @@ class SuperManageAction extends CommonAction{
 	public function projectnews(){
 		$unum=I("unum");
 		$uname=I("uname");
+		$uid=I("uid");
 		$this->unum=$unum;
 		$this->uname=$uname;
 		$this->msg=I('msg');
-		$projectnews=M('projectnews')->order('ptop desc,pdateend desc')->select();
+		$userInfo=M("user")->where(array("unum"=>$unum,"uname"=>$uname))->find();
+		$role=M("role_user")->where(array("user_id"=>$userInfo['uid']))->find();
+		if($role['role_id'] >3 && $role['role_id']==5 ){
+			$this->role=1;
+		}else{
+			$this->role=0;
+		}
+		$projectnews=M('projectnews')->where(array("delete"=>0,))->order('ptop desc,pdateend desc')->select();
 		$this->projectnews=$projectnews;
 		$this->display();
 	}
@@ -648,7 +682,7 @@ class SuperManageAction extends CommonAction{
 		$this->uname=$uname;
 		$pid=I('pid');
 		$this->msg=I('msg');
-		$projectnews=M('projectnews')->where(array('pid'=>$pid))->find();
+		$projectnews=M('projectnews')->where(array('pid'=>$pid,'delete'=>0))->find();
 		$this->projectnews=$projectnews;
 		$this->display();
 	}
@@ -761,13 +795,26 @@ class SuperManageAction extends CommonAction{
 			$this->searchlevel=$searchlevel;
 			
 		//分配来源
-		$fids=M("projectnews")->field(array('pid','ptitle'))->order('pid desc')->select();
+		$fids=M("projectnews")->field(array('pid','ptitle','delete'=>0,))->order('pid desc')->select();
 		$this->searchfids=$fids;
 		$searchfid=I('searchfid');
 		if(empty($searchfid))
 			$this->searchfid=0;
 		else 
 			$this->searchfid=$searchfid;
+		$this->display();
+	}
+	public function reportread(){
+		$unum=I("unum");
+		$uname=I("uname");
+		$this->unum=$unum;
+		$this->uname=$uname;
+		$rid=I('rid');
+		$pid=I('');
+		$this->pid=$pid;
+		$report=M('report')->where(array('rid'=>$rid,))->find();
+		//p($report);
+		$this->report=$report;
 		$this->display();
 	}
 	
@@ -933,7 +980,7 @@ class SuperManageAction extends CommonAction{
 		}
 		//p($project);die;
 		$this->project=$project;
-		//p($project);die;
+		// p($project);die;
 		$this->display();
 	}
 	public function projectupdate(){
@@ -1025,6 +1072,8 @@ class SuperManageAction extends CommonAction{
 			'plastcheck'=>$_POST['lastcheck'],
 			'pmiddleend'=>$_POST['middleend'],
 			'plastend'=>$_POST['lastend'],		
+			'gdescription'=>$_POST['gdescription'],		
+			'sdescription'=>$_POST['sdescription'],		
 		);
 		$result=M('project')->save($data);
 		if($result)
@@ -1092,7 +1141,7 @@ class SuperManageAction extends CommonAction{
 		$this->searchyear=I('searchannual');
 		$this->searchlevel=I('searchlevel');
 		$this->searchfid=I('searchfid');
-		$fids=M("projectnews")->field(array('pid','ptitle'))->order('pid desc')->select();
+		$fids=M("projectnews")->field(array('pid','ptitle','delete'=>0,))->order('pid desc')->select();
 		$this->searchfids=$fids;
 		$this->display('project');
 	}	
@@ -1102,7 +1151,8 @@ class SuperManageAction extends CommonAction{
 		$projectnews = M ( "projectnews" );
 		$data['status']="ok";
 		$data['p']=$pid;
-		if($projectnews->where('pid='.$pid)->delete()){
+		$sqlData['delete']=1;
+		if($projectnews->where('pid='.$pid)->save($sqlData)){
 			$this->ajaxReturn($data,"json");
 		}else{
 			$data['status']="error";
@@ -1477,25 +1527,28 @@ class SuperManageAction extends CommonAction{
 				for($currentColumn= 'A';$currentColumn<= $allColumn; $currentColumn++){
 					$val = $currentSheet->getCellByColumnAndRow(ord($currentColumn) - 65,$currentRow)->getValue();/**ord()将字符转为十进制数*/
 						if($currentColumn=='A'){
-							$user[$currentRow-2]['unum']=$val;
+							$user[$currentRow-2]['unum']=$val;//学号
 						}
 						if($currentColumn=='B'){
-							$user[$currentRow-2]['uname']=$val;
+							$user[$currentRow-2]['uname']=$val;//姓名
 						}
 						if($currentColumn=='C'){
-							$user[$currentRow-2]['uprofession']=$val;
+							$user[$currentRow-2]['uprofession']=$val;//职称（学生是学生）
 						}
 						if($currentColumn=='D'){
-							$user[$currentRow-2]['school']=$val;
+							$user[$currentRow-2]['school']=$val;//学院
 						}
 						if($currentColumn=='E'){
-							$user[$currentRow-2]['master']=$val;
+							$user[$currentRow-2]['master']=$val;//专业
 						}
 						if($currentColumn=='F'){
-							$user[$currentRow-2]['ugrade']=$val;
+							$user[$currentRow-2]['ugrade']=$val;//班级
 						}
 						if($currentColumn=='G'){
-							$user[$currentRow-2]['uflag']=$val;
+							$user[$currentRow-2]['uflag']=$val;//身份 学生/老师/
+						}
+						if($currentColumn=='H'){
+							$user[$currentRow-2]['description']=$val;//描述（学硕/专硕）
 						}
 					}
 				}

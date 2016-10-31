@@ -57,6 +57,7 @@
 								<input type="radio" id="adminstatus" name="status" value='1' style="width: 50px"/>&nbsp;&nbsp;通过&nbsp;&nbsp;&nbsp;&nbsp;
 					       		<input type="radio" id="adminstatus" name="status" value='2' style="width: 50px"/>&nbsp;&nbsp;不通过
 					       		<input type="radio" id="adminstatus"  name="status" value='0' checked='checked' style="width: 50px"/>&nbsp;&nbsp;未审核
+					       		<textarea name="gdescription" id="gdescription" cols="40" rows="2" placeholder="不通过的原因..."style="resize: vertical;;">{$project['gdescription']}</textarea>
 						    <else/>
 								<if condition="$project['pstatus'] eq 1">
 										<label class='margin-top' >已通过</label>
@@ -64,6 +65,7 @@
 					       		<else/>
 									<input type="radio" id="adminstatus" name="status" value='1' style="width: 50px"/>&nbsp;&nbsp;通过&nbsp;&nbsp;&nbsp;&nbsp;
 					       			<input type="radio" id="adminstatus" name="status" value='2' checked='checked' style="width: 50px"/>&nbsp;&nbsp;不通过
+					       			<textarea name="gdescription" id="gdescription" cols="40" rows="2" placeholder="不通过的原因..."style="resize: vertical;;">{$project['gdescription']}</textarea>
 					       		</if>
 							</if>
 				       </div>
@@ -85,6 +87,7 @@
 								<input type="radio" id="leaderstatus1" name="leaderstatus" value='1' style="width: 50px"/>&nbsp;&nbsp;通过&nbsp;&nbsp;&nbsp;&nbsp;
 					       		<input type="radio" id="leaderstatus2" name="leaderstatus" value='2' style="width: 50px"/>&nbsp;&nbsp;不通过
 					       		<input type="radio" id="leaderstatus0" name="leaderstatus" value='0' checked='checked' style="width: 50px"/>&nbsp;&nbsp;未审核
+					       		<textarea name="sdescription" id="sdescription" cols="40" rows="2" placeholder="不通过的原因..."style="resize: vertical;;">{$project['sdescription']}</textarea>
 						    <else/>
 								<if condition="$project['pleaderstatus'] eq 1">
 									<label class='margin-top'>已通过</label>
@@ -92,6 +95,7 @@
 				       			<else/>
 									<input type="radio" id="leaderstatus1" name="leaderstatus" value='1' style="width: 50px"/>&nbsp;&nbsp;通过&nbsp;&nbsp;&nbsp;&nbsp;
 					       			<input type="radio" id="leaderstatus2" name="leaderstatus" value='2' checked='checked' style="width: 50px"/>&nbsp;&nbsp;不通过
+					       			<textarea name="sdescription" id="sdescription" cols="40" rows="2" placeholder="不通过的原因..."style="resize: vertical;;">{$project['sdescription']}</textarea>
 					       		</if>
 							</if>
 				       </div>
@@ -129,7 +133,7 @@
 											<td>{$u.rmonth}</td>
 											<td>{$u.rname}</td>
 											<td>
-												<a href="{:U('Admin/Stu/reportread',array('pid'=>$myproject['pid'],'rid'=>$u['rid'],'unum'=>$unum,'uname'=>$uname))}">读取{$pid}</a>
+												<a href="{:U('Admin/SuperManage/reportread',array('pid'=>$project['pid'],'rid'=>$u['rid'],'unum'=>$unum,'uname'=>$uname))}">读取{$pid}</a>
 											</td>		
 										</tr>
 									</foreach>
@@ -373,8 +377,10 @@
 						<div class="col-sm-9 col-sm-offset-1">
 							<foreach name="project['user']" item='v'>
 									<if condition="$v['uprofession'] neq '学生'">
-										<label for="username" class="col-sm-3  control-label" >{$v.uname}({$v.unum})</label>
-										<label for="username" class="col-sm-2  control-label" >{$v.uprofession}</label>
+										<if condition="$v['uprofession'] neq ''">
+											<label for="username" class="col-sm-3  control-label" >{$v.uname}({$v.unum})</label>
+											<label for="username" class="col-sm-2  control-label" >{$v.uprofession}</label>
+										</if>
 									<else/>
 									</if>
 								</foreach>

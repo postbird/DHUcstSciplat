@@ -52,21 +52,32 @@
 </head>
 <body>
 	<div class='container'>
+	<div class="well">
+		<p class="text-danger"><strong>【注意】</strong></p>
+		<p>科创平台竞赛中心只进行相关竞赛的获奖情况的信息统计，而不是竞赛的报名入口。如果在计算机学院认可的竞赛列表中有参加并获得成绩，请认真填写相关信息，进行信息的录入。</p>
+		<p>如果你参加了竞赛类表中没有的比赛，可以通过科创帮助中心进行申请，并由学院审核通过，通过后，将永久认可该竞赛。</p>
+	</div>
 		<h3 class='head'>{$race['rname']}</h3>
 		<hr/>
 	 	<form id="form1" method='post'  class="form-horizontal" enctype="multipart/form-data">
 		 			
 					<div class="form-group">
-						<div class="col-sm-10 col-sm-offset-1">
+						<label for="" class="col-sm-2 control-label">描述：</label>
+						<div class="col-sm-10 normalfont">
 					      {$race['rcontent']}
 					    </div>
 					</div>
 					<hr/>
 					<div class="form-group">
-						<label  class="col-sm-2 control-label" >开始日期:</label>
-						<label  class="col-sm-2 control-label normalfont" >{$race['rdatestart']}</label>
-					    <label  class="col-sm-2  control-label" >截止日期:</label>
-					    <label  class="col-sm-2 control-label normalfont" >{$race['rdateend']}</label>
+						<label  class="col-sm-2 control-label" >竞赛时间:</label>
+						<label  class="col-sm-3 text-center normalfont" >{$race['rdate']}</label>
+				    </div>
+				    <hr/>
+					<div class="form-group">
+						<label  class="col-sm-2 control-label" >系统录入开始日期:</label>
+						<label  class="col-sm-4 text-center normalfont" >{$race['rdatestart']}</label>
+					    <label  class="col-sm-2  control-label" >系统录入截止日期:</label>
+					    <label  class="col-sm-4 text-center normalfont" >{$race['rdateend']}</label>
 				    </div>
 				    <hr/>
 					<div class="form-group">
@@ -83,7 +94,7 @@
 						<if condition="$race['raccessory'] eq ''">
 					    <else/>
 					   		 <label for="username" class="col-sm-2  control-label" >附件:</label>
-					    	 <label  class="col-sm-2 control-label normalfont" ><a href="{:U('Admin/Stu/downracefile')}?filename=.{$race["raccessory"]}">附件下载</a></label>	
+					    	 <label  class="col-sm-2 control-label normalfont" ><a href="{:U('Admin/Stu/downracefile')}?filename=.{$race['raccessory']}">附件下载</a></label>	
 						</if>   
 					</div>
 					<hr/>
@@ -93,10 +104,10 @@
 								<label " class="control-label" >已截止</label>
 							<else/>
 								<if condition="$isapply eq 1">
-									<label " class="control-label" >已申请</label>
+									<label " class="control-label" >已经申请录入</label>
 								<else/>
 									<button class="btn btn-default "  data-toggle="modal" data-target="#adduserModal">
-										申报竞赛
+										申请录入
 									</button>
 								</if>
 							</if>
@@ -114,8 +125,8 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title head" id="myModalLabel">{$race['rname']}</h4>
-		        <h3 class='head'>竞赛申报</h3>
+		        <h3 class=" head" id="myModalLabel">{$race['rname']}</h3>
+		        <h4 class='head modal-title'>竞赛信息录入</h4>
 		      </div>
 		      <div class="modal-body">
 		        <form id="form2" method='post' action="__URL__/raceinsert" class="form-horizontal" enctype="multipart/form-data">
@@ -160,7 +171,7 @@
 								<option value='一等奖'>一等奖</option>
 								<option value='二等奖'>二等奖</option>
 								<option value='三等奖'>三等奖</option>
-								<option value='参与奖'>参与奖</option>
+								<option value='优秀奖'>优秀奖</option>
 							</select>
 					   </div>
 					</div>
@@ -168,7 +179,8 @@
 						 <label for="username" class="col-sm-2  control-label" >附件:</label>
 					 	<div class="col-sm-8">
 					     请选择需要上传的文件(大小不超过10M，文件类型为.doc,.pdf,.zip)：
-					     <input type='file' name="raceFile" id='raceFile'/>
+					     <p class="text-danger"><strong>不支持.docx文件</strong></p>
+					     <input type='file' name="raceFile" id='raceFile' required="true" />
 					    </div>	
 					 </div>
 					 <hr/>
@@ -176,7 +188,7 @@
 						<label for="username" class="col-sm-2  control-label" >图片上传:</label>
 						<div class="col-sm-8">
 					     请上传证书照片(图片类型：.jpg,.gif,.png)：
-					     <input type='file' name="imageFile" onchange="previewFile()" id='imageread'/>
+					     <input type='file' name="imageFile" onchange="previewFile()" id='imageread'required="true" />
 			      		<img src="" height="200" width="300" alt="图片 预览..."/>	
 					    </div>
 					   

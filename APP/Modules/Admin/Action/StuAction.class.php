@@ -25,7 +25,7 @@ class StuAction extends CommonAction{
 		$count=M('race')->count();
 		$page=new Page($count,12);
 		$limit = $page->firstRow . ',' . $page->listRows;
-		$race=M('race')->where(array('rstatus'=>'1',))->limit($limit)->order('rdatestart desc,rid desc')->select();
+		$race=M('race')->where(array('rstatus'=>'1','delete'=>0))->limit($limit)->order('rdatestart desc,rid desc')->select();
 		$this->race=$race;
 		$this->page=$page->show ();
 		$this->display();
@@ -42,7 +42,7 @@ class StuAction extends CommonAction{
 		$this->unum=$unum;
 		$this->uname=$uname;
 		$rid=I('rid');
-		$race=M('race')->where(array('rid'=>$rid))->find();
+		$race=M('race')->where(array('rid'=>$rid,'delete'=>0))->find();
 		//判定是否过期
 		$sub=(time()-strtotime($race['rdateend']))-1*24*60*60;
 		if($sub>0){
@@ -187,7 +187,7 @@ class StuAction extends CommonAction{
 		$uname=I("uname");
 		$this->unum=$unum;
 		$this->uname=$uname;
-		$myrace=M('race_user')->where(array('unum'=>$unum))->order('mid desc')->select();
+		$myrace=M('race_user')->where(array('unum'=>$unum,'delete'=>0,))->order('mid desc')->select();
 		$this->myrace=$myrace;
 		$this->display();
 	}
@@ -268,7 +268,7 @@ class StuAction extends CommonAction{
 			if(!$a)
 					$this->success("保存成功，请等待审核！");
 				else 
-					$this->error("保存失败，请联系管理员！");						
+					$this->error("保存失败");						
 			}
 		//检测附件上传
 		if($_FILES['raceFile']['error']){
@@ -295,7 +295,7 @@ class StuAction extends CommonAction{
 					$this->error("上传文件过大！");
 				}
 				//限制文件上传类型
-				$allowExt=array('doc','pdf','zip');
+				$allowExt=array('docx','doc','pdf','zip');
 				$ext=pathinfo($_FILES['raceFile']['name'],PATHINFO_EXTENSION);
 				if(!in_array($ext,$allowExt)){
 					$this->error("上传文件格式不正确！");
@@ -325,7 +325,7 @@ class StuAction extends CommonAction{
 				if(!$b)
 						$this->success("保存成功，请等待审核！");
 					else 
-						$this->error("保存失败，请联系管理员！");						
+						$this->error("保存失败");						
 				}			
 		//写入其他信息
 		$c=0;
@@ -341,9 +341,9 @@ class StuAction extends CommonAction{
 			$c++;
 		}
 		if(!$c)
-				$this->success("申请成功，请等待审核！");
+				$this->success("保存成功");
 			else 
-				$this->error("申请失败，请联系管理员！");						
+				$this->error("保存失败,无修改");						
 	}	
 	
 	//========竞赛中心结束========
@@ -353,10 +353,10 @@ class StuAction extends CommonAction{
 		$this->unum=$unum;
 		$this->uname=I("uname");
 		import("ORG.Util.Page");
-		$count=M('projectnews')->count();
+		$count=M('projectnews')->where(array("delete"=>0,))->count();
 		$page=new Page($count,12);
 		$limit = $page->firstRow . ',' . $page->listRows;
-		$projectnews=M('projectnews')->where(array('pstatus'=>'1',))->limit($limit)->order('pdateend desc,pid desc')->select();
+		$projectnews=M('projectnews')->where(array('pstatus'=>'1',"delete"=>0,))->limit($limit)->order('pdateend desc,pid desc')->select();
 		for($i=0;$i<count($projectnews);$i++){
 			$isapply=M('project')->where(array('fid'=>$projectnews[$i]['pid'],'pcaptainnum'=>$unum))->find();
 			if(empty($isapply))
@@ -386,7 +386,7 @@ class StuAction extends CommonAction{
 		$projectnews['subtime']=0;
 		$this->projectnews=$projectnews;
 		//指导老师列表
-		$teacher=M('user')->where(array('uflag'=>"教师"))->field(array('unum','uname'))->order('unum')->select();
+		$teacher=M('user')->where(array('uflag'=>"教师"))->field(array('unum','uname'))->order("convert(uname USING gbk) COLLATE gbk_chinese_ci asc ")->select();
 		$this->teacher=$teacher;
 		//项目信息
 		$this->pid=$pid;
@@ -503,6 +503,7 @@ class StuAction extends CommonAction{
 				'pcaptainname'=>$_POST['name'][0],
 				'pcontent'=>$_POST['content'],
 				'paccessory'=>$raceFilePath,
+				'plevel'=>$_POST['level'],
 				
 			);
 		
@@ -529,6 +530,155 @@ class StuAction extends CommonAction{
 				$this->success("申请成功！");
 			else 
 				$this->error("申请失败，请联系管理员！");		
+	}
+	//重新申请处理
+	public function mynoprojectupdate(){
+		// p($_POST);die;
+		//p($_POST);die;
+		//p($_FILES);die;
+		//删除已经有的成员和项目申请
+		$pid=$_POST['pid'];
+		 M("project_user")->where(array('project_id'=>$pid,))->delete();
+		// M("project")->where(array('pid'=>$pid,))->delete();
+		//检查成员是否正确
+		for($i=0;$i<count($_POST['num']);$i++){
+			$num=$_POST['num'][$i];
+			if(empty($num)){
+				$this->error("学号不能为空！");
+			}
+			$result=M('user')->where(array('unum'=>$num))->find();
+			if($_POST['name'][$i]!=$result['uname']){
+				$this->error("学号为:".$num."的姓名不匹配！");
+			}
+		}
+		//老师为两名
+		//检测老师是否正确
+		//考虑情况如下：
+		/*
+			1、选择一个老师，第一个选择，第二个没有选择【允许】
+			2、选择一个老师，第一个没有选择，第二个选择【允许】
+			3、选择两个老师，两个不一样【允许】
+			4、选择两个老师，两个一样【允许--但是要进行过滤】
+			5、一个老师都没有选择【不允许】
+		*/
+		//检查规则  设置一个标记  teacherEmptyFlag=0; 如果 第二次 teacherEmptyFlag==1 则认为已经有一个老师都没有选择，进行跳转
+		//为了方便以及过滤内容，同时将teachernum进行过滤，如果已经存在，那么就不再写入。 $teacherNumArray 存放最后要处理的教师
+		//	为了添加到新的数组的teacherNumArray 需要一个变量teacherNumArrayCount进行控制
+		$teacherEmptyFlag=0;
+		$teacherNumArray=array();
+		$teacherNumArrayCount=0;
+		$teacher=$_POST['teachernum'];
+		// p($teacher);die;
+		for($i=0; $i<count($teacher);$i++){
+			if(($teacher[$i]==0) || empty($teacher[$i])){
+				if($teacherEmptyFlag==1){
+					$this->error("必须选择一位指导老师");
+				}else{
+					$teacherEmptyFlag+=1;
+				}
+			}else{
+				if(count($teacherNumArray)==0){
+						$teacherNumArray[$teacherNumArrayCount]=$teacher[$i];
+						$teacherNumArrayCount+=1;
+				}else{
+					for($j=0;$j<count($teacherNumArray);$j++){
+						if($teacherNumArray[$j]==$teacher[$i]){
+							continue;
+						}else{
+							$teacherNumArray[$teacherNumArrayCount]=$teacher[$i];
+							$teacherNumArrayCount+=1;
+						}
+					}
+				}
+			}
+		}
+		// p($teacherNumArray);exit();
+		//查询项目信息
+		$result=M('projectnews')->where(array('pid'=>$_POST['pid']))->field(array('pid','ptitle'))->find();
+		$title=$result['ptitle'];	
+		//检测附件上传
+		if($_FILES['raceFile']['error']){
+				if($_FILES['raceFile']['error']==4){
+					// $this->error("请上传附件！");
+					$raceFilePath=$_POST['paccessory'];
+				}else{
+					switch($_FILES['raceFile']['error']){
+						case 1:
+							$this->error("上传文件超过了PHP配置文件中upload_max_file的值");break;
+						case 2:
+							$this->error("上传文件超过了表单文件最大值");break;	
+						case 3:
+							$this->error("文件被部分上传");break;
+						case 6:
+							$this->error("没有找到临时文件");break;
+						case 7:
+						case 8:
+							$this->error("系统错误");break;		
+					}
+				}
+			}else{
+			//限制文件上传大小
+				if($_FILES['raceFile']['size']>10*1024*1024){
+					$this->error("上传文件过大！");
+				}
+				//限制文件上传类型
+				$allowExt=array('doc','docx');
+				$ext=pathinfo($_FILES['raceFile']['name'],PATHINFO_EXTENSION);
+				if(!in_array($ext,$allowExt)){
+					$this->error("上传文件格式不正确！");
+				}
+				//生成随即文件名
+				$uniName=md5(uniqid(microtime(true),true)).'.'.$ext;
+				$raceFilePath="/Uploads/project/".$uniName;
+				$raceFilePathtmp=".".$raceFilePath;
+				//将上传的临时文件保存到制定目录
+				move_uploaded_file($_FILES['raceFile']['tmp_name'],$raceFilePathtmp);
+							
+			}
+		//添加记录至project表中
+		$a=0;
+		$data=array(
+				'pname'=>$_POST['title'],
+				'fid'=>$_POST['pid'],
+				'ftitle'=>$_POST['ftitle'],
+				'pclass'=>$_POST['class'],
+				'pnumber'=>$_POST['number'],
+				'pfather'=>$_POST['father'],
+				'pcaptainnum'=>$_POST['num'][0],
+				'pcaptainname'=>$_POST['name'][0],
+				'pcontent'=>$_POST['content'],
+				'paccessory'=>$raceFilePath,
+				'plevel'=>$_POST['level'],
+				'pstatus'=>0,
+				'pleaderstatus'=>0,
+			);
+		 M('project')->where(array('pid'=>$pid,))->save($data);
+		//写入projet_user表中\
+		 M("project_user")->where(array('project_id'=>$pid,))->delete();
+		$b=0;
+		for($i=0;$i<count($_POST['num']);$i++){
+			$user=M('user')->where(array('unum'=>$_POST['num'][$i]))->find();
+			$data=array('project_id'=>$pid,'user_id'=>$user['uid']);
+			$tmpresult=M('project_user')->add($data);
+			if(!$tmpresult)
+				$b++;
+		}
+		for($i=0;$i<count($teacherNumArray);$i++){
+			$user=M('user')->where(array('unum'=>$teacherNumArray[$i]))->find();
+			$data=array('project_id'=>$pid,'user_id'=>$user['uid']);
+			$tmpresult=M('project_user')->add($data);
+			if(!$tmpresult){
+				$b++;
+			}
+		}
+		$unum=$_POST['unum'];
+		$uname=$_POST['uname'];
+
+		// p(U("Stu/myproject/unum/".$unum."/uname/".$uname.""));
+		if(!$b)
+				$this->success("重新申请成功！");
+			else 
+				$this->error("重新申请失败，请联系管理员！");		
 	}
 	public function myproject(){
 		
@@ -562,11 +712,20 @@ class StuAction extends CommonAction{
 		$myproject=D('ProjectRelation')->relation(true)->where(array('pid'=>$pid))->find();
 		//p($myproject);die;
 		$this->myproject=$myproject;
-		$this->display();
+		////指导老师列表
+		$teacher=M('user')->where(array('uflag'=>"教师"))->field(array('unum','uname'))->order("convert(uname USING gbk) COLLATE gbk_chinese_ci asc ")->select();
+		// p($myproject);
+		$this->teacher=$teacher;
+		if($myproject['pstatus']!=1 && $myproject['pstatus']!=0  ){
+			$this->display('mynoprojectread');
+		}else{
+			$this->display();
+		}
 	}
-	
+
 	public function myprojectupdate(){
-		//p($_POST);die;
+		// p($_POST);die;
+		
 		$unum=I("unum");
 		$uname=I("uname");
 		$this->unum=$unum;
@@ -574,7 +733,7 @@ class StuAction extends CommonAction{
 		$pid=I('pid');
 		//检测申请书上传
 		if($_FILES['applyFile']['error']==4){
-					$applyFilePath=$_POST['applyfile'];
+					$applyFilePath=$_POST['raceFile'];
 				}
 		else{
 				switch($_FILES['applyFile']['error']){
@@ -612,7 +771,6 @@ class StuAction extends CommonAction{
 					unlink($tmpfile);
 				}	
 			}
-			
 		//检测中期表上传
 		if($_FILES['middleFile']['error']==4){
 					$middleFilePath=$_POST['middlefile'];
@@ -694,17 +852,16 @@ class StuAction extends CommonAction{
 				}	
 			}
 			//循环添加记录至race_user表中
+
 			$data=array(
 				'pid'=>$pid,
 				'pname'=>$_POST['title'],
-				'pclass'=>$_POST['class'],
-				'pnumber'=>$_POST['number'],
-				'pfather'=>$_POST['father'],
 				'pcontent'=>$_POST['content'],
 				'paccessory'=>$applyFilePath,
 				'pmiddleaccessory'=>$middleFilePath,
 				'plastaccessory'=>$lastFilePath,
 			);
+			// p($data);
 			$result=M('project')->save($data);
 			if($result)
 				$this->success("保存成功！");

@@ -1,0 +1,501 @@
+[ 2016-10-31T20:34:13+08:00 ] 0.0.0.0 /sciplat/index.php/Admin/SuperManage/user/msg/%E5%AF%BC%E5%85%A5%E6%88%90%E5%8A%9F%EF%BC%81
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000766s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000829s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.007663s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` WHERE ( `uid` = 2 ) LIMIT 1   [ RunTime:0.000302s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Common\functions.php 第 755 行.
+SQL: SHOW COLUMNS FROM `sp_lastip` [ RunTime:0.008458s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_lastip` WHERE ( `ip` = '0.0.0.0' ) ORDER BY time_stamp desc LIMIT 1   [ RunTime:0.001505s ]
+SQL: INSERT INTO `sp_lastip` (`description`,`ip`,`time_stamp`,`time_date`) VALUES ('hp/Admin/SuperManage/user-10000-系统管理员','0.0.0.0',1477917253,'2016-10-31 20:34:13') [ RunTime:0.026455s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_user` LIMIT 1   [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `sp_user` [ RunTime:0.004768s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `sp_user` ORDER BY uid desc LIMIT 0,30   [ RunTime:0.000387s ]
+SQL: SHOW COLUMNS FROM `sp_role` [ RunTime:0.004828s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2281' [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `sp_elite` [ RunTime:0.009419s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2281' [ RunTime:0.007191s ]
+SQL: SHOW COLUMNS FROM `sp_project` [ RunTime:0.009037s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2281' [ RunTime:0.016792s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2280' [ RunTime:0.000373s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2280' [ RunTime:0.000245s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2280' [ RunTime:0.000229s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2279' [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2279' [ RunTime:0.000232s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2279' [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2278' [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2278' [ RunTime:0.000237s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2278' [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2277' [ RunTime:0.000282s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2277' [ RunTime:0.000232s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2277' [ RunTime:0.000221s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2276' [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2276' [ RunTime:0.000235s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2276' [ RunTime:0.000235s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2275' [ RunTime:0.000304s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2275' [ RunTime:0.000263s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2275' [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2274' [ RunTime:0.000292s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2274' [ RunTime:0.000204s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2274' [ RunTime:0.000184s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2273' [ RunTime:0.000325s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2273' [ RunTime:0.000430s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2273' [ RunTime:0.000521s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2272' [ RunTime:0.000811s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2272' [ RunTime:0.000273s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2272' [ RunTime:0.000200s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2271' [ RunTime:0.000246s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2271' [ RunTime:0.000203s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2271' [ RunTime:0.000193s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2270' [ RunTime:0.000279s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2270' [ RunTime:0.000208s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2270' [ RunTime:0.000194s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2269' [ RunTime:0.000283s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2269' [ RunTime:0.000315s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2269' [ RunTime:0.000528s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2268' [ RunTime:0.000459s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2268' [ RunTime:0.000269s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2268' [ RunTime:0.000183s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2267' [ RunTime:0.000239s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2267' [ RunTime:0.000183s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2267' [ RunTime:0.000174s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2266' [ RunTime:0.000211s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2266' [ RunTime:0.000182s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2266' [ RunTime:0.000171s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2265' [ RunTime:0.000208s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2265' [ RunTime:0.000171s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2265' [ RunTime:0.000165s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2264' [ RunTime:0.000206s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2264' [ RunTime:0.000170s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2264' [ RunTime:0.000183s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2263' [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2263' [ RunTime:0.000234s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2263' [ RunTime:0.000215s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2262' [ RunTime:0.000205s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2262' [ RunTime:0.000157s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2262' [ RunTime:0.000139s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2261' [ RunTime:0.000190s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2261' [ RunTime:0.000146s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2261' [ RunTime:0.000152s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2260' [ RunTime:0.000207s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2260' [ RunTime:0.000170s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2260' [ RunTime:0.000177s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2259' [ RunTime:0.000236s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2259' [ RunTime:0.000168s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2259' [ RunTime:0.000177s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2258' [ RunTime:0.000335s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2258' [ RunTime:0.000425s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2258' [ RunTime:0.000430s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2257' [ RunTime:0.000394s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2257' [ RunTime:0.000417s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2257' [ RunTime:0.000406s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2256' [ RunTime:0.001037s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2256' [ RunTime:0.001939s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2256' [ RunTime:0.000287s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2255' [ RunTime:0.000342s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2255' [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2255' [ RunTime:0.000197s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2254' [ RunTime:0.000294s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2254' [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2254' [ RunTime:0.000196s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2253' [ RunTime:0.000264s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2253' [ RunTime:0.000187s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2253' [ RunTime:0.000431s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.id,name,remark FROM sp_role_user AS a, sp_role AS b WHERE a.role_id = b.id AND a. user_id='2252' [ RunTime:0.000403s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.eid,ename FROM sp_elite_user AS a, sp_elite AS b WHERE a.elite_id = b.eid AND a. user_id='2252' [ RunTime:0.000250s ]
+NOTIC: [8] Undefined index: mapping_order I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.pid FROM sp_project_user AS a, sp_project AS b WHERE a.project_id = b.pid AND a. user_id='2252' [ RunTime:0.000180s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 273 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 168 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 273 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 168 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 197 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 399 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 404 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 197 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead I:\softwarework\xampp\htdocs\sciplat\ThinkPHP\Lib\Template\ThinkTemplate.class.php 第 137 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.071604s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071766s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001159s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000583s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000456s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000558s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002889s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000805s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000855s ]
+
