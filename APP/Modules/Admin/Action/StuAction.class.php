@@ -1107,7 +1107,7 @@ class StuAction extends CommonAction{
 		}
 		$condition['user_num']=array('in',$_POST['subBox']);
 		
-		if($_POST['option1']=="选中标记"){
+		if($_POST['option1']=="确认参加"){
 			//写入积分表
 			for($i=0;$i<count($_POST['subBox']);$i++){
 				$record=M('lecture_user')->where(array('lecture_id'=>$_POST['lecture_id'],'user_num'=>$_POST['subBox'][$i],'lpresent'=>0))->find();
@@ -1125,7 +1125,7 @@ class StuAction extends CommonAction{
 			else
 				$this->error("部分数据保存失败！"); 
 		}
-		if($_POST['option2']=="取消标记"){
+		if($_POST['option2']=="取消参加"){
 			//写入积分表
 			for($i=0;$i<count($_POST['subBox']);$i++){
 				$record=M('lecture_user')->where(array('lecture_id'=>$_POST['lecture_id'],'user_num'=>$_POST['subBox'][$i],'lpresent'=>1))->find();

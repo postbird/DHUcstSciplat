@@ -74,6 +74,8 @@
 	<h3 class='head'>{$lecture[0]['lecture_title']}</h3>
 	<h2 class='head'>报名分组列表</h2>
 	<hr/>
+	<a href="{:U('Admin/SuperManage/lectureCard/',array('unum'=>$unum,'lid'=>$lecture[0]['lecture_id'],'uname'=>$uname))}" class="btn btn-primary">刷卡验证</a>
+	
 	<form method='post' action="__URL__/lecturelistset" >
 		<div >
 			<div class="col-sm-11 col-sm-offset-1 ">
@@ -140,8 +142,8 @@
 			<a id="checkAll" href="javascript:;"class="btn btn-default">全选</a>
 			<a id="delAll" href="javascript:;" class="btn btn-default">取消全选</a>
 			<input type="submit" name='option3' value="选中导出" class="btn btn-primary">
-			<input type="submit" name='option1' value="选中标记" class="btn btn-primary">
-			<input type="submit" name='option2' value="取消标记" class="btn btn-primary">
+			<input type="submit" name='option1' value="确认参加" class="btn btn-primary">
+			<input type="submit" name='option2' value="取消参加" class="btn btn-primary">
 			&nbsp;&nbsp;<span class='red'>{$msg}</span>
 		</div>
 		<div class="modal-footer">

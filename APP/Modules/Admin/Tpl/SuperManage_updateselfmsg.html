@@ -154,8 +154,12 @@
 			      	</label>
 			    </div>
 	 		</div>
-	 		<hr/>
-	 		
+	 		<div class="form-group">
+	 			<label for="usernum" class="col-sm-2  control-label" >备注:</label>
+			    <div class="col-sm-3">
+			      <input type="text" class="form-control" value='{$user["description"]}' disabled="disabled">
+			    </div>
+	 		</div>
 		   <div class="modal-footer">
 		   			<input type='hidden',id='uid' name='uid' value='{$user["uid"]}'>
 			  		<input type='hidden',id='unum' name='unum' value='{$unum}'>

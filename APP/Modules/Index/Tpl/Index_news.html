@@ -41,5 +41,19 @@
 					</div>
 		</form>
 	</div>
-	
+	<script>
+	// alert(window.location.href.replace());
+	var view={$news['nid']};
+	var sUrl=window.location.href;
+	var sArr=sUrl.split("/");
+	var sLength=sArr.length;
+	var u=sUrl.replace("/"+sArr[sLength-3]+"/"+sArr[sLength-2]+"/"+sArr[sLength-1],"/newsView");
+	$.post(u,{
+		'view':view
+	},
+	function(data){
+		//check
+	}
+	);
+	</script>
 <include file="./APP/Modules/Index/Public/all-footer.html"  />

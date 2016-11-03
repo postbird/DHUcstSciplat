@@ -1,5 +1,19 @@
 <?php
 class SuperManageAction extends CommonAction{
+	//判断是否是科创管理员/主要管理员
+	//如果是返回1 不是返回0
+	public function checkStuSuper($num){
+		$flag=0;
+		$userid=M("user")->where(array("unum"=>$num))->getField("uid");
+		$res=M("role_user")->where(array("user_id"=>$userid))->find();
+		if($res['role_id']>=3){
+			$flag= 1;
+		}else{
+			$flag= 0;
+		}
+		$this->stusuper=$flag;
+		// return $flag;
+	}
 	//=============信息中心开始============
 	public function news(){
 		
@@ -1172,7 +1186,7 @@ class SuperManageAction extends CommonAction{
 			$this->ajaxReturn($data,"json");
 		}
 	}
-	//=============项目中心结束============
+	//=============讲座中心结束============
 	//=============人才库管理开始============
 	public function elite(){
 		$this->unum=I("unum");
@@ -1746,7 +1760,7 @@ class SuperManageAction extends CommonAction{
 		}
 		$condition['user_num']=array('in',$_POST['subBox']);
 		
-		if($_POST['option1']=="选中标记"){
+		if($_POST['option1']=="确认参加"){
 			//写入积分表
 			for($i=0;$i<count($_POST['subBox']);$i++){
 				$record=M('lecture_user')->where(array('lecture_id'=>$_POST['lecture_id'],'user_num'=>$_POST['subBox'][$i],'lpresent'=>0))->find();
@@ -1765,7 +1779,7 @@ class SuperManageAction extends CommonAction{
 			else
 				$this->redirect('lectureapply',array('unum'=>$unum,'uname'=>$uname,'msg'=>"保存失败！",'lid'=>$_POST['lecture_id'])); 
 		}
-		if($_POST['option2']=="取消标记"){
+		if($_POST['option2']=="取消参加"){
 			//写入积分表
 			for($i=0;$i<count($_POST['subBox']);$i++){
 				$record=M('lecture_user')->where(array('lecture_id'=>$_POST['lecture_id'],'user_num'=>$_POST['subBox'][$i],'lpresent'=>1))->find();
@@ -1826,7 +1840,62 @@ class SuperManageAction extends CommonAction{
 	          $objWriter->save('php://output');
 		}
 	}
-	
+	//实现刷卡验证参加讲座
+		public function lectureCard(){
+			$unum=I("unum");
+			$uname=I("uname");
+			$this->unum=$unum;
+			$this->uname=$uname;
+			$this->checkStuSuper($unum);
+			$lid=I('lid');
+			$this->lid=$lid;
+			$this->display();
+		}
+	//获得讲座的人数名单
+		public function lectureInfo(){
+			$unum=I("unum");
+			$uname=I("uname");
+			$this->unum=$unum;
+			$this->uname=$uname;
+			$this->checkStuSuper($unum);
+			$lid=I("view");
+			$lecture=M('lecture_user')->where(array('lecture_id'=>$lid))->order('lpresent desc')->select();
+			$data['status']="ok";
+			$data['msg']="success";
+			$data['stu']=$lecture;
+			$this->ajaxReturn($data,"json");
+		}
+	//获得讲座的人数名单
+		public function lectureUserConfirm(){
+			$unum=I("unum");
+			$uname=I("uname");
+			$this->unum=$unum;
+			$this->uname=$uname;
+			$this->checkStuSuper($unum);
+			// p($_POST);
+			$lid=I("view");
+			if($_POST['option1']=="确认参加"){
+			//写入积分表
+			for($i=0;$i<count($_POST['stunum']);$i++){
+				$record=M('lecture_user')->where(array('lecture_id'=>$lid,'user_num'=>$_POST['stunum'][$i],'lpresent'=>0))->find();
+				if(!empty($record)){
+					$user=M('user')->where(array('unum'=>$record['user_num']))->field(array('uid,upoint'))->find();
+					$user['upoint']+=1;
+					M('user')->save($user);
+				}else{
+					$this->redirect('lectureapply',array('unum'=>$unum,'uname'=>$uname,'msg'=>"没有任何更改！",'lid'=>$lid)); 
+				}
+			}
+			$condition['user_num']=array('in',$_POST['stunum']);
+			$condition['lecture_id']=$lid;
+			$result=M('lecture_user')->where($condition)->setField('lpresent', '1');
+			
+			if($result)
+				$this->redirect('lectureapply',array('unum'=>$unum,'uname'=>$uname,'msg'=>"保存成功！",'lid'=>$lid));
+			else
+				$this->redirect('lectureapply',array('unum'=>$unum,'uname'=>$uname,'msg'=>"保存失败！",'lid'=>$lid)); 
+			}
+		}
 	//=============讲座结束=============
 	//======个人信息设置开始=========
 		public function updateselfmsg(){

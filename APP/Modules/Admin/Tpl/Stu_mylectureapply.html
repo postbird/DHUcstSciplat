@@ -74,6 +74,8 @@
 	<h3 class='head'>{$lecture[0]['lecture_title']}</h3>
 	<h2 class='head'>报名分组列表</h2>
 	<hr/>
+	<a href="{:U('Admin/SuperManage/lectureCard/',array('unum'=>$unum,'lid'=>$lecture[0]['lecture_id'],'uname'=>$uname))}" class="btn btn-primary">刷卡验证</a>
+
 	<form method='post' action="__URL__/mylecturelistset" >
 		<div >
 			<div class="col-sm-11 col-sm-offset-1 ">

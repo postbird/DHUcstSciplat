@@ -154,13 +154,21 @@ class IndexAction extends Action{
 		$this->checkParam($nid);
 		$news=M('news')->where(array('nid'=>$nid))->find();
 		$this->redirectParam($news);
-		$news['nview']=$news['nview']+1;
-		M('news')->where(array('nid'=>$nid))->save($news);
+		// $news['nview']=$news['nview']+1;
 		$this->news=$news;
 		$this->page_title=$news['ntitle']." | 计算机学院科创管理系统";
 		
 		//p($news);
 		$this->display();
+	}
+	//统计浏览量 使用ajax请求
+	//ajax参数为 view 
+	public function newsView(){
+		$nid=I("view");
+		$this->checkParam($nid);
+		M('news')->where(array('nid'=>$nid))->setInc('nview',1);
+		$data['status']="ok";
+		$data['msg']="checked";
 	}
 	public function lecturelist(){
 		import("ORG.Util.Page");
