@@ -46,6 +46,96 @@
             });
         });
 </script>
+<script type="text/javascript">
+    //需要的全局变量
+    var verifyUrl='{:U("Admin/Login/verify",'','')}';
+    var loginindexUrl='{:U("Index/Index/index",'','')}';
+    var loginloginUrl='{:U("Admin/Login/login",'','')}';
+    var indexUrl='{:U("Index/Index/index",'','')}';
+    var indexUrl="__APP__/Index/";
+           
+    //登录页面,验证码
+    function change_code(){
+      $('#verify_code').attr("src",verifyUrl+'/'+Math.random());
+      return false;
+    }
+   function logincheck(){
+    var username = $('#username');
+    var password = $('#password');
+    var verify_code = $('#code');
+    
+    if(username.val() == ''){
+      alert('用户名不能为空');
+      username.focus();
+      return ;
+    }
+    if(password.val() == ''){
+      alert('密码名不能为空');
+      password.focus();
+      return ;
+    }
+    
+    if(verify_code.val() == ''){
+      alert('验证码码不能为空');
+      verify_code.focus();
+      return ;
+    }
+    
+    $.post(loginloginUrl,{username:username.val(),password:password.val(),verify_code:verify_code.val()},function (data) {
+      if(data.status == 2){
+        alert('验证码错误');
+        return false;
+      }else if(data.status == 3){
+        
+        window.location.href = indexUrl ;
+      }else if(data.status == 0){
+        alert('登录失败，请重新尝试');
+        return false;
+        // window.location.href = loginindexUrl;
+      }else if(data.status==4)
+      {
+        alert('用户名或密码错误');
+        return false;
+        // window.location.href = loginindexUrl;
+      }
+      else{
+        
+        alert('用户名或密码错误');
+        return false;
+        // window.location.href = loginindexUrl;
+      }
+      
+      },'json');
+    }
+    function lectureapply(){
+       var lid = arguments[0] ? arguments[0] : 0;
+       var unum = arguments[1] ? arguments[1] : 0;
+      if(lid==0 || unum==0){
+        alert("请先登录");
+        return ;
+      }
+      alert("报名后不可撤销，确认报名？");
+      if(confirm("再次确认报名!")){
+        $.ajax({
+          type:"POST",
+          url:"__APP__/Admin/Stu/lectureapply/",
+          data:{'lid':lid,'unum':unum},
+          success:function(data,textStatus,jqXHR){
+          alert("报名成功");
+            window.location.reload();
+          },
+          error:function(jqXHR,textStatus,errorThrown){
+            alert("报名失败");
+          }
+        })
+          
+        }
+        else{
+        
+          return;
+        }
+    }
+    </script>
 </head>
 <body style="padding-top:70px;">
 <!--登录 modal-->
