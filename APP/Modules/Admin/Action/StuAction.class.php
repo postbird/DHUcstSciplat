@@ -991,7 +991,7 @@ class StuAction extends CommonAction{
 		$lid=I('lid');
 		$lecture=M('lecture')->where(array('lid'=>$lid))->find();
 		//判定是否过期
-		$sub=(time()-strtotime($lecture['ldateend']))-1*24*60*60;
+		$sub=time()-strtotime($lecture['ldateend']." 00:00:00");
 		if($sub>0){
 			$lecture['subtime']=1;
 		}
